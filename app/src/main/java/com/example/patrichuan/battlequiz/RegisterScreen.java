@@ -1,41 +1,24 @@
 package com.example.patrichuan.battlequiz;
 
-import android.support.v7.app.ActionBar;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.LinearLayout;
-
-import com.parse.ParseObject;
 
 
-public class LoginScreen extends ActionBarActivity {
-
-    private LinearLayout MainLayout;
+public class RegisterScreen extends ActionBarActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.loginscreen_layout);
-
-
-        ActionBar actionBar = getSupportActionBar();
-        actionBar.hide();
-
-        ParseObject testObject = new ParseObject("TestObject");
-        testObject.put("foo", "bar");
-        testObject.saveInBackground();
-
-        MainLayout = (LinearLayout)findViewById(R.id.main_layout);
-        MainLayout.setBackgroundResource(R.drawable.bg);
+        setContentView(R.layout.registerscreen_layout);
     }
 
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_login_screen, menu);
+        getMenuInflater().inflate(R.menu.menu_register_screen, menu);
         return true;
     }
 
