@@ -1,17 +1,42 @@
 package com.example.patrichuan.battlequiz;
 
+import android.content.Intent;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
+import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 
 
 public class RegisterScreen extends ActionBarActivity {
+
+    private Button Registerbtn;
+    private LinearLayout MainLayout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.registerscreen_layout);
+
+        Registerbtn = (Button)findViewById(R.id.Registerbtn);
+
+        Registerbtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent SiguienteActivity = new Intent(v.getContext(), LoginScreen.class);
+                startActivity(SiguienteActivity);
+            }
+        });
+
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.hide();
+
+        MainLayout = (LinearLayout)findViewById(R.id.main_layout);
+        MainLayout.setBackgroundResource(R.drawable.bg);
     }
 
 

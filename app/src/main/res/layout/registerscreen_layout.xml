@@ -1,12 +1,177 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
-    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    tools:context="com.example.patrichuan.battlequiz.RegisterScreen">
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/main_layout"
+    android:weightSum="1"
+    android:orientation="horizontal"
+    tools:context=".LoginScreen"
+    android:baselineAligned="false">
 
-    <TextView android:text="@string/hello_world" android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+    <RelativeLayout
+        android:id="@+id/child_one"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="0.5"
+        android:paddingBottom="@dimen/activity_vertical_margin"
+        android:paddingStart="@dimen/activity_horizontal_margin"
+        android:paddingEnd="@dimen/activity_horizontal_margin">
 
-</RelativeLayout>
+        <com.example.patrichuan.battlequiz.AspectRatioImageView
+            android:src="@drawable/sombrapersonaje"
+            android:id="@+id/sombraimg"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:adjustViewBounds="true"
+            android:alpha="0.5"
+            android:layout_centerHorizontal="true"
+            android:layout_alignParentBottom="true"/>
+
+        <com.example.patrichuan.battlequiz.AspectRatioImageView
+            android:src="@drawable/prota"
+            android:id="@+id/protaimg"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:adjustViewBounds="true"
+            android:layout_centerHorizontal="true"
+            android:layout_alignParentBottom="true" />
+
+        <com.example.patrichuan.battlequiz.AspectRatioImageView
+            android:src="@drawable/logo"
+            android:id="@+id/logoimg"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:adjustViewBounds="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true" />
+
+
+
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/child_two"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="0.4"
+        android:paddingTop="@dimen/activity_vertical_margin"
+        android:paddingBottom="@dimen/activity_vertical_margin">
+
+        <com.example.patrichuan.battlequiz.AspectRatioImageView
+            android:src="@drawable/marcoderecho"
+            android:id="@+id/marcoderechoimg"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true"
+            android:adjustViewBounds="true"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingTop="@dimen/activity_vertical_margin"
+            android:paddingBottom="@dimen/activity_vertical_margin"
+            android:paddingStart="@dimen/activity_horizontal_margin"
+            android:paddingEnd="@dimen/activity_horizontal_margin"
+            android:orientation="vertical"
+            android:weightSum="1">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="0.25">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="REGISTER"
+                    android:textSize="40sp"
+                    android:textColor="@android:color/white"
+                    android:layout_alignParentBottom="true"
+                    android:paddingBottom="10dp"
+                    android:gravity="center_horizontal" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="0.5">
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:textSize="20sp"
+                    android:background="@drawable/edittext"
+                    android:text="USER"
+                    android:gravity="center"
+                    android:id="@+id/UserEt"
+                    android:layout_alignParentTop="true">
+                </EditText>
+
+                <EditText
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:textSize="20sp"
+                android:background="@drawable/edittext"
+                android:text="PASS"
+                android:gravity="center"
+                android:id="@+id/Pass1"
+                android:layout_below="@+id/UserEt">
+            </EditText>
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:textSize="20sp"
+                    android:background="@drawable/edittext"
+                    android:text="REPEAT PASS"
+                    android:gravity="center"
+                    android:id="@+id/Pass2"
+                    android:layout_below="@+id/Pass1"
+                    android:layout_alignParentStart="true">
+                </EditText>
+
+
+
+            </RelativeLayout>
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="0.25">
+
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:textSize="20sp"
+                    android:background="@drawable/buttonregister"
+                    android:textColor="@android:color/white"
+                    android:text="REGISTER"
+                    android:id="@+id/Registerbtn"
+                    android:gravity="center"
+                    android:layout_alignParentTop="true">
+                </Button>
+
+            </RelativeLayout>
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/child_three"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="0.1"
+        android:paddingTop="@dimen/activity_vertical_margin"
+        android:paddingBottom="@dimen/activity_vertical_margin"
+        android:paddingEnd="10dp">
+
+    </RelativeLayout>
+
+
+
+</LinearLayout>

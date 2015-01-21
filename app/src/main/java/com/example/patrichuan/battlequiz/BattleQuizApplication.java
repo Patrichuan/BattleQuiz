@@ -11,6 +11,6 @@ public class BattleQuizApplication extends Application {
 
         // Enable Local Datastore.
         Parse.enableLocalDatastore(this);
-        Parse.initialize(this, "uijAwGOulCsR2k9xqPx4ttZ7mRpr45qmL12HzczS", "NQG9WFZDDOUovoIrnrXIOj9lNSBB8vBRmA0jiAuh");
+        Parse.initialize(this, "UsuarioDePrueba1", "Contraseña1");
     }
 }

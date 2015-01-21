@@ -24,7 +24,8 @@
         </activity>
         <activity
             android:name=".RegisterScreen"
-            android:label="@string/title_activity_register_screen" >
+            android:label="@string/title_activity_register_screen"
+            android:screenOrientation="landscape" >>
         </activity>
     </application>
 
