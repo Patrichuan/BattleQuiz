@@ -41,7 +41,7 @@ public class LoginScreen extends ActionBarActivity {
         testObject.saveInBackground();
 
         MainLayout = (LinearLayout)findViewById(R.id.main_layout);
-        MainLayout.setBackgroundResource(R.drawable.bg);
+        MainLayout.setBackgroundResource(R.drawable.background);
     }
 
 

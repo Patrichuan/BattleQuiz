@@ -9,8 +9,6 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
-import android.widget.RelativeLayout;
-
 
 public class RegisterScreen extends ActionBarActivity {
 
@@ -36,7 +34,7 @@ public class RegisterScreen extends ActionBarActivity {
         actionBar.hide();
 
         MainLayout = (LinearLayout)findViewById(R.id.main_layout);
-        MainLayout.setBackgroundResource(R.drawable.bg);
+        MainLayout.setBackgroundResource(R.drawable.background);
     }
 
 
