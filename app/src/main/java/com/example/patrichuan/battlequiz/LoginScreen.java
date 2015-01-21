@@ -1,10 +1,13 @@
 package com.example.patrichuan.battlequiz;
 
+import android.content.Intent;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
 import android.widget.LinearLayout;
 
 import com.parse.ParseObject;
@@ -13,12 +16,22 @@ import com.parse.ParseObject;
 public class LoginScreen extends ActionBarActivity {
 
     private LinearLayout MainLayout;
+    private Button Registerbtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.loginscreen_layout);
 
+        Registerbtn = (Button)findViewById(R.id.Registerbtn);
+
+        Registerbtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent SiguienteActivity = new Intent(v.getContext(), RegisterScreen.class);
+                startActivity(SiguienteActivity);
+            }
+        });
 
         ActionBar actionBar = getSupportActionBar();
         actionBar.hide();
