@@ -111,6 +111,19 @@
                 </EditText>
 
                 <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:textSize="20sp"
+                    android:background="@drawable/edittext"
+                    android:hint="EMAIL"
+                    android:gravity="center"
+                    android:id="@+id/EmailEt"
+                    android:layout_alignParentStart="true"
+                    android:layout_below="@+id/Pass2"
+                    android:layout_alignParentLeft="true">
+                </EditText>
+
+                <EditText
                 android:layout_width="match_parent"
                 android:layout_height="30dp"
                 android:textSize="20sp"
@@ -118,7 +131,8 @@
                 android:hint="PASS"
                 android:gravity="center"
                 android:id="@+id/Pass1"
-                android:layout_below="@+id/UserEt">
+                    android:layout_below="@+id/UserEt"
+                    android:layout_alignParentStart="true">
             </EditText>
 
                 <EditText
@@ -129,8 +143,9 @@
                     android:hint="REPEAT PASS"
                     android:gravity="center"
                     android:id="@+id/Pass2"
+                    android:layout_alignParentStart="true"
                     android:layout_below="@+id/Pass1"
-                    android:layout_alignParentStart="true">
+                    android:layout_alignParentLeft="true">
                 </EditText>
 
 
@@ -149,7 +164,7 @@
                     android:textSize="20sp"
                     android:background="@drawable/buttonregister"
                     android:textColor="@android:color/white"
-                    android:text="REGISTER"
+                    android:text="SIGN UP"
                     android:id="@+id/Registerbtn"
                     android:gravity="center"
                     android:layout_alignParentTop="true">
