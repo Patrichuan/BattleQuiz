@@ -94,15 +94,14 @@ public class LoginScreen extends ActionBarActivity {
         String usernametxt;
         String passwordtxt;
         userEdit = (EditText) findViewById(R.id.UserEt);
-        passEdit = (EditText) findViewById(R.id.Pass1);
+        passEdit = (EditText) findViewById(R.id.PassEt);
 
-        usernametxt = userEdit.getText().toString();
-        passwordtxt = passEdit.getText().toString();
+
 
 
         // Retrieve the text entered from the EditText
-        usernametxt = userEdit.getText().toString();
-        passwordtxt = passEdit.getText().toString();
+        usernametxt = userEdit.getText().toString().toUpperCase();
+        passwordtxt = passEdit.getText().toString().toUpperCase();
 
         // Send data to Parse.com for verification
         ParseUser.logInInBackground(usernametxt, passwordtxt,
@@ -118,6 +117,9 @@ public class LoginScreen extends ActionBarActivity {
                             finish();
 
                         } else {
+
+                            //VENTANA EMERGENTE USUARIO INVÁLIDO
+
                             Toast.makeText(
                                     getApplicationContext(),
                                     "No such user exist, please signup",

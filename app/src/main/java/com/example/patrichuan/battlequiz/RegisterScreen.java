@@ -60,6 +60,28 @@ public class RegisterScreen extends ActionBarActivity {
     }
 
 
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        getMenuInflater().inflate(R.menu.menu_register_screen, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        // Handle action bar item clicks here. The action bar will
+        // automatically handle clicks on the Home/Up button, so long
+        // as you specify a parent activity in AndroidManifest.xml.
+        int id = item.getItemId();
+
+        //noinspection SimplifiableIfStatement
+        if (id == R.id.action_settings) {
+            return true;
+        }
+
+        return super.onOptionsItemSelected(item);
+    }
+
     public boolean register() {
         String usernametxt;
         String passwordtxt;
@@ -73,10 +95,10 @@ public class RegisterScreen extends ActionBarActivity {
 
 
 // Retrieve the text entered from the EditText
-        usernametxt = userEdit.getText().toString();
-        passwordtxt = passEdit.getText().toString();
-        repitPass = repitPassEdit.getText().toString();
-        email = emailEdit.getText().toString();
+        usernametxt = userEdit.getText().toString().toUpperCase();
+        passwordtxt = passEdit.getText().toString().toUpperCase();
+        repitPass = repitPassEdit.getText().toString().toUpperCase();;
+        email = emailEdit.getText().toString().toUpperCase();;
 
         // Force user to fill up the form
         if (usernametxt.equals("") && passwordtxt.equals("") && repitPass.equals("") && email.equals("")) {
@@ -140,27 +162,5 @@ public class RegisterScreen extends ActionBarActivity {
             isValid = true;
         }
         return isValid;
-    }
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_register_screen, menu);
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
-        }
-
-        return super.onOptionsItemSelected(item);
     }
 }
