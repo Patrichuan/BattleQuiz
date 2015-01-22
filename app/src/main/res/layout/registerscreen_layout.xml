@@ -5,6 +5,7 @@
     android:id="@+id/main_layout"
     android:weightSum="1"
     android:orientation="horizontal"
+    android:background="@drawable/background"
     tools:context=".LoginScreen">
 
     <RelativeLayout
