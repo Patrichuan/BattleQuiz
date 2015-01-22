@@ -148,11 +148,21 @@
                     android:textSize="20sp"
                     android:background="@drawable/buttonregister"
                     android:textColor="@android:color/white"
-                    android:text="REGISTER"
+                    android:text="SIGN UP"
                     android:id="@+id/Registerbtn"
                     android:gravity="center"
                     android:layout_alignParentTop="true">
                 </Button>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="I lost my password"
+                    android:textSize="15sp"
+                    android:textColor="@android:color/white"
+                    android:layout_alignParentBottom="true"
+                    android:paddingBottom="10dp"
+                    android:gravity="center_horizontal" />
 
             </RelativeLayout>
 
