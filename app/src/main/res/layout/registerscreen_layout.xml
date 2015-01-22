@@ -104,7 +104,7 @@
                     android:layout_height="30dp"
                     android:textSize="20sp"
                     android:background="@drawable/edittext"
-                    android:text="USER"
+                    android:hint="USER"
                     android:gravity="center"
                     android:id="@+id/UserEt"
                     android:layout_alignParentTop="true">
@@ -115,7 +115,7 @@
                 android:layout_height="30dp"
                 android:textSize="20sp"
                 android:background="@drawable/edittext"
-                android:text="PASS"
+                android:hint="PASS"
                 android:gravity="center"
                 android:id="@+id/Pass1"
                 android:layout_below="@+id/UserEt">
@@ -126,7 +126,7 @@
                     android:layout_height="30dp"
                     android:textSize="20sp"
                     android:background="@drawable/edittext"
-                    android:text="REPEAT PASS"
+                    android:hint="REPEAT PASS"
                     android:gravity="center"
                     android:id="@+id/Pass2"
                     android:layout_below="@+id/Pass1"

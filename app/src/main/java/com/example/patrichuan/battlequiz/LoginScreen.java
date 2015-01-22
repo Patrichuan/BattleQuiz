@@ -12,7 +12,6 @@ import android.widget.LinearLayout;
 
 import com.parse.ParseObject;
 
-
 public class LoginScreen extends ActionBarActivity {
 
     private LinearLayout MainLayout;
@@ -33,6 +32,11 @@ public class LoginScreen extends ActionBarActivity {
             }
         });
 
+        View decorView = getWindow().getDecorView();
+        // Hide the status bar.
+        int uiOptions = View.SYSTEM_UI_FLAG_FULLSCREEN;
+        decorView.setSystemUiVisibility(uiOptions);
+        // Hide the action bar
         ActionBar actionBar = getSupportActionBar();
         actionBar.hide();
 
