@@ -3,7 +3,7 @@ package com.example.patrichuan.battlequiz;
 import android.app.Application;
 import com.parse.Parse;
 
-public class BattleQuizApplication extends Application {
+public class ParseCom extends Application {
 
     @Override
     public void onCreate () {
@@ -11,6 +11,6 @@ public class BattleQuizApplication extends Application {
 
         // Enable Local Datastore.
         Parse.enableLocalDatastore(this);
-        Parse.initialize(this, "UsuarioDePrueba1", "Contraseña1");
+        Parse.initialize(this, "uijAwGOulCsR2k9xqPx4ttZ7mRpr45qmL12HzczS", "NQG9WFZDDOUovoIrnrXIOj9lNSBB8vBRmA0jiAuh");
     }
 }

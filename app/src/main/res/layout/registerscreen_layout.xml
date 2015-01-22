@@ -5,8 +5,7 @@
     android:id="@+id/main_layout"
     android:weightSum="1"
     android:orientation="horizontal"
-    tools:context=".LoginScreen"
-    android:baselineAligned="false">
+    tools:context=".LoginScreen">
 
     <RelativeLayout
         android:id="@+id/child_one"
@@ -90,7 +89,7 @@
                     android:textColor="@android:color/white"
                     android:layout_alignParentBottom="true"
                     android:paddingBottom="10dp"
-                    android:gravity="center_horizontal" />
+                    android:gravity="center_horizontal"/>
 
             </RelativeLayout>
 
