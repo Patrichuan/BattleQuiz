@@ -1,5 +1,6 @@
 package com.example.patrichuan.battlequiz;
 
+import android.content.Context;
 import android.content.Intent;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.ActionBarActivity;
@@ -8,14 +9,24 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.LinearLayout;
+import android.widget.Toast;
 
+import com.parse.LogInCallback;
 import com.parse.ParseObject;
+import com.parse.ParseUser;
+
+import java.text.ParseException;
 
 public class LoginScreen extends ActionBarActivity {
 
     private LinearLayout MainLayout;
     private Button Registerbtn;
+    private Button Loginbtn;
+
+    private EditText userEdit;
+    private EditText passEdit;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,6 +43,15 @@ public class LoginScreen extends ActionBarActivity {
             }
         });
 
+        Loginbtn =(Button)findViewById(R.id.Loginbtn);
+        Loginbtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                login();
+            }
+        });
+
+
         View decorView = getWindow().getDecorView();
         // Hide the status bar.
         int uiOptions = View.SYSTEM_UI_FLAG_FULLSCREEN;
@@ -40,9 +60,7 @@ public class LoginScreen extends ActionBarActivity {
         ActionBar actionBar = getSupportActionBar();
         actionBar.hide();
 
-        ParseObject testObject = new ParseObject("TestObject");
-        testObject.put("foo", "bar");
-        testObject.saveInBackground();
+
 
         MainLayout = (LinearLayout)findViewById(R.id.main_layout);
         MainLayout.setBackgroundResource(R.drawable.background);
@@ -70,4 +88,43 @@ public class LoginScreen extends ActionBarActivity {
 
         return super.onOptionsItemSelected(item);
     }
+
+    public void login(){
+
+        String usernametxt;
+        String passwordtxt;
+        userEdit = (EditText) findViewById(R.id.UserEt);
+        passEdit = (EditText) findViewById(R.id.Pass1);
+
+        usernametxt = userEdit.getText().toString();
+        passwordtxt = passEdit.getText().toString();
+
+
+        // Retrieve the text entered from the EditText
+        usernametxt = userEdit.getText().toString();
+        passwordtxt = passEdit.getText().toString();
+
+        // Send data to Parse.com for verification
+        ParseUser.logInInBackground(usernametxt, passwordtxt,
+                new LogInCallback() {
+                    @Override
+                    public void done(ParseUser parseUser, com.parse.ParseException e) {
+                        if (parseUser != null) {
+                            Intent SiguienteActivity = new Intent(LoginScreen.this, MainMenuScreen.class);
+                            startActivity(SiguienteActivity);
+                            Toast.makeText(getApplicationContext(),
+                                    "Successfully Logged in",
+                                    Toast.LENGTH_LONG).show();
+                            finish();
+
+                        } else {
+                            Toast.makeText(
+                                    getApplicationContext(),
+                                    "No such user exist, please signup",
+                                    Toast.LENGTH_LONG).show();
+                        }
+                    }
+                });
+    }
+
 }
