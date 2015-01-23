@@ -7,12 +7,9 @@
         </shape>
     </item>
 
-
-
     <item
         android:bottom="4px"
         android:right="4px">
-
         <shape>
 
             <size
@@ -20,8 +17,11 @@
                 android:height="60dp"
                 />
 
-            <solid android:color="#ee9394" />
+            <solid android:color="#edcc90" />
 
+            <stroke
+                android:width="3dp"
+                android:color="#bba172" />
         </shape>
     </item>
 </layer-list>
