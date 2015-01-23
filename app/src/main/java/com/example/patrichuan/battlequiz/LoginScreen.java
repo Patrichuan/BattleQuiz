@@ -52,10 +52,8 @@ public class LoginScreen extends ActionBarActivity {
             }
         });
 
-
+        //Hide status bar
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN);
-
-
         // Hide the action bar
         ActionBar actionBar = getSupportActionBar();
         actionBar.hide();

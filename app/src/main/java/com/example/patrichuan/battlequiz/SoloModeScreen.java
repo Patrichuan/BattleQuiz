@@ -1,17 +1,29 @@
 package com.example.patrichuan.battlequiz;
 
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.WindowManager;
+import android.widget.LinearLayout;
 
 
 public class SoloModeScreen extends ActionBarActivity {
-
+    private LinearLayout MainLayout;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_solo_mode_screen);
+
+        //Hide status bar
+        getWindow().addFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN);
+        // Hide the action bar
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.hide();
+
+        MainLayout = (LinearLayout) findViewById(R.id.main_layout);
+        MainLayout.setBackgroundResource(R.drawable.background);
     }
 
 

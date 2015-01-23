@@ -1,5 +1,6 @@
 package com.example.patrichuan.battlequiz;
 
+import android.content.Intent;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
@@ -7,26 +8,38 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.WindowManager;
+import android.widget.Button;
 import android.widget.LinearLayout;
 
 
 public class MainMenuScreen extends ActionBarActivity {
 
     private LinearLayout MainLayout;
-
+    private Button SoloModebtn;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_menu_screen);
 
+        //Hide status bar
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN);
-
         // Hide the action bar
         ActionBar actionBar = getSupportActionBar();
         actionBar.hide();
 
+        SoloModebtn = (Button) findViewById(R.id.SoloModebtn);
+
+        SoloModebtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent SiguienteActivity = new Intent(v.getContext(), SoloModeScreen.class);
+                startActivity(SiguienteActivity);
+            }
+        });
+
         MainLayout = (LinearLayout) findViewById(R.id.main_layout);
         MainLayout.setBackgroundResource(R.drawable.background);
+
     }
 
 
