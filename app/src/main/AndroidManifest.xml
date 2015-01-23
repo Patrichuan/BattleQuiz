@@ -29,11 +29,13 @@
         </activity>
         <activity
             android:name=".MainMenuScreen"
-            android:label="@string/title_activity_main_menu_screen" >
+            android:label="@string/title_activity_main_menu_screen"
+            android:screenOrientation="landscape" >
         </activity>
         <activity
             android:name=".SoloModeScreen"
-            android:label="@string/title_activity_solo_mode_screen" >
+            android:label="@string/title_activity_solo_mode_screen"
+            android:screenOrientation="landscape" >
         </activity>
     </application>
 

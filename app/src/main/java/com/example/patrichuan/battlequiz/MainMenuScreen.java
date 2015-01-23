@@ -1,17 +1,33 @@
 package com.example.patrichuan.battlequiz;
 
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.LinearLayout;
 
 
 public class MainMenuScreen extends ActionBarActivity {
+
+    private LinearLayout MainLayout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_menu_screen);
+
+        View decorView = getWindow().getDecorView();
+        // Hide the status bar.
+        int uiOptions = View.SYSTEM_UI_FLAG_FULLSCREEN;
+        decorView.setSystemUiVisibility(uiOptions);
+        // Hide the action bar
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.hide();
+
+        MainLayout = (LinearLayout) findViewById(R.id.main_layout);
+        MainLayout.setBackgroundResource(R.drawable.background);
     }
 
 
