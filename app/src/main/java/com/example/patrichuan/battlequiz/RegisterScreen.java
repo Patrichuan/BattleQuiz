@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
@@ -41,16 +42,15 @@ public class RegisterScreen extends ActionBarActivity {
         Registerbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(register()){
-                Intent SiguienteActivity = new Intent(v.getContext(), LoginScreen.class);
-                startActivity(SiguienteActivity);}
+                if (register()) {
+                    Intent SiguienteActivity = new Intent(v.getContext(), LoginScreen.class);
+                    startActivity(SiguienteActivity);
+                }
             }
         });
 
-        View decorView = getWindow().getDecorView();
-        // Hide the status bar.
-        int uiOptions = View.SYSTEM_UI_FLAG_FULLSCREEN;
-        decorView.setSystemUiVisibility(uiOptions);
+
+        getWindow().addFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN);
         // Hide the action bar
         ActionBar actionBar = getSupportActionBar();
         actionBar.hide();
@@ -97,8 +97,10 @@ public class RegisterScreen extends ActionBarActivity {
 // Retrieve the text entered from the EditText
         usernametxt = userEdit.getText().toString().toUpperCase();
         passwordtxt = passEdit.getText().toString().toUpperCase();
-        repitPass = repitPassEdit.getText().toString().toUpperCase();;
-        email = emailEdit.getText().toString().toUpperCase();;
+        repitPass = repitPassEdit.getText().toString().toUpperCase();
+        ;
+        email = emailEdit.getText().toString().toUpperCase();
+        ;
 
         // Force user to fill up the form
         if (usernametxt.equals("") && passwordtxt.equals("") && repitPass.equals("") && email.equals("")) {
@@ -110,7 +112,7 @@ public class RegisterScreen extends ActionBarActivity {
 
         } else {
             if (passwordtxt.equals(repitPass)) {
-                if(isEmailValid(email)) {
+                if (isEmailValid(email)) {
                     // Save new user data into Parse.com Data Storage
                     ParseUser user = new ParseUser();
                     user.setUsername(usernametxt);
@@ -132,7 +134,7 @@ public class RegisterScreen extends ActionBarActivity {
                         }
                     });
                     return true;
-                }else{
+                } else {
                     //VENTANA EMERGENTE EMAIL INVALIDO
                     Toast.makeText(getApplicationContext(),
                             "Has introducido mal tu email.",

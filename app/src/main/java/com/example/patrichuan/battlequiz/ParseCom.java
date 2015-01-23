@@ -1,6 +1,7 @@
 package com.example.patrichuan.battlequiz;
 
 import android.app.Application;
+
 import com.parse.Parse;
 import com.parse.ParseACL;
 import com.parse.ParseUser;
@@ -8,7 +9,7 @@ import com.parse.ParseUser;
 public class ParseCom extends Application {
 
     @Override
-    public void onCreate () {
+    public void onCreate() {
         super.onCreate();
 
         // Enable Local Datastore.

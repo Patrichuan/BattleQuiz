@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
@@ -33,7 +34,7 @@ public class LoginScreen extends ActionBarActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.loginscreen_layout);
 
-        Registerbtn = (Button)findViewById(R.id.Registerbtn);
+        Registerbtn = (Button) findViewById(R.id.Registerbtn);
 
         Registerbtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -43,7 +44,7 @@ public class LoginScreen extends ActionBarActivity {
             }
         });
 
-        Loginbtn =(Button)findViewById(R.id.Loginbtn);
+        Loginbtn = (Button) findViewById(R.id.Loginbtn);
         Loginbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -52,17 +53,15 @@ public class LoginScreen extends ActionBarActivity {
         });
 
 
-        View decorView = getWindow().getDecorView();
-        // Hide the status bar.
-        int uiOptions = View.SYSTEM_UI_FLAG_FULLSCREEN;
-        decorView.setSystemUiVisibility(uiOptions);
+        getWindow().addFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN);
+
+
         // Hide the action bar
         ActionBar actionBar = getSupportActionBar();
         actionBar.hide();
 
 
-
-        MainLayout = (LinearLayout)findViewById(R.id.main_layout);
+        MainLayout = (LinearLayout) findViewById(R.id.main_layout);
         MainLayout.setBackgroundResource(R.drawable.background);
     }
 
@@ -89,14 +88,12 @@ public class LoginScreen extends ActionBarActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    public void login(){
+    public void login() {
 
         String usernametxt;
         String passwordtxt;
         userEdit = (EditText) findViewById(R.id.UserEt);
         passEdit = (EditText) findViewById(R.id.PassEt);
-
-
 
 
         // Retrieve the text entered from the EditText
