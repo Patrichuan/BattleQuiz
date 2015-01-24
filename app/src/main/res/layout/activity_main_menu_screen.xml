@@ -25,7 +25,7 @@
             android:layout_centerHorizontal="true"
             android:adjustViewBounds="true"
             android:alpha="0.5"
-            android:src="@drawable/sombrapersonaje" />
+            android:src="@drawable/one_sombra_personaje" />
 
         <ImageView
             android:id="@+id/protaimg"
@@ -34,7 +34,7 @@
             android:layout_alignParentBottom="true"
             android:layout_centerHorizontal="true"
             android:adjustViewBounds="true"
-            android:src="@drawable/prota" />
+            android:src="@drawable/one_prota" />
 
         <ImageView
             android:id="@+id/logoimg"
