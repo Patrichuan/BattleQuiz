@@ -36,6 +36,13 @@ public class RegisterScreen extends ActionBarActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.registerscreen_layout);
 
+        // Aplicamos a Password
+        EditText EditPass = (EditText) findViewById(R.id.Pass1);
+        EditText EditPass2 = (EditText) findViewById(R.id.Pass2);
+
+        FontsOverride.setPasswordFont(this, EditPass);
+        FontsOverride.setPasswordFont(this, EditPass2);
+
 
         Registerbtn = (Button) findViewById(R.id.Registerbtn);
 
