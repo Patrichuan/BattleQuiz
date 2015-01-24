@@ -18,7 +18,7 @@
         android:paddingEnd="@dimen/activity_horizontal_margin">
 
         <ImageView
-            android:src="@drawable/sombrapersonaje"
+            android:src="@drawable/one_sombra_personaje"
             android:id="@+id/sombraimg"
             android:layout_height="wrap_content"
             android:layout_width="match_parent"
@@ -28,7 +28,7 @@
             android:layout_alignParentBottom="true"/>
 
         <ImageView
-            android:src="@drawable/prota"
+            android:src="@drawable/one_prota"
             android:id="@+id/protaimg"
             android:layout_height="wrap_content"
             android:layout_width="match_parent"
@@ -84,7 +84,7 @@
             <Button
                 android:layout_width="match_parent"
                 android:layout_height="45dp"
-                android:textSize="20sp"
+                android:textSize="30sp"
                 android:background="@drawable/buttonmenu"
                 android:textColor="@android:color/white"
                 android:text="SUDEN DEATH"
@@ -98,7 +98,7 @@
             <Button
                 android:layout_width="match_parent"
                 android:layout_height="45dp"
-                android:textSize="20sp"
+                android:textSize="30sp"
                 android:background="@drawable/buttonmenu"
                 android:textColor="@android:color/white"
                 android:text="CLASSIC MODE"
@@ -112,7 +112,7 @@
             <Button
                 android:layout_width="match_parent"
                 android:layout_height="45dp"
-                android:textSize="20sp"
+                android:textSize="30sp"
                 android:background="@drawable/buttonmenu"
                 android:textColor="@android:color/white"
                 android:text="LEADER BOARDS"
