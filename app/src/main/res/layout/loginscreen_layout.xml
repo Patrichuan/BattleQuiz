@@ -118,7 +118,8 @@
                     android:hint="PASS"
                     android:gravity="center"
                     android:id="@+id/PassEt"
-                    android:layout_below="@+id/UserEt">
+                    android:layout_below="@+id/UserEt"
+                    android:password="true">
                  </EditText>
 
                 <Button
