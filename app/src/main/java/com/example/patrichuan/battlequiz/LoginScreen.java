@@ -2,6 +2,7 @@ package com.example.patrichuan.battlequiz;
 
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
@@ -34,7 +35,11 @@ public class LoginScreen extends ActionBarActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.loginscreen_layout);
 
+        FontsOverride.setDefaultFont(this, "DEFAULT", "fonts/HVD_Comic_Serif_Pro.otf");
+
         Registerbtn = (Button) findViewById(R.id.Registerbtn);
+
+
 
         Registerbtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -61,6 +66,9 @@ public class LoginScreen extends ActionBarActivity {
 
         MainLayout = (LinearLayout) findViewById(R.id.main_layout);
         MainLayout.setBackgroundResource(R.drawable.background);
+
+
+
     }
 
 

@@ -66,7 +66,9 @@
             android:layout_weight="0.2"
             android:paddingBottom="@dimen/activity_vertical_margin"
             android:paddingEnd="@dimen/activity_horizontal_margin"
-            android:paddingStart="@dimen/activity_horizontal_margin"></RelativeLayout>
+            android:paddingStart="@dimen/activity_horizontal_margin">
+
+        </RelativeLayout>
 
         <LinearLayout
             android:id="@+id/button_layout"
@@ -90,7 +92,9 @@
                 android:text="SOLO MODE"
 
                 android:textColor="@android:color/white"
-                android:textSize="20sp"></Button>
+                android:textSize="30sp">
+
+            </Button>
 
             <Button
                 android:id="@+id/Multiplayerbtn"
@@ -103,7 +107,9 @@
                 android:text="MULTIPLAYER"
 
                 android:textColor="@android:color/white"
-                android:textSize="20sp"></Button>
+                android:textSize="30sp">
+
+            </Button>
 
             <Button
                 android:id="@+id/Shopbtn"
@@ -116,7 +122,9 @@
                 android:text="SHOP"
 
                 android:textColor="@android:color/white"
-                android:textSize="20sp"></Button>
+                android:textSize="30sp">
+
+            </Button>
 
             <Button
                 android:id="@+id/Achievementsbtn"
@@ -129,7 +137,9 @@
                 android:text="ACHIEVEMENTS"
 
                 android:textColor="@android:color/white"
-                android:textSize="20sp"></Button>
+                android:textSize="30sp">
+
+            </Button>
         </LinearLayout>
 
     </LinearLayout>
