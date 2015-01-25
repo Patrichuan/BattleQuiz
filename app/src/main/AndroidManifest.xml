@@ -11,16 +11,17 @@
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
+
         <activity
             android:name=".LoginScreen"
             android:label="@string/app_name"
-            android:screenOrientation="landscape"
-            android:noHistory="true" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+            android:noHistory="true"
+            android:screenOrientation="landscape" >
+        <intent-filter>
+            <action android:name="android.intent.action.MAIN" />
+            <category android:name="android.intent.category.LAUNCHER" />
+        </intent-filter>
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity
             android:name=".RegisterScreen"
@@ -29,15 +30,10 @@
 >
         </activity>
         <activity
-            android:name=".MainMenuScreen"
-            android:label="@string/title_activity_main_menu_screen"
-            android:screenOrientation="landscape" >
+            android:name=".GameScreen"
+            android:label="@string/title_activity_game_screen" >
         </activity>
-        <activity
-            android:name=".SoloModeScreen"
-            android:label="@string/title_activity_solo_mode_screen"
-            android:screenOrientation="landscape" >
-        </activity>
+
     </application>
 
 </manifest>
