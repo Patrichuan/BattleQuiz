@@ -14,7 +14,7 @@ public class SoloModeScreen extends ActionBarActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_solo_mode_screen);
+        setContentView(R.layout.solomodescreen_layout);
 
         //Hide status bar
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN);

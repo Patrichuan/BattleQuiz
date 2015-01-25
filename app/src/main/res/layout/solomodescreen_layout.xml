@@ -90,8 +90,6 @@
                 android:text="SUDEN DEATH"
                 android:id="@+id/SudenDeathbtn"
                 android:gravity="center"
-                android:layout_below="@+id/PassEt"
-                android:layout_alignParentStart="true"
                 android:layout_marginTop="10dp">
             </Button>
 
@@ -104,8 +102,6 @@
                 android:text="CLASSIC MODE"
                 android:id="@+id/ClassiModebtn"
                 android:gravity="center"
-                android:layout_below="@+id/PassEt"
-                android:layout_alignParentStart="true"
                 android:layout_marginTop="10dp">
             </Button>
 
@@ -115,11 +111,9 @@
                 android:textSize="30sp"
                 android:background="@drawable/buttonmenu"
                 android:textColor="@android:color/white"
-                android:text="LEADER BOARDS"
+                android:text="LEADERBOARD"
                 android:id="@+id/LeaderBoardbtn"
                 android:gravity="center"
-                android:layout_below="@+id/PassEt"
-                android:layout_alignParentStart="true"
                 android:layout_marginTop="10dp">
             </Button>
 

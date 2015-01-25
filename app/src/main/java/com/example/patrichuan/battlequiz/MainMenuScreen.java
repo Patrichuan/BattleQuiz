@@ -19,7 +19,7 @@ public class MainMenuScreen extends ActionBarActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main_menu_screen);
+        setContentView(R.layout.mainmenuscreen_layout);
 
         FontsOverride.setDefaultFont(this, "DEFAULT", "fonts/HVD_Comic_Serif_Pro.otf");
 
