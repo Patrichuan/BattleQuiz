@@ -43,7 +43,8 @@
         </activity>
         <activity
             android:name=".GameScreen"
-            android:label="@string/title_activity_game_screen" >
+            android:label="@string/title_activity_game_screen"
+            android:screenOrientation="landscape" >
         </activity>
     </application>
 
