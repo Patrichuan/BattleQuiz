@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+
     <string name="app_name">BattleQuiz</string>
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
@@ -8,4 +9,6 @@
     <string name="title_activity_main_menu_screen">MainMenuScreen</string>
     <string name="title_activity_solo_mode_screen">SoloModeScreen</string>
     <string name="title_activity_game_screen">SoloModeScreen</string>
+    <string name="title_activity_splash_screen">SplashScreen</string>
+
 </resources>
