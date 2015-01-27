@@ -14,14 +14,14 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
+import android.widget.TextView;
 
 
 public class SplashScreen extends ActionBarActivity {
 
-    private ProgressBar progressBar;
-    private Handler progressBarHandler;
-    private int progressBarStatus = 0;
-    private int maxprogress = 100;
+    private ProgressWheel progressWheel;
+    private TextView value;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,48 +35,25 @@ public class SplashScreen extends ActionBarActivity {
         ActionBar actionBar = getSupportActionBar();
         actionBar.hide();
 
-        progressBar = (ProgressBar)findViewById(R.id.ProgressBar);
-        progressBarHandler = new Handler();
 
-        // Establezco el % inicial de la barra y el maximo %
-        progressBar.setProgress(0);
-        progressBar.setMax(maxprogress);
+        progressWheel = (ProgressWheel) findViewById(R.id.progress_wheel);
+        value = (TextView) findViewById(R.id.value_tv);
 
-        // Reseteo el % de progreso actual
-        progressBarStatus = 0;
 
-        new Thread(new Runnable() {
-            public void run() {
-                while (progressBarStatus < maxprogress) {
-
-                    // Aqui llamariamos al metodo para ir cargando datos y en dicho metodo
-                    // iriamos devolviendo valores en función de la información que va
-                    // quedando por cargar (aqui se suma 5% tan solo por probar)
-                    progressBarStatus += 10;
-
-                    // Establezco 1 segundo de intervalo para que no cargue de golpe la barra
-                    // y sea visible el aumento del %
-                    try {
-                        Thread.sleep(1000);
-                    } catch (InterruptedException e) {
-                        e.printStackTrace();
-                    }
-
-                    // Actualizo la barra
-                    progressBarHandler.post(new Runnable() {
-                        public void run() {
-                            progressBar.setProgress(progressBarStatus);
-                        }
-                    });
+        progressWheel.setProgress(0.0f);
+        progressWheel.setCallback(new ProgressWheel.ProgressCallback() {
+            @Override
+            public void onProgressUpdate(float progress) {
+                if (progress == 0) {
+                    progressWheel.setProgress(1.0f);
+                } else if (progress == 1.0f) {
+                    Intent SiguienteActivity = new Intent(SplashScreen.this, LoginScreen.class);
+                    startActivity(SiguienteActivity);
+                    overridePendingTransition(R.anim.pull_in_left, R.anim.push_out_right);
                 }
-
-                // Termina de cargar y lanzo la activity login (comprobar si el usuario ya esta logeado comprobando con parse)
-                if (progressBarStatus >= maxprogress) {
-                        Intent SiguienteActivity = new Intent(SplashScreen.this, LoginScreen.class);
-                        startActivity(SiguienteActivity);
-                }
+                value.setText(String.format("%.0f", progress*100)+"%");
             }
-        }).start();
+        });
 
     }
 
