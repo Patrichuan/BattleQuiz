@@ -32,6 +32,7 @@ public class GameScreen extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
+        overridePendingTransition(R.anim.pull_in_right, R.anim.push_out_left);
         setContentView(R.layout.gamescreen_layout);
 
         View decorView = getWindow().getDecorView();
@@ -55,7 +56,8 @@ public class GameScreen extends ActionBarActivity {
                 // Prueba del listener: Dibujar personaje
                 OcupadoPor = (ImageView)v.findViewById(R.id.Ocupante);
                 OcupadoPor.setImageResource(R.drawable.seven_personaje_amarillo);
-                // Prueba del listener: Colorear casilla                CasillaDe = (ImageView)v.findViewById(R.id.Casilla);
+                // Prueba del listener: Colorear casilla
+                CasillaDe = (ImageView)v.findViewById(R.id.Casilla);
                 CasillaDe.setImageResource(R.drawable.seven_casilla_amarilla);
             }
         });
@@ -158,5 +160,11 @@ public class GameScreen extends ActionBarActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        overridePendingTransition(R.anim.pull_in_left, R.anim.push_out_right);
     }
 }

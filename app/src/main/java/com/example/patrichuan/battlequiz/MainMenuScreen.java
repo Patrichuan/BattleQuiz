@@ -19,6 +19,7 @@ public class MainMenuScreen extends ActionBarActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        overridePendingTransition(R.anim.pull_in_right, R.anim.push_out_left);
         setContentView(R.layout.mainmenuscreen_layout);
 
         FontsOverride.setDefaultFont(this, "DEFAULT", "fonts/HVD_Comic_Serif_Pro.otf");
@@ -36,6 +37,7 @@ public class MainMenuScreen extends ActionBarActivity {
             public void onClick(View v) {
                 Intent SiguienteActivity = new Intent(v.getContext(), SoloModeScreen.class);
                 startActivity(SiguienteActivity);
+                overridePendingTransition(R.anim.pull_in_left, R.anim.push_out_right);
             }
         });
 
@@ -65,5 +67,11 @@ public class MainMenuScreen extends ActionBarActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        overridePendingTransition(R.anim.pull_in_left, R.anim.push_out_right);
     }
 }

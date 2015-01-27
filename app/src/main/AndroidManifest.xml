@@ -14,7 +14,7 @@
         <activity
             android:name=".SplashScreen"
             android:theme="@style/AppTheme"
-            android:screenOrientation="landscape" >
+            android:screenOrientation="landscape">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
@@ -23,7 +23,6 @@
         <activity
             android:name=".LoginScreen"
             android:label="@string/app_name"
-            android:noHistory="true"
             android:screenOrientation="landscape" >
         </activity>
         <activity
@@ -45,6 +44,7 @@
             android:name=".GameScreen"
             android:label="@string/title_activity_game_screen"
             android:screenOrientation="landscape" >
+
         </activity>
     </application>
 
