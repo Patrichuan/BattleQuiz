@@ -1,6 +1,7 @@
 package com.example.patrichuan.battlequiz;
 
 import android.app.Fragment;
+import android.app.FragmentManager;
 import android.app.FragmentTransaction;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.ActionBarActivity;
@@ -12,6 +13,10 @@ import android.view.View;
 
 // Problema con las puntuaciones en tablets (en esos casos la fuente deberia de ser 40sp y no 20sp)
 public class GameScreen extends ActionBarActivity {
+
+    public static GameScreen_Tablero FragmentTablero;
+    public static GameScreen_Pregunta FragmentPregunta;
+    public static FragmentManager fragmentManager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -28,23 +33,16 @@ public class GameScreen extends ActionBarActivity {
         ActionBar actionBar = getSupportActionBar();
         actionBar.hide();
 
+        // FRAGMENTS
+        FragmentTablero = new GameScreen_Tablero();
+        FragmentPregunta = new GameScreen_Pregunta();
+        fragmentManager = getFragmentManager();
 
-        Fragment f1 = new GameScreen_Tablero();
-        FragmentTransaction ft = this.getFragmentManager().beginTransaction();
-        ft.add(R.id.child_two, f1);
-        ft.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN);
-        ft.addToBackStack(null);
-        ft.commit();
-
-
-        // Replace whatever is in the fragment_container view with this fragment,
-        // and add the transaction to the back stack
-        // transaction.replace(R.id.fragment_container, newFragment);
-        // transaction.addToBackStack(null);
-
-        // Commit the transaction
-        // transaction.commit();
-
+        FragmentTransaction transaction_1 = fragmentManager.beginTransaction();
+        transaction_1.replace(R.id.child_two, FragmentTablero);
+        transaction_1.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN);
+        transaction_1.addToBackStack(null);
+        transaction_1.commit();
 
     }
 
