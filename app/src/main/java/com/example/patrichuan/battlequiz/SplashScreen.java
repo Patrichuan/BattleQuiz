@@ -16,11 +16,15 @@ import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import com.parse.ParseUser;
+
 
 public class SplashScreen extends ActionBarActivity {
 
     private ProgressWheel progressWheel;
     private TextView value;
+    private Intent SiguienteActivity;
+    private ParseUser currentUser;
 
 
     @Override
@@ -35,7 +39,7 @@ public class SplashScreen extends ActionBarActivity {
         ActionBar actionBar = getSupportActionBar();
         actionBar.hide();
 
-
+        // Poner otra flag para que no se quede en el historial
         progressWheel = (ProgressWheel) findViewById(R.id.progress_wheel);
         value = (TextView) findViewById(R.id.value_tv);
 
@@ -47,7 +51,14 @@ public class SplashScreen extends ActionBarActivity {
                 if (progress == 0) {
                     progressWheel.setProgress(1.0f);
                 } else if (progress == 1.0f) {
-                    Intent SiguienteActivity = new Intent(SplashScreen.this, LoginScreen.class);
+                    currentUser = ParseUser.getCurrentUser();
+                    if (currentUser != null) {
+                        // do stuff with the user
+                        SiguienteActivity = new Intent(SplashScreen.this, MainMenuScreen.class);
+                    } else {
+                        // show the signup or login screen
+                        SiguienteActivity = new Intent(SplashScreen.this, LoginScreen.class);
+                    }
                     startActivity(SiguienteActivity);
                     overridePendingTransition(R.anim.pull_in_left, R.anim.push_out_right);
                 }
