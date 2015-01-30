@@ -16,7 +16,6 @@ import android.widget.BaseAdapter;
 import android.widget.GridView;
 import android.widget.ImageView;
 import java.util.ArrayList;
-import java.util.List;
 
 // Problema con las puntuaciones en tablets (en esos casos la fuente deberia de ser 40sp y no 20sp)
 public class GameScreen extends ActionBarActivity {
@@ -41,7 +40,18 @@ public class GameScreen extends ActionBarActivity {
         actionBar.hide();
 
         gridView = (GridView)findViewById(R.id.gridview);
-        tableroadapter = new TableroAdapter(this);
+
+        // Creo el ArrayList con los datos del tablero y se lo paso al adaptador
+        ArrayList<Item> items = new ArrayList<>();
+        // Uso un StringBuilder para poner un TAG a cada casilla
+        StringBuilder NombreCasilla = new StringBuilder("Casilla");
+        for (int i = 1; i <= 35; i++) {
+            NombreCasilla.append(i);
+            items.add(new Item(NombreCasilla.toString(), R.drawable.seven_casilla_gris_borde, R.drawable.empty));
+            NombreCasilla = new StringBuilder("Casilla");
+        }
+
+        tableroadapter = new TableroAdapter(this, items);
 
         gridView.setAdapter(tableroadapter);
         gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -102,17 +112,21 @@ public class GameScreen extends ActionBarActivity {
 
 
     public class TableroAdapter extends BaseAdapter {
-        private List<Item> items = new ArrayList<Item>();
-        private LayoutInflater inflater;
 
-        public TableroAdapter(Context context) {
+        private LayoutInflater inflater;
+        private ArrayList<Item> items;
+
+        public TableroAdapter(Context context, ArrayList<Item> items) {
             inflater = LayoutInflater.from(context);
-            StringBuilder NombreCasilla = new StringBuilder("Casilla");
-            for (int i = 1; i <= 35; i++) {
-                NombreCasilla.append(i);
-                items.add(new Item(NombreCasilla.toString(), R.drawable.seven_casilla_gris_borde, R.drawable.empty));
-                NombreCasilla = new StringBuilder("Casilla");
-            }
+            this.items = items;
+        }
+
+        public ArrayList<Item> getArrayDeItems () {
+            return items;
+        }
+
+        public void setArrayDeItems (ArrayList<Item> items) {
+            this.items = items;
         }
 
         @Override
@@ -140,25 +154,32 @@ public class GameScreen extends ActionBarActivity {
                 v.setTag(R.id.Casilla, v.findViewById(R.id.Casilla));
                 v.setTag(R.id.Ocupante, v.findViewById(R.id.Ocupante));
             }
+
+            // A partir de un objeto Item devuelve la vista
             Item item = (Item) getItem(i);
+
             Casilla = (ImageView) v.getTag(R.id.Casilla);
             Casilla.setImageResource(item.drawableCasilla);
             Casilla.setTag(item.name);
+
             Ocupante = (ImageView) v.getTag(R.id.Ocupante);
             Ocupante.setImageResource(item.drawableOcupante);
+
             return v;
         }
 
-        private class Item {
-            final String name;
-            final int drawableCasilla;
-            final int drawableOcupante;
 
-            Item(String name, int drawableCasilla, int drawableOcupante) {
-                this.name = name;
-                this.drawableCasilla = drawableCasilla;
-                this.drawableOcupante = drawableOcupante;
-            }
+    }
+
+    private class Item {
+        final String name;
+        final int drawableCasilla;
+        final int drawableOcupante;
+
+        Item(String name, int drawableCasilla, int drawableOcupante) {
+            this.name = name;
+            this.drawableCasilla = drawableCasilla;
+            this.drawableOcupante = drawableOcupante;
         }
     }
 
