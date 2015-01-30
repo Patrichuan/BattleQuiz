@@ -1,4 +1,6 @@
-package com.example.patrichuan.battlequiz; /**
+package com.example.patrichuan.battlequiz;
+
+/**
  * Created by daniel on 24/01/15.
  */
 import java.lang.reflect.Field;

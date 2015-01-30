@@ -34,6 +34,7 @@ public class RegisterScreen extends ActionBarActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        overridePendingTransition(R.anim.pull_in_right, R.anim.push_out_left);
         setContentView(R.layout.registerscreen_layout);
 
         // Aplicamos a Password
@@ -52,6 +53,7 @@ public class RegisterScreen extends ActionBarActivity {
                 if (register()) {
                     Intent SiguienteActivity = new Intent(v.getContext(), LoginScreen.class);
                     startActivity(SiguienteActivity);
+                    overridePendingTransition(R.anim.pull_in_left, R.anim.push_out_right);
                 }
             }
         });
@@ -171,5 +173,11 @@ public class RegisterScreen extends ActionBarActivity {
             isValid = true;
         }
         return isValid;
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        overridePendingTransition(R.anim.pull_in_left, R.anim.push_out_right);
     }
 }

@@ -8,6 +8,9 @@
     <string name="title_activity_register_screen">RegisterScreen</string>
     <string name="title_activity_main_menu_screen">MainMenuScreen</string>
     <string name="title_activity_solo_mode_screen">SoloModeScreen</string>
-    <string name="title_activity_shop_screen">ShopScreen</string>
+    <string name="title_activity_game_screen">SoloModeScreen</string>
+    <string name="title_activity_splash_screen">SplashScreen</string>
+    <string name="default_progressbar">Default Progressbar:</string>
+    <string name="title_activity_comin_soon">CominSoon</string>
 
 </resources>

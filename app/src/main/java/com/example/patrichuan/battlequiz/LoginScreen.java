@@ -34,6 +34,7 @@ public class LoginScreen extends ActionBarActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        overridePendingTransition(R.anim.pull_in_right, R.anim.push_out_left);
         setContentView(R.layout.loginscreen_layout);
 
         FontsOverride.setDefaultFont(this, "DEFAULT", "fonts/HVD_Comic_Serif_Pro.otf");
@@ -59,6 +60,7 @@ public class LoginScreen extends ActionBarActivity {
             public void onClick(View v) {
                 Intent SiguienteActivity = new Intent(v.getContext(), RegisterScreen.class);
                 startActivity(SiguienteActivity);
+                overridePendingTransition(R.anim.pull_in_left, R.anim.push_out_right);
             }
         });
 
@@ -143,6 +145,12 @@ public class LoginScreen extends ActionBarActivity {
                         }
                     }
                 });
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        overridePendingTransition(R.anim.pull_in_left, R.anim.push_out_right);
     }
 
 }

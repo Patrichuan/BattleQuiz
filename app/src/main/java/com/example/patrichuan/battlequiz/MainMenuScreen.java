@@ -15,12 +15,13 @@ import android.widget.LinearLayout;
 public class MainMenuScreen extends ActionBarActivity {
 
     private LinearLayout MainLayout;
-    private Button SoloModebtn;
-    private Button Shopbtn;
+    private Button SoloModebtn, MultiModebtn;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main_menu_screen);
+        overridePendingTransition(R.anim.pull_in_right, R.anim.push_out_left);
+        setContentView(R.layout.mainmenuscreen_layout);
 
         FontsOverride.setDefaultFont(this, "DEFAULT", "fonts/HVD_Comic_Serif_Pro.otf");
 
@@ -37,18 +38,21 @@ public class MainMenuScreen extends ActionBarActivity {
             public void onClick(View v) {
                 Intent SiguienteActivity = new Intent(v.getContext(), SoloModeScreen.class);
                 startActivity(SiguienteActivity);
+                overridePendingTransition(R.anim.pull_in_left, R.anim.push_out_right);
             }
         });
 
-        Shopbtn = (Button) findViewById(R.id.Shopbtn);
+        MultiModebtn = (Button) findViewById(R.id.Multiplayerbtn);
 
-        Shopbtn.setOnClickListener(new View.OnClickListener() {
+        MultiModebtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent SiguienteActivity = new Intent(v.getContext(), ShopScreen.class);
-                startActivity(SiguienteActivity);
+                Intent SiguenteActivity = new Intent(v.getContext(), ComingSoon.class);
+                startActivity(SiguenteActivity);
+                overridePendingTransition(R.anim.pull_in_left, R.anim.pull_in_right);
             }
         });
+
 
         MainLayout = (LinearLayout) findViewById(R.id.main_layout);
         MainLayout.setBackgroundResource(R.drawable.background);
@@ -76,5 +80,11 @@ public class MainMenuScreen extends ActionBarActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        overridePendingTransition(R.anim.pull_in_left, R.anim.push_out_right);
     }
 }
