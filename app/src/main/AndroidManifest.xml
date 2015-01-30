@@ -14,8 +14,8 @@
         <activity
             android:name=".LoginScreen"
             android:label="@string/app_name"
-            android:screenOrientation="landscape"
-            android:noHistory="true" >
+            android:noHistory="true"
+            android:screenOrientation="landscape" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -37,6 +37,11 @@
             android:name=".SoloModeScreen"
             android:label="@string/title_activity_solo_mode_screen"
             android:screenOrientation="landscape" >
+        </activity>
+        <activity
+            android:name=".ShopScreen"
+            android:label="@string/title_activity_shop_screen"
+            android:screenOrientation="landscape">
         </activity>
     </application>
 

@@ -8,5 +8,6 @@
     <string name="title_activity_register_screen">RegisterScreen</string>
     <string name="title_activity_main_menu_screen">MainMenuScreen</string>
     <string name="title_activity_solo_mode_screen">SoloModeScreen</string>
+    <string name="title_activity_shop_screen">ShopScreen</string>
 
 </resources>

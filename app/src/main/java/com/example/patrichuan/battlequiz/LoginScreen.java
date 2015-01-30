@@ -12,6 +12,7 @@ import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.Toast;
 
@@ -42,7 +43,14 @@ public class LoginScreen extends ActionBarActivity {
 
         FontsOverride.setPasswordFont(this, EditPass);
 
-
+        ImageView imagen = (ImageView)findViewById(R.id.protaimg);
+        imagen.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent SiguienteActivity = new Intent(LoginScreen.this, MainMenuScreen.class);
+                startActivity(SiguienteActivity);
+            }
+        });
 
 
         Registerbtn = (Button) findViewById(R.id.Registerbtn);

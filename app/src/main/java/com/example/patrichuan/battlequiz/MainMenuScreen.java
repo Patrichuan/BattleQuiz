@@ -16,6 +16,7 @@ public class MainMenuScreen extends ActionBarActivity {
 
     private LinearLayout MainLayout;
     private Button SoloModebtn;
+    private Button Shopbtn;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -35,6 +36,16 @@ public class MainMenuScreen extends ActionBarActivity {
             @Override
             public void onClick(View v) {
                 Intent SiguienteActivity = new Intent(v.getContext(), SoloModeScreen.class);
+                startActivity(SiguienteActivity);
+            }
+        });
+
+        Shopbtn = (Button) findViewById(R.id.Shopbtn);
+
+        Shopbtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent SiguienteActivity = new Intent(v.getContext(), ShopScreen.class);
                 startActivity(SiguienteActivity);
             }
         });
