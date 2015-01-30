@@ -83,11 +83,11 @@
 
             <Button
                 android:layout_width="match_parent"
-                android:layout_height="45dp"
-                android:textSize="30sp"
+                android:layout_height="90dp"
+                android:textSize="60sp"
                 android:background="@drawable/buttonmenu"
                 android:textColor="@android:color/white"
-                android:text="SUDEN DEATH"
+                android:text="SUDDEN DEATH"
                 android:id="@+id/SudenDeathbtn"
                 android:gravity="center"
                 android:layout_marginTop="10dp">
@@ -95,8 +95,8 @@
 
             <Button
                 android:layout_width="match_parent"
-                android:layout_height="45dp"
-                android:textSize="30sp"
+                android:layout_height="90dp"
+                android:textSize="60sp"
                 android:background="@drawable/buttonmenu"
                 android:textColor="@android:color/white"
                 android:text="CLASSIC MODE"
@@ -107,8 +107,8 @@
 
             <Button
                 android:layout_width="match_parent"
-                android:layout_height="45dp"
-                android:textSize="30sp"
+                android:layout_height="90dp"
+                android:textSize="60sp"
                 android:background="@drawable/buttonmenu"
                 android:textColor="@android:color/white"
                 android:text="LEADERBOARD"

@@ -86,7 +86,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="REGISTER"
-                    android:textSize="40sp"
+                    android:textSize="80sp"
                     android:textColor="@android:color/white"
                     android:layout_alignParentBottom="true"
                     android:paddingBottom="10dp"
@@ -101,8 +101,8 @@
 
                 <EditText
                     android:layout_width="match_parent"
-                    android:layout_height="30dp"
-                    android:textSize="20sp"
+                    android:layout_height="60dp"
+                    android:textSize="40sp"
                     android:background="@drawable/edittext"
                     android:hint="USER"
                     android:gravity="center"
@@ -112,8 +112,8 @@
 
                 <EditText
                     android:layout_width="match_parent"
-                    android:layout_height="30dp"
-                    android:textSize="20sp"
+                    android:layout_height="60dp"
+                    android:textSize="40sp"
                     android:background="@drawable/edittext"
                     android:hint="EMAIL"
                     android:gravity="center"
@@ -125,8 +125,8 @@
 
                 <EditText
                     android:layout_width="match_parent"
-                    android:layout_height="30dp"
-                    android:textSize="20sp"
+                    android:layout_height="60dp"
+                    android:textSize="40sp"
                     android:background="@drawable/edittext"
                     android:hint="PASS"
                     android:gravity="center"
@@ -138,8 +138,8 @@
 
                 <EditText
                     android:layout_width="match_parent"
-                    android:layout_height="30dp"
-                    android:textSize="20sp"
+                    android:layout_height="60dp"
+                    android:textSize="40sp"
                     android:background="@drawable/edittext"
                     android:hint="REPEAT PASS"
                     android:gravity="center"
@@ -162,8 +162,8 @@
 
                 <Button
                     android:layout_width="match_parent"
-                    android:layout_height="30dp"
-                    android:textSize="20sp"
+                    android:layout_height="60dp"
+                    android:textSize="40sp"
                     android:background="@drawable/buttonregister"
                     android:textColor="@android:color/white"
                     android:text="SIGN UP"

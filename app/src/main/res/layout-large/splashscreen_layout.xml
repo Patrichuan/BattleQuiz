@@ -20,15 +20,15 @@
             android:layout_height="wrap_content"
             android:text="0%"
             android:textColor="@android:color/black"
-            android:textSize="40sp"
+            android:textSize="80sp"
             android:id="@+id/value_tv"
             android:layout_centerVertical="true"
             android:layout_centerHorizontal="true" />
 
         <com.example.patrichuan.battlequiz.ProgressWheel
             android:id="@+id/progress_wheel"
-            android:layout_width="250dp"
-            android:layout_height="250dp"
+            android:layout_width="500dp"
+            android:layout_height="500dp"
             wheel:matProg_barColor="#5588FF"
             wheel:matProg_circleRadius="250dp"
             wheel:matProg_fillRadius="false"
@@ -42,15 +42,16 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="@drawable/seven_personaje_rojo"
-        android:layout_alignBottom="@+id/value_tv"
-        android:layout_toEndOf="@+id/value_tv" />
+            android:layout_alignTop="@+id/imageView4"
+            android:layout_toEndOf="@+id/value_tv" />
 
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@drawable/seven_personaje_azul"
             android:layout_centerVertical="true"
-            android:layout_toStartOf="@+id/value_tv" />
+            android:layout_toStartOf="@+id/value_tv"
+            android:id="@+id/imageView4" />
 
     </RelativeLayout>
 
