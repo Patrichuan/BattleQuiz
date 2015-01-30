@@ -12,5 +12,6 @@
     <string name="title_activity_splash_screen">SplashScreen</string>
     <string name="default_progressbar">Default Progressbar:</string>
     <string name="title_activity_comin_soon">CominSoon</string>
+    <string name="title_activity_shop_screen">ShopScreen</string>
 
 </resources>

@@ -15,7 +15,7 @@ import android.widget.LinearLayout;
 public class MainMenuScreen extends ActionBarActivity {
 
     private LinearLayout MainLayout;
-    private Button SoloModebtn, MultiModebtn;
+    private Button SoloModebtn, MultiModebtn, Shopbtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,6 +50,17 @@ public class MainMenuScreen extends ActionBarActivity {
                 Intent SiguenteActivity = new Intent(v.getContext(), ComingSoon.class);
                 startActivity(SiguenteActivity);
                 overridePendingTransition(R.anim.pull_in_left, R.anim.pull_in_right);
+            }
+        });
+
+        Shopbtn = (Button) findViewById(R.id.Shopbtn);
+
+        Shopbtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent SiguenteActivity = new Intent(v.getContext(), ShopScreen.class);
+                startActivity(SiguenteActivity);
+                overridePendingTransition(R.anim.pull_in_left, R.anim.push_out_right);
             }
         });
 
