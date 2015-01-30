@@ -44,6 +44,10 @@ public class LoginScreen extends ActionBarActivity {
         FontsOverride.setPasswordFont(this, EditPass);
 
 
+        // Hay que poner este codigo a un listener de un futuro boton para deslogearse
+        //  ParseUser.logOut();
+        //  ParseUser currentUser = ParseUser.getCurrentUser(); // this will now be null
+
 
 
         Registerbtn = (Button) findViewById(R.id.Registerbtn);
