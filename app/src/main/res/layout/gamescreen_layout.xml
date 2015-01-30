@@ -135,8 +135,18 @@
         android:id="@+id/child_two"
         android:layout_width="0dp"
         android:layout_height="match_parent"
-        android:layout_weight="0.82"/>
+        android:layout_weight="0.82">
 
+        <GridView
+            android:id="@+id/gridview"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:verticalSpacing="0dp"
+            android:horizontalSpacing="0dp"
+            android:stretchMode="columnWidth"
+            android:numColumns="7"/>
+
+    </RelativeLayout>
 
 
 
