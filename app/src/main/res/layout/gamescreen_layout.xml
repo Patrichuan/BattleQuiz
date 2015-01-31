@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:id="@+id/main_layout"
@@ -8,8 +7,7 @@
     android:orientation="horizontal"
     android:background="@drawable/background"
     android:paddingBottom="5dp"
-    android:paddingTop="5dp"
-    android:baselineAligned="false">
+    android:paddingTop="5dp">
 
     <RelativeLayout
         android:id="@+id/child_one"
@@ -137,24 +135,23 @@
         android:layout_height="match_parent"
         android:layout_weight="0.82">
 
-        <GridView
-            android:id="@+id/gridview"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:verticalSpacing="0dp"
-            android:horizontalSpacing="0dp"
-            android:stretchMode="columnWidth"
-            android:numColumns="7"/>
+            <GridView
+                android:id="@+id/gridview"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:verticalSpacing="0dp"
+                android:horizontalSpacing="0dp"
+                android:stretchMode="columnWidth"
+                android:numColumns="7"/>
+
 
     </RelativeLayout>
-
-
-
 
     <RelativeLayout
         android:id="@+id/child_three"
         android:layout_width="0dp"
         android:layout_height="match_parent"
-        android:layout_weight="0.01"/>
+        android:layout_weight="0.01">
+    </RelativeLayout>
 
 </LinearLayout>

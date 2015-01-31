@@ -12,6 +12,7 @@ import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.Toast;
 
@@ -43,11 +44,18 @@ public class LoginScreen extends ActionBarActivity {
 
         FontsOverride.setPasswordFont(this, EditPass);
 
+        ImageView imagen = (ImageView)findViewById(R.id.protaimg);
+        imagen.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent SiguienteActivity = new Intent(LoginScreen.this, MainMenuScreen.class);
+                startActivity(SiguienteActivity);
+            }
+        });
 
         // Hay que poner este codigo a un listener de un futuro boton para deslogearse
         //  ParseUser.logOut();
         //  ParseUser currentUser = ParseUser.getCurrentUser(); // this will now be null
-
 
 
         Registerbtn = (Button) findViewById(R.id.Registerbtn);

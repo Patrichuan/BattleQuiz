@@ -136,7 +136,7 @@ public class RegisterScreen extends ActionBarActivity {
                                         Toast.LENGTH_LONG).show();
                             } else {
                                 Toast.makeText(getApplicationContext(),
-                                        "Sign up Error", Toast.LENGTH_LONG)
+                                        "Error en el registro, el nombre de usuario o el email ya están registrados.", Toast.LENGTH_LONG)
                                         .show();
                             }
                         }
