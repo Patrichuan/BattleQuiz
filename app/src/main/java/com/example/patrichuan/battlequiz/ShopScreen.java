@@ -59,7 +59,7 @@ public class ShopScreen extends ActionBarActivity {
                     FragmentManager fm = getFragmentManager();
                     FragmentTransaction ft = fm.beginTransaction();
 
-                    ft.setCustomAnimations(R.animator.slide_in_left, R.animator.slide_out_left);
+                    ft.setCustomAnimations(R.animator.slide_in_left, R.animator.slide_out_right);
                     ft.replace(R.id.fragment_place, FragUsable);
 
                     ft.commit();
@@ -80,7 +80,7 @@ public class ShopScreen extends ActionBarActivity {
                     FragmentManager fm = getFragmentManager();
                     FragmentTransaction ft = fm.beginTransaction();
 
-                    ft.setCustomAnimations(R.animator.slide_in_right, R.animator.slide_out_right);
+                    ft.setCustomAnimations(R.animator.slide_in_right, R.animator.slide_out_left);
                     ft.replace(R.id.fragment_place, FragCosmetic);
 
                     ft.commit();
