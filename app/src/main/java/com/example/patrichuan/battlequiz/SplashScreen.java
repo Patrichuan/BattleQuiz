@@ -59,6 +59,7 @@ public class SplashScreen extends ActionBarActivity {
                         // show the signup or login screen
                         SiguienteActivity = new Intent(SplashScreen.this, LoginScreen.class);
                     //}
+                    Intent SiguienteActivity = new Intent(SplashScreen.this, LoginScreen.class);
                     startActivity(SiguienteActivity);
                     overridePendingTransition(R.anim.pull_in_left, R.anim.push_out_right);
                 }

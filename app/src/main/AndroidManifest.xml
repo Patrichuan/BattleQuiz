@@ -17,9 +17,9 @@
             android:screenOrientation="landscape" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-
         </activity>
         <activity
             android:name=".LoginScreen"
@@ -30,6 +30,7 @@
             android:name=".RegisterScreen"
             android:label="@string/title_activity_register_screen"
             android:screenOrientation="landscape" >
+>
         </activity>
         <activity
             android:name=".MainMenuScreen"
@@ -50,6 +51,11 @@
             android:name=".ComingSoon"
             android:label="@string/title_activity_comin_soon"
             android:screenOrientation="landscape" >
+        </activity>
+        <activity
+            android:name=".ShopScreen"
+            android:label="@string/title_activity_shop_screen"
+            android:screenOrientation="landscape">
         </activity>
     </application>
 

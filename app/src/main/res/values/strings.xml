@@ -6,13 +6,12 @@
     <string name="action_settings">Settings</string>
     <string name="login">LOG IN</string>
     <string name="title_activity_register_screen">RegisterScreen</string>
-    <string name="title_activity_login_screen">LoginScreen</string>
     <string name="title_activity_main_menu_screen">MainMenuScreen</string>
     <string name="title_activity_solo_mode_screen">SoloModeScreen</string>
     <string name="title_activity_game_screen">SoloModeScreen</string>
     <string name="title_activity_splash_screen">SplashScreen</string>
     <string name="default_progressbar">Default Progressbar:</string>
     <string name="title_activity_comin_soon">CominSoon</string>
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_shop_screen">ShopScreen</string>
 
 </resources>
