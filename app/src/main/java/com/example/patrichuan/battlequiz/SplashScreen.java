@@ -51,14 +51,17 @@ public class SplashScreen extends ActionBarActivity {
                 if (progress == 0) {
                     progressWheel.setProgress(1.0f);
                 } else if (progress == 1.0f) {
-                    //currentUser = ParseUser.getCurrentUser();
-                    //if (currentUser != null) {
-                        // do stuff with the user
-                    //    SiguienteActivity = new Intent(SplashScreen.this, MainMenuScreen.class);
-                    //} else {
+                    currentUser = ParseUser.getCurrentUser();
+                //    if (currentUser != null) {
+                       // do stuff with the user
+                //        SiguienteActivity = new Intent(SplashScreen.this, MainMenuScreen.class);
+                //    } else {
                         // show the signup or login screen
                         SiguienteActivity = new Intent(SplashScreen.this, LoginScreen.class);
-                    //}
+                //    }
+                    // Remuevo la activity del stack ya que no me interesa que al dar a volver
+                    // aparezca la ventana de login de nuevo
+                    SiguienteActivity.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                     startActivity(SiguienteActivity);
                     overridePendingTransition(R.anim.pull_in_left, R.anim.push_out_right);
                 }

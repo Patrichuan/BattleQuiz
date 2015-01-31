@@ -13,112 +13,120 @@
         android:layout_width="0dp"
         android:layout_height="match_parent"
         android:layout_weight="0.5"
-        android:paddingBottom="@dimen/activity_vertical_margin"
-        android:paddingStart="@dimen/activity_horizontal_margin"
-        android:paddingEnd="@dimen/activity_horizontal_margin">
+        android:paddingBottom="25dp"
+        android:paddingEnd="@dimen/activity_horizontal_margin"
+        android:paddingStart="@dimen/activity_horizontal_margin">
 
         <ImageView
-            android:src="@drawable/one_sombra_personaje"
             android:id="@+id/sombraimg"
-            android:layout_height="wrap_content"
             android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
             android:adjustViewBounds="true"
             android:alpha="0.5"
-            android:layout_centerHorizontal="true"
-            android:layout_alignParentBottom="true"/>
+            android:src="@drawable/one_sombra_personaje" />
 
         <ImageView
-            android:src="@drawable/one_prota"
             android:id="@+id/protaimg"
-            android:layout_height="wrap_content"
             android:layout_width="match_parent"
-            android:adjustViewBounds="true"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
             android:layout_centerHorizontal="true"
-            android:layout_alignParentBottom="true" />
+            android:adjustViewBounds="true"
+            android:src="@drawable/one_prota" />
 
         <ImageView
-            android:src="@drawable/logo"
             android:id="@+id/logoimg"
-            android:layout_height="wrap_content"
             android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:adjustViewBounds="true"
+            android:src="@drawable/logo"
             android:layout_above="@+id/sombraimg"
-            android:layout_alignParentEnd="true" />
-
-
+            android:layout_alignParentStart="true" />
 
 
     </RelativeLayout>
+
     <LinearLayout
         android:layout_width="0dp"
         android:layout_height="match_parent"
         android:layout_weight="0.5"
-        android:paddingTop="@dimen/activity_vertical_margin"
-        android:paddingBottom="@dimen/activity_vertical_margin"
-        android:paddingStart="0dp"
-        android:paddingEnd="10dp"
         android:orientation="vertical"
+        android:paddingBottom="@dimen/activity_vertical_margin"
         android:weightSum="1">
 
         <RelativeLayout
             android:id="@+id/ghost_layout"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="0.2"
-            android:paddingBottom="@dimen/activity_vertical_margin"
-            android:paddingStart="@dimen/activity_horizontal_margin"
-            android:paddingEnd="@dimen/activity_horizontal_margin">
+            android:layout_weight="0.2">
+
+            <ImageView
+                android:id="@+id/settings_btn"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:adjustViewBounds="true"
+                android:src="@drawable/seven_settings"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true" />
+
         </RelativeLayout>
+
         <LinearLayout
             android:id="@+id/button_layout"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="0.8"
-            android:paddingTop="0dp"
-            android:paddingBottom="0dp"
-            android:paddingStart="0dp"
-            android:paddingEnd="10dp"
             android:orientation="vertical"
-            >
+            android:paddingBottom="0dp"
+            android:paddingEnd="10dp"
+            android:paddingStart="0dp"
+            android:paddingTop="10dp">
 
             <Button
+                android:id="@+id/SuddenDeathbtn"
                 android:layout_width="match_parent"
-                android:layout_height="90dp"
-                android:textSize="60sp"
+                android:layout_height="80dp"
+                android:layout_marginTop="80dp"
                 android:background="@drawable/buttonmenu"
-                android:textColor="@android:color/white"
+                android:gravity="center"
                 android:text="SUDDEN DEATH"
-                android:id="@+id/SudenDeathbtn"
-                android:gravity="center"
-                android:layout_marginTop="10dp">
+
+                android:textColor="@android:color/white"
+                android:textSize="60sp">
+
             </Button>
 
             <Button
+                android:id="@+id/ClassicModebtn"
                 android:layout_width="match_parent"
-                android:layout_height="90dp"
-                android:textSize="60sp"
+                android:layout_height="80dp"
+                android:layout_marginTop="20dp"
                 android:background="@drawable/buttonmenu"
-                android:textColor="@android:color/white"
+                android:gravity="center"
                 android:text="CLASSIC MODE"
-                android:id="@+id/ClassiModebtn"
-                android:gravity="center"
-                android:layout_marginTop="10dp">
+
+                android:textColor="@android:color/white"
+                android:textSize="60sp">
+
             </Button>
 
             <Button
+                android:id="@+id/HallOfFamebtn"
                 android:layout_width="match_parent"
-                android:layout_height="90dp"
-                android:textSize="60sp"
+                android:layout_height="80dp"
+                android:layout_marginTop="20dp"
                 android:background="@drawable/buttonmenu"
-                android:textColor="@android:color/white"
-                android:text="LEADERBOARD"
-                android:id="@+id/LeaderBoardbtn"
                 android:gravity="center"
-                android:layout_marginTop="10dp">
+                android:text="HALL OF FAME"
+
+                android:textColor="@android:color/white"
+                android:textSize="60sp">
+
             </Button>
 
         </LinearLayout>
 
     </LinearLayout>
-
 </LinearLayout>

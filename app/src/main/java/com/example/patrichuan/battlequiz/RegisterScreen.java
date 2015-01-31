@@ -107,9 +107,8 @@ public class RegisterScreen extends ActionBarActivity {
         usernametxt = userEdit.getText().toString().toUpperCase();
         passwordtxt = passEdit.getText().toString().toUpperCase();
         repitPass = repitPassEdit.getText().toString().toUpperCase();
-        ;
         email = emailEdit.getText().toString().toUpperCase();
-        ;
+
 
         // Force user to fill up the form
         if (usernametxt.equals("") && passwordtxt.equals("") && repitPass.equals("") && email.equals("")) {

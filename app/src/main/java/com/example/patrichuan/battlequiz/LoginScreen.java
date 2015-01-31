@@ -124,6 +124,9 @@ public class LoginScreen extends ActionBarActivity {
                     public void done(ParseUser parseUser, com.parse.ParseException e) {
                         if (parseUser != null) {
                             Intent SiguienteActivity = new Intent(LoginScreen.this, MainMenuScreen.class);
+                            // Remuevo la activity del stack ya que no me interesa que al dar a volver
+                            // aparezca la ventana de login de nuevo
+                            SiguienteActivity.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                             startActivity(SiguienteActivity);
                             Toast.makeText(getApplicationContext(),
                                     "Successfully Logged in",

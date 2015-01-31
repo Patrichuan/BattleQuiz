@@ -36,7 +36,7 @@ public class MainMenuScreen extends ActionBarActivity {
         SoloModebtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent SiguienteActivity = new Intent(v.getContext(), SoloModeScreen.class);
+                Intent SiguienteActivity = new Intent(v.getContext(), GameScreen.class);
                 startActivity(SiguienteActivity);
                 overridePendingTransition(R.anim.pull_in_left, R.anim.push_out_right);
             }
