@@ -3,6 +3,7 @@ package com.example.patrichuan.battlequiz;
 
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
+import android.graphics.Color;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
@@ -51,11 +52,14 @@ public class ShopScreen extends ActionBarActivity {
             public void onClick(View v) {
                 if (!FragUsable.isVisible()) {
                     cosmetic.setBackgroundResource(R.drawable.buttonmenu);
+                    cosmetic.setTextColor(Color.WHITE);
                     usables.setBackgroundResource(R.drawable.buttonpressed);
+                    usables.setTextColor(Color.parseColor("#ce492b"));
+
                     FragmentManager fm = getFragmentManager();
                     FragmentTransaction ft = fm.beginTransaction();
 
-                    ft.setCustomAnimations(R.animator.slide_in_right, R.animator.slide_out_right);
+                    ft.setCustomAnimations(R.animator.slide_in_left, R.animator.slide_out_left);
                     ft.replace(R.id.fragment_place, FragUsable);
 
                     ft.commit();
@@ -69,7 +73,10 @@ public class ShopScreen extends ActionBarActivity {
             public void onClick(View v) {
                 if(!FragCosmetic.isVisible()){
                     usables.setBackgroundResource(R.drawable.buttonmenu);
+                    usables.setTextColor(Color.WHITE);
                     cosmetic.setBackgroundResource(R.drawable.buttonpressed);
+                    cosmetic.setTextColor(Color.parseColor("#ce492b"));
+
                     FragmentManager fm = getFragmentManager();
                     FragmentTransaction ft = fm.beginTransaction();
 

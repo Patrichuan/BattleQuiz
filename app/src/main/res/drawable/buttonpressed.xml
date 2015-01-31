@@ -4,6 +4,7 @@
     <item>
         <shape>
             <solid android:color="#000000" />
+
         </shape>
     </item>
 
@@ -21,7 +22,7 @@
 
             <stroke
                 android:width="3dp"
-                android:color="#ff7c7c" />
+                android:color="#ce492b" />
         </shape>
     </item>
 </layer-list>
