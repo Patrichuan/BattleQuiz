@@ -26,20 +26,20 @@
             android:layout_height="0dp"
             android:layout_weight="0.2"
             android:layout_marginTop="0dp">
+
             <RelativeLayout
                 android:id="@+id/coin_layout"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_centerHorizontal="false">
+                android:orientation="horizontal">
 
 
             <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="250dp"
+                android:layout_height="250dp"
                 android:id="@+id/background_coin"
-                android:alpha="0.8"
                 android:gravity="start"
+                android:alpha="0.8"
                 android:src="@drawable/three_c_background_coin"
                 android:adjustViewBounds="false"
                 android:layout_marginStart="10dp"/>
@@ -50,20 +50,20 @@
                     android:id="@+id/editText"
                     android:text="2000"
                     android:textColor="#ffc955"
-                    android:textSize="20sp"
+                    android:textSize="50sp"
                     android:gravity="center"
-                    android:layout_marginEnd="6dp"
+                    android:layout_marginEnd="16dp"
                     android:layout_alignEnd="@id/background_coin"
                     android:textAlignment="gravity" />
 
             </RelativeLayout>
 
             <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_marginTop="10dp"
                 android:id="@+id/big_coin"
-                android:src="@drawable/three_c_big_coin"
-                android:cropToPadding="false" />
+                android:src="@drawable/three_c_big_coin" />
 
 
 
@@ -71,26 +71,26 @@
 
         <Button
             android:layout_width="match_parent"
-            android:layout_height="45dp"
-            android:textSize="30sp"
+            android:layout_height="80dp"
+            android:textSize="60sp"
             android:background="@drawable/buttonmenu"
             android:textColor="@android:color/white"
             android:text="COSMETICS"
             android:id="@+id/Cosmeticbtn"
             android:gravity="center"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="15dp"
             >
         </Button>
         <Button
             android:layout_width="match_parent"
-            android:layout_height="45dp"
-            android:textSize="30sp"
+            android:layout_height="80dp"
+            android:textSize="60sp"
             android:background="@drawable/buttonmenu"
             android:textColor="@android:color/white"
             android:text="USABLES"
             android:id="@+id/usablebtn"
             android:gravity="center"
-            android:layout_marginTop="5dp"
+            android:layout_marginTop="15dp"
             >
         </Button>
 
