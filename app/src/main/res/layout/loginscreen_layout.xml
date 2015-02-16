@@ -83,7 +83,7 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="LOGIN"
+                    android:text="@string/LogInBig"
                     android:textSize="40sp"
                     android:textColor="@android:color/white"
                     android:layout_alignParentBottom="true"
@@ -102,7 +102,7 @@
                     android:layout_height="30dp"
                     android:textSize="20sp"
                     android:background="@drawable/edittext"
-                    android:hint="USER"
+                    android:hint="@string/User"
                     android:gravity="center"
                     android:id="@+id/UserEt"
                     android:layout_alignParentTop="true">
@@ -113,24 +113,22 @@
                     android:layout_height="30dp"
                     android:textSize="20sp"
                     android:background="@drawable/edittext"
-                    android:hint="PASS"
+                    android:hint="@string/Pass"
                     android:gravity="center"
                     android:id="@+id/PassEt"
                     android:layout_below="@+id/UserEt"
-                    android:password="true">
+                    android:inputType="textPassword">
                  </EditText>
 
                 <Button
                     android:layout_width="match_parent"
                     android:layout_height="30dp"
                     android:textSize="20sp"
-                    android:background="@drawable/buttonlogin"
-                    android:textColor="@android:color/white"
-                    android:text="LOG IN"
+                    android:text="@string/LogIn"
                     android:id="@+id/Loginbtn"
-                    android:gravity="center"
                     android:layout_below="@+id/PassEt"
-                    android:layout_alignParentStart="true">
+                    android:layout_alignParentStart="true"
+                    style="@style/GreenButton">
                 </Button>
 
             </RelativeLayout>
@@ -145,18 +143,16 @@
                     android:layout_width="match_parent"
                     android:layout_height="30dp"
                     android:textSize="20sp"
-                    android:background="@drawable/buttonregister"
-                    android:textColor="@android:color/white"
-                    android:text="SIGN UP"
+                    android:text="@string/SignUp"
                     android:id="@+id/Registerbtn"
-                    android:gravity="center"
-                    android:layout_alignParentTop="true">
+                    android:layout_alignParentTop="true"
+                    style="@style/RedButton">
                 </Button>
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="I lost my password"
+                    android:text="@string/ILostMyPassword"
                     android:textSize="15sp"
                     android:textColor="@android:color/white"
                     android:layout_alignParentBottom="true"

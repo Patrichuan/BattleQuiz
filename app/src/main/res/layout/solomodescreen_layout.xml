@@ -62,14 +62,7 @@
             android:layout_height="0dp"
             android:layout_weight="0.2">
 
-            <ImageView
-                android:id="@+id/settings_btn"
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:adjustViewBounds="true"
-                android:src="@drawable/seven_settings"
-                android:layout_alignParentTop="true"
-                android:layout_alignParentEnd="true" />
+
 
         </RelativeLayout>
 
@@ -91,7 +84,7 @@
                 android:layout_marginTop="10dp"
                 android:background="@drawable/buttonmenu"
                 android:gravity="center"
-                android:text="SUDDEN DEATH"
+                android:text="@string/SuddenDeathMode"
                 android:textColor="@android:color/white"
                 android:textSize="30sp">
 
@@ -104,7 +97,7 @@
                 android:layout_marginTop="10dp"
                 android:background="@drawable/buttonmenu"
                 android:gravity="center"
-                android:text="CLASSIC MODE"
+                android:text="@string/ClassicMode"
                 android:textColor="@android:color/white"
                 android:textSize="30sp">
 
@@ -117,7 +110,7 @@
                 android:layout_marginTop="10dp"
                 android:background="@drawable/buttonmenu"
                 android:gravity="center"
-                android:text="HALL OF FAME"
+                android:text="@string/HallOfFame"
                 android:textColor="@android:color/white"
                 android:textSize="30sp">
 

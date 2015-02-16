@@ -1,19 +1,13 @@
 package com.example.patrichuan.battlequiz;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.os.Handler;
-
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
 import android.view.WindowManager;
-import android.widget.Button;
-import android.widget.ImageView;
-import android.widget.ProgressBar;
-import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.parse.ParseUser;
@@ -26,6 +20,10 @@ public class SplashScreen extends ActionBarActivity {
     private Intent SiguienteActivity;
     private ParseUser currentUser;
 
+    private final String settingsTAG = "settingsTAG";
+
+    private SharedPreferences GameSettings;
+    private SharedPreferences.Editor prefEditor;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,6 +42,17 @@ public class SplashScreen extends ActionBarActivity {
         value = (TextView) findViewById(R.id.value_tv);
 
 
+        // Establezco las SharedPreferences nada mas lanzar la primera pantalla
+        GameSettings = getSharedPreferences(settingsTAG, 0);
+        prefEditor = GameSettings.edit();
+
+        prefEditor.putString("Music_uri", "android.resource://" + this.getPackageName() + "/raw/backgroundmusic");
+        prefEditor.putBoolean("Music", true);
+        prefEditor.putBoolean("Fx", true);
+        prefEditor.putBoolean("AppRecienLanzada", true);
+        prefEditor.commit();
+
+
         progressWheel.setProgress(0.0f);
         progressWheel.setCallback(new ProgressWheel.ProgressCallback() {
             @Override
@@ -52,23 +61,23 @@ public class SplashScreen extends ActionBarActivity {
                     progressWheel.setProgress(1.0f);
                 } else if (progress == 1.0f) {
                     currentUser = ParseUser.getCurrentUser();
-                //    if (currentUser != null) {
-                       // do stuff with the user
-                //        SiguienteActivity = new Intent(SplashScreen.this, MainMenuScreen.class);
-                //    } else {
+                    if (currentUser != null) {
+                        if (currentUser.getUsername() != null) {
+                            // do stuff with the user
+                            System.out.println(currentUser.getUsername());
+                            SiguienteActivity = new Intent(SplashScreen.this, MainMenuScreen.class);
+                        }
+
+                    } else {
                         // show the signup or login screen
                         SiguienteActivity = new Intent(SplashScreen.this, LoginScreen.class);
-                //    }
-                    // Remuevo la activity del stack ya que no me interesa que al dar a volver
-                    // aparezca la ventana de login de nuevo
-                    SiguienteActivity.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                    }
                     startActivity(SiguienteActivity);
                     overridePendingTransition(R.anim.pull_in_left, R.anim.push_out_right);
                 }
                 value.setText(String.format("%.0f", progress*100)+"%");
             }
         });
-
     }
 
     @Override

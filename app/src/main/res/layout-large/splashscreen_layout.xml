@@ -39,15 +39,15 @@
             android:layout_centerHorizontal="true"/>
 
         <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
         android:background="@drawable/seven_personaje_rojo"
             android:layout_alignTop="@+id/imageView4"
             android:layout_toEndOf="@+id/value_tv" />
 
         <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
             android:background="@drawable/seven_personaje_azul"
             android:layout_centerVertical="true"
             android:layout_toStartOf="@+id/value_tv"

@@ -4,6 +4,7 @@
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
     <application
         android:name=".ParseCom"
@@ -16,6 +17,37 @@
             android:theme="@style/AppTheme"
             android:screenOrientation="landscape"
             android:noHistory="true">
+
+        </activity>
+        <activity
+            android:name=".LoginScreen"
+            android:label="@string/title_activity_login_screen"
+            android:screenOrientation="landscape"
+            android:launchMode="singleInstance">
+        </activity>
+        <activity
+            android:name=".RegisterScreen"
+            android:label="@string/title_activity_register_screen"
+            android:screenOrientation="landscape"
+            android:noHistory="true">
+        </activity>
+        <activity
+            android:name=".MainMenuScreen"
+            android:label="@string/title_activity_main_menu_screen"
+            android:screenOrientation="landscape"
+            android:launchMode="singleInstance">
+        </activity>
+        <activity
+            android:name=".SoloModeScreen"
+            android:label="@string/title_activity_solo_mode_screen"
+            android:screenOrientation="landscape"
+            android:launchMode="singleInstance">
+        </activity>
+        <activity
+            android:name=".GameScreen"
+            android:label="@string/title_activity_game_screen"
+            android:screenOrientation="landscape"
+            android:launchMode="singleInstance">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -23,42 +55,16 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".LoginScreen"
-            android:label="@string/title_activity_login_screen"
-            android:screenOrientation="landscape">
-        </activity>
-        <activity
-            android:name=".RegisterScreen"
-            android:label="@string/title_activity_register_screen"
-            android:screenOrientation="landscape" >
->
-        </activity>
-        <activity
-            android:name=".MainMenuScreen"
-            android:label="@string/title_activity_main_menu_screen"
-            android:screenOrientation="landscape" >
-        </activity>
-        <activity
-            android:name=".SoloModeScreen"
-            android:label="@string/title_activity_solo_mode_screen"
-            android:screenOrientation="landscape" >
-        </activity>
-        <activity
-            android:name=".GameScreen"
-            android:label="@string/title_activity_game_screen"
-            android:screenOrientation="landscape" >
-
-        </activity>
-        <activity
             android:name=".ComingSoon"
             android:label="@string/title_activity_comin_soon"
-            android:screenOrientation="landscape" >
+            android:screenOrientation="landscape"
+            android:launchMode="singleInstance">
         </activity>
         <activity
             android:name=".ShopScreen"
             android:label="@string/title_activity_shop_screen"
-            android:screenOrientation="landscape">
-
+            android:screenOrientation="landscape"
+            android:launchMode="singleInstance">
         </activity>
     </application>
 

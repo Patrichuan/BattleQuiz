@@ -3,18 +3,20 @@ package com.example.patrichuan.battlequiz;
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
 import android.content.Context;
+import android.os.Bundle;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.ActionBarActivity;
-import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.WindowManager;
 import android.widget.AdapterView;
 import android.widget.BaseAdapter;
 import android.widget.GridView;
 import android.widget.ImageView;
+
 import java.util.ArrayList;
 
 // Problema con las puntuaciones en tablets (en esos casos la fuente deberia de ser 40sp y no 20sp)
@@ -31,10 +33,10 @@ public class GameScreen extends ActionBarActivity {
         overridePendingTransition(R.anim.pull_in_right, R.anim.push_out_left);
         setContentView(R.layout.gamescreen_layout);
 
-        View decorView = getWindow().getDecorView();
-        // Hide the status bar.
-        int uiOptions = View.SYSTEM_UI_FLAG_FULLSCREEN;
-        decorView.setSystemUiVisibility(uiOptions);
+        FontsOverride.setDefaultFont(this, "DEFAULT", "fonts/HVD_Comic_Serif_Pro.otf");
+
+        //Hide status bar
+        getWindow().addFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN);
         // Hide the action bar
         ActionBar actionBar = getSupportActionBar();
         actionBar.hide();
@@ -75,7 +77,7 @@ public class GameScreen extends ActionBarActivity {
                 // Compruebo si el fragment esta ya creado o no, si no lo esta lo creo
                 if (fragmentPregunta == null) {
                     fragmentPregunta = new GameScreen_Pregunta();
-                    transaction.add(R.id.child_two, fragmentPregunta, "PopUpPregunta");
+                    transaction.add(R.id.main_layout, fragmentPregunta, "PopUpPregunta");
                     transaction.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN);
                     transaction.addToBackStack(null);
                 }

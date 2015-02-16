@@ -83,7 +83,7 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="REGISTER"
+                    android:text="@string/Register"
                     android:textSize="40sp"
                     android:textColor="@android:color/white"
                     android:layout_alignParentBottom="true"
@@ -102,7 +102,7 @@
                     android:layout_height="30dp"
                     android:textSize="20sp"
                     android:background="@drawable/edittext"
-                    android:hint="USER"
+                    android:hint="@string/User"
                     android:gravity="center"
                     android:id="@+id/UserEt"
                     android:layout_alignParentTop="true">
@@ -113,12 +113,12 @@
                     android:layout_height="30dp"
                     android:textSize="20sp"
                     android:background="@drawable/edittext"
-                    android:hint="EMAIL"
+                    android:hint="@string/Email"
                     android:gravity="center"
                     android:id="@+id/EmailEt"
                     android:layout_alignParentStart="true"
                     android:layout_below="@+id/Pass2"
-                    android:layout_alignParentLeft="true">
+                    android:inputType="textEmailAddress">
                 </EditText>
 
                 <EditText
@@ -126,12 +126,12 @@
                     android:layout_height="30dp"
                     android:textSize="20sp"
                     android:background="@drawable/edittext"
-                    android:hint="PASS"
+                    android:hint="@string/Pass"
                     android:gravity="center"
                     android:id="@+id/Pass1"
                     android:layout_below="@+id/UserEt"
                     android:layout_alignParentStart="true"
-                    android:password="true">
+                    android:inputType="textPassword">
             </EditText>
 
                 <EditText
@@ -139,13 +139,12 @@
                     android:layout_height="30dp"
                     android:textSize="20sp"
                     android:background="@drawable/edittext"
-                    android:hint="REPEAT PASS"
+                    android:hint="@string/RepeatPass"
                     android:gravity="center"
                     android:id="@+id/Pass2"
                     android:layout_alignParentStart="true"
                     android:layout_below="@+id/Pass1"
-                    android:layout_alignParentLeft="true"
-                    android:password="true">
+                    android:inputType="textPassword">
                 </EditText>
 
 
@@ -162,12 +161,11 @@
                     android:layout_width="match_parent"
                     android:layout_height="30dp"
                     android:textSize="20sp"
-                    android:background="@drawable/buttonregister"
-                    android:textColor="@android:color/white"
-                    android:text="SIGN UP"
+                    android:text="@string/SignUpButton"
                     android:id="@+id/Registerbtn"
-                    android:gravity="center"
-                    android:layout_alignParentTop="true">
+                    android:layout_alignParentTop="true"
+                    style="@style/RedButton">
+
                 </Button>
 
             </RelativeLayout>

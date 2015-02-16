@@ -1,16 +1,100 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context="com.example.patrichuan.battlequiz.GameScreen_Pregunta">
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.example.patrichuan.battlequizzies.GameScreen_Pregunta"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@android:color/white"
+        android:alpha="0.4">
+    </RelativeLayout>
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/texto"
-        android:textSize="60sp"/>
+        android:textSize="40sp"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@android:color/white"
+        android:textSize="40sp"
+        android:text="D"
+        android:background="@drawable/button_green_answer_large"
+        android:layout_gravity="end|bottom"
+        android:layout_marginBottom="40dp"
+        android:layout_marginEnd="30dp">
+    </Button>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@android:color/white"
+        android:textSize="40sp"
+        android:text="C"
+        android:background="@drawable/button_green_answer_large"
+        android:layout_gravity="center_horizontal|bottom"
+        android:layout_marginBottom="40dp"
+        android:layout_marginEnd="42dp">
+    </Button>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@android:color/white"
+        android:textSize="40sp"
+        android:text="A"
+        android:background="@drawable/button_green_answer_large"
+        android:layout_gravity="center_horizontal|bottom"
+        android:layout_marginBottom="170dp"
+        android:layout_marginEnd="42dp">
+    </Button>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@android:color/white"
+        android:textSize="40sp"
+        android:text="B"
+        android:background="@drawable/button_green_answer_large"
+        android:layout_gravity="end|bottom"
+        android:layout_marginBottom="170dp"
+        android:layout_marginEnd="30dp">
+    </Button>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@android:color/white"
+        android:textSize="40sp"
+        android:text="B"
+        android:background="@drawable/pregunta_black_box_large"
+        android:layout_gravity="end|top"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="30dp">
+    </Button>
+
+
+
+
+    <ImageView
+        android:layout_width="500dp"
+        android:layout_height="match_parent"
+        android:src="@drawable/seven_a_personaje_con_cronometro"
+        android:layout_gravity="start|center_vertical" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_gravity="end|center_vertical"
+        android:padding="5dp"
+        android:layout_height="match_parent"
+        android:scaleType="fitXY"
+        android:adjustViewBounds="true"
+        android:src="@drawable/seven_a_marco_pregunta" />
+
+
 
 </FrameLayout>
-
-
-
-

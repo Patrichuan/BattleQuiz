@@ -62,14 +62,7 @@
             android:layout_height="0dp"
             android:layout_weight="0.2">
 
-            <ImageView
-                android:id="@+id/settings_btn"
-                android:layout_width="60dp"
-                android:layout_height="60dp"
-                android:adjustViewBounds="true"
-                android:src="@drawable/seven_settings"
-                android:layout_alignParentTop="true"
-                android:layout_alignParentEnd="true" />
+
 
         </RelativeLayout>
 

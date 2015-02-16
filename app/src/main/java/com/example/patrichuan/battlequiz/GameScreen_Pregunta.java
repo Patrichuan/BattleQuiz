@@ -1,7 +1,7 @@
 package com.example.patrichuan.battlequiz;
 
-import android.os.Bundle;
 import android.app.Fragment;
+import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,6 +14,7 @@ public class GameScreen_Pregunta extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         super.onCreateView(inflater, container, savedInstanceState);
+
         root = (ViewGroup) inflater.inflate(R.layout.gamescreen_pregunta_fragment, container, false);
         return root;
     }

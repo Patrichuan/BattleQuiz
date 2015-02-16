@@ -1,139 +1,140 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:id="@+id/main_layout"
-    android:weightSum="1"
-    android:orientation="horizontal"
-    android:background="@drawable/background"
-    android:paddingBottom="5dp"
-    android:paddingTop="5dp">
+    android:id="@+id/main_layout">
 
-    <RelativeLayout
-        android:id="@+id/child_one"
-        android:layout_width="0dp"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_weight="0.17">
+        android:weightSum="1"
+        android:orientation="horizontal"
+        android:background="@drawable/background"
+        android:paddingBottom="5dp"
+        android:paddingTop="5dp">
 
-        <LinearLayout
-            android:id="@+id/marcadores"
-            android:layout_width="match_parent"
+        <RelativeLayout
+            android:id="@+id/child_one"
+            android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_centerVertical="true"
-            android:weightSum="1"
-            android:orientation="vertical">
+            android:layout_weight="0.17">
 
-            <RelativeLayout
-                android:id="@+id/marcadorazul"
+            <LinearLayout
+                android:id="@+id/marcadores"
                 android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_weight="0.25">
+                android:layout_height="match_parent"
+                android:layout_centerVertical="true"
+                android:weightSum="1"
+                android:orientation="vertical">
 
-                <ImageView
+                <RelativeLayout
+                    android:id="@+id/marcadorazul"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_alignParentBottom="true"
-                    android:layout_centerHorizontal="true"
-                    android:src="@drawable/seven_marcador_azul"/>
+                    android:layout_height="0dp"
+                    android:layout_weight="0.25">
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentBottom="true"
-                    android:layout_centerHorizontal="true"
-                    android:id="@+id/puntuacionazul"
-                    android:textSize="20sp"
-                    android:textColor="@android:color/white"
-                    android:text="2014"/>
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_alignParentBottom="true"
+                        android:layout_centerHorizontal="true"
+                        android:src="@drawable/seven_marcador_azul"/>
 
-            </RelativeLayout>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentBottom="true"
+                        android:layout_centerHorizontal="true"
+                        android:id="@+id/puntuacionazul"
+                        android:textSize="20sp"
+                        android:textColor="@android:color/white"
+                        android:text="@string/PuntuacionPrueba"/>
 
-            <RelativeLayout
-                android:id="@+id/marcadorverde"
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_weight="0.25">
+                </RelativeLayout>
 
-                <ImageView
+                <RelativeLayout
+                    android:id="@+id/marcadorverde"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_alignParentBottom="true"
-                    android:layout_centerHorizontal="true"
-                    android:src="@drawable/seven_marcador_verde"/>
+                    android:layout_height="0dp"
+                    android:layout_weight="0.25">
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentBottom="true"
-                    android:layout_centerHorizontal="true"
-                    android:id="@+id/puntuacionverde"
-                    android:textSize="20sp"
-                    android:textColor="@android:color/white"
-                    android:text="2014"/>
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_alignParentBottom="true"
+                        android:layout_centerHorizontal="true"
+                        android:src="@drawable/seven_marcador_verde"/>
 
-            </RelativeLayout>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentBottom="true"
+                        android:layout_centerHorizontal="true"
+                        android:id="@+id/puntuacionverde"
+                        android:textSize="20sp"
+                        android:textColor="@android:color/white"
+                        android:text="@string/PuntuacionPrueba"/>
 
-            <RelativeLayout
-                android:id="@+id/marcadorrojo"
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_weight="0.25">
+                </RelativeLayout>
 
-                <ImageView
+                <RelativeLayout
+                    android:id="@+id/marcadorrojo"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_alignParentBottom="true"
-                    android:layout_centerHorizontal="true"
-                    android:src="@drawable/seven_marcador_rojo"/>
+                    android:layout_height="0dp"
+                    android:layout_weight="0.25">
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentBottom="true"
-                    android:layout_centerHorizontal="true"
-                    android:id="@+id/puntuacionroja"
-                    android:textSize="20sp"
-                    android:textColor="@android:color/white"
-                    android:text="2014"/>
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_alignParentBottom="true"
+                        android:layout_centerHorizontal="true"
+                        android:src="@drawable/seven_marcador_rojo"/>
 
-            </RelativeLayout>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentBottom="true"
+                        android:layout_centerHorizontal="true"
+                        android:id="@+id/puntuacionroja"
+                        android:textSize="20sp"
+                        android:textColor="@android:color/white"
+                        android:text="@string/PuntuacionPrueba"/>
 
-            <RelativeLayout
-                android:id="@+id/marcadoraamarillo"
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_weight="0.25">
+                </RelativeLayout>
 
-                <ImageView
+                <RelativeLayout
+                    android:id="@+id/marcadoraamarillo"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_alignParentBottom="true"
-                    android:layout_centerHorizontal="true"
-                    android:src="@drawable/seven_marcador_amarillo"/>
+                    android:layout_height="0dp"
+                    android:layout_weight="0.25">
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentBottom="true"
-                    android:layout_centerHorizontal="true"
-                    android:id="@+id/puntuacionamarilla"
-                    android:textSize="20sp"
-                    android:textColor="@android:color/white"
-                    android:text="122"/>
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_alignParentBottom="true"
+                        android:layout_centerHorizontal="true"
+                        android:src="@drawable/seven_marcador_amarillo"/>
 
-            </RelativeLayout>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentBottom="true"
+                        android:layout_centerHorizontal="true"
+                        android:id="@+id/puntuacionamarilla"
+                        android:textSize="20sp"
+                        android:textColor="@android:color/white"
+                        android:text="@string/PuntuacionPrueba"/>
 
-        </LinearLayout>
+                </RelativeLayout>
+            </LinearLayout>
+        </RelativeLayout>
 
-
-    </RelativeLayout>
-
-
-    <RelativeLayout
-        android:id="@+id/child_two"
-        android:layout_width="0dp"
-        android:layout_height="match_parent"
-        android:layout_weight="0.82">
+        <RelativeLayout
+            android:id="@+id/child_two"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.82">
 
             <GridView
                 android:id="@+id/gridview"
@@ -144,14 +145,15 @@
                 android:stretchMode="columnWidth"
                 android:numColumns="7"/>
 
+        </RelativeLayout>
 
-    </RelativeLayout>
+        <RelativeLayout
+            android:id="@+id/child_three"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.01">
+        </RelativeLayout>
 
-    <RelativeLayout
-        android:id="@+id/child_three"
-        android:layout_width="0dp"
-        android:layout_height="match_parent"
-        android:layout_weight="0.01">
-    </RelativeLayout>
+    </LinearLayout>
 
-</LinearLayout>
+</RelativeLayout>

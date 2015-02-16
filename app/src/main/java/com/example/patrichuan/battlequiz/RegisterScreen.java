@@ -1,9 +1,9 @@
 package com.example.patrichuan.battlequiz;
 
 import android.content.Intent;
+import android.os.Bundle;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.ActionBarActivity;
-import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -13,11 +13,9 @@ import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.Toast;
 
-import com.parse.ParseAnonymousUtils;
 import com.parse.ParseUser;
 import com.parse.SignUpCallback;
 
-import java.text.ParseException;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -25,10 +23,7 @@ public class RegisterScreen extends ActionBarActivity {
 
     private Button Registerbtn;
     private LinearLayout MainLayout;
-    private EditText userEdit;
-    private EditText passEdit;
-    private EditText repitPassEdit;
-    private EditText emailEdit;
+    private EditText userEdit, passEdit, repitPassEdit, emailEdit;
 
 
     @Override
@@ -37,13 +32,14 @@ public class RegisterScreen extends ActionBarActivity {
         overridePendingTransition(R.anim.pull_in_right, R.anim.push_out_left);
         setContentView(R.layout.registerscreen_layout);
 
+        FontsOverride.setDefaultFont(this, "DEFAULT", "fonts/HVD_Comic_Serif_Pro.otf");
+
         // Aplicamos a Password
         EditText EditPass = (EditText) findViewById(R.id.Pass1);
         EditText EditPass2 = (EditText) findViewById(R.id.Pass2);
 
         FontsOverride.setPasswordFont(this, EditPass);
         FontsOverride.setPasswordFont(this, EditPass2);
-
 
         Registerbtn = (Button) findViewById(R.id.Registerbtn);
 
@@ -52,6 +48,7 @@ public class RegisterScreen extends ActionBarActivity {
             public void onClick(View v) {
                 if (register()) {
                     Intent SiguienteActivity = new Intent(v.getContext(), LoginScreen.class);
+                    SiguienteActivity.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
                     startActivity(SiguienteActivity);
                     overridePendingTransition(R.anim.pull_in_left, R.anim.push_out_right);
                 }
