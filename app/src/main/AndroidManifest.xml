@@ -13,8 +13,8 @@
         android:theme="@style/AppTheme" >
         <activity
             android:name=".SplashScreen"
-            android:theme="@style/AppTheme"
-            android:screenOrientation="landscape" >
+            android:screenOrientation="landscape"
+            android:theme="@style/AppTheme" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -55,7 +55,17 @@
         <activity
             android:name=".ShopScreen"
             android:label="@string/title_activity_shop_screen"
-            android:screenOrientation="landscape">
+            android:screenOrientation="landscape" >
+        </activity>
+        <activity
+            android:name=".AchievementScreen"
+            android:label="@string/title_activity_achievement_screen"
+            android:screenOrientation="landscape" >
+        </activity>
+        <activity
+            android:name=".ThemeChoiceScreen"
+            android:label="@string/title_activity_theme_choice_screen"
+            android:screenOrientation="landscape" >
         </activity>
     </application>
 

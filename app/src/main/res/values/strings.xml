@@ -13,5 +13,7 @@
     <string name="default_progressbar">Default Progressbar:</string>
     <string name="title_activity_comin_soon">CominSoon</string>
     <string name="title_activity_shop_screen">ShopScreen</string>
+    <string name="title_activity_achievement_screen">AchievementScreen</string>
+    <string name="title_activity_theme_choice_screen">ThemeChoiceScreen</string>
 
 </resources>
