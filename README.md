@@ -2,7 +2,7 @@
 
 Sprint 3 (4 Marzo): Que deberiamos de tener
 -------------------------------------------
-- Pantalla Achievements (Dani)
+- Pantalla Achievements (Dani-HECHO)
 - Meter algun sonido (Matias)
 - Conseguir adaptar tienda a layout larges (Dani)
 - Pantalla Preguntas
