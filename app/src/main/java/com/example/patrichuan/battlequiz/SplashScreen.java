@@ -2,22 +2,12 @@ package com.example.patrichuan.battlequiz;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.os.Handler;
-
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
 import android.view.WindowManager;
-import android.widget.Button;
-import android.widget.ImageView;
-import android.widget.ProgressBar;
-import android.widget.RelativeLayout;
 import android.widget.TextView;
-
-import com.parse.ParseUser;
-
 
 public class SplashScreen extends ActionBarActivity {
 
@@ -25,6 +15,7 @@ public class SplashScreen extends ActionBarActivity {
     private TextView value;
     private Intent SiguienteActivity;
     private ParseUser currentUser;
+    private ConnectSQLite sqLite;
 
 
     @Override
@@ -32,6 +23,10 @@ public class SplashScreen extends ActionBarActivity {
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.splashscreen_layout);
+
+        sqLite = new ConnectSQLite(this);
+        sqLite.createDataBase();
+        sqLite.openDataBase();
 
         //Hide status bar
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN);
@@ -51,7 +46,9 @@ public class SplashScreen extends ActionBarActivity {
                 if (progress == 0) {
                     progressWheel.setProgress(1.0f);
                 } else if (progress == 1.0f) {
+                    Intent SiguienteActivity = new Intent(SplashScreen.this, LoginScreen.class);
                     currentUser = ParseUser.getCurrentUser();
+
                 //    if (currentUser != null) {
                        // do stuff with the user
                 //        SiguienteActivity = new Intent(SplashScreen.this, MainMenuScreen.class);

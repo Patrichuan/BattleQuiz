@@ -4,7 +4,7 @@
     <string name="app_name">BattleQuiz</string>
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
-    <string name="title_activity_login_screen">LOG IN</string>
+    <string name="login">LOG IN</string>
     <string name="title_activity_register_screen">RegisterScreen</string>
     <string name="title_activity_main_menu_screen">MainMenuScreen</string>
     <string name="title_activity_solo_mode_screen">SoloModeScreen</string>
@@ -13,5 +13,31 @@
     <string name="default_progressbar">Default Progressbar:</string>
     <string name="title_activity_comin_soon">CominSoon</string>
     <string name="title_activity_shop_screen">ShopScreen</string>
+    <string name="ShopMoney">2000</string>
+    <string name="Cosmetic">COSMETICS</string>
+    <string name="Usable">USABLES</string>
+    <string name="PuntuacionPrueba">2014</string>
+    <string name="SignUp">SIGN UP</string>
+    <string name="ILostMyPassword">I lost my password</string>
+    <string name="LogIn">LOG IN</string>
+    <string name="Pass">PASS</string>
+    <string name="User">USER</string>
+    <string name="LogInBig">LOGIN</string>
+    <string name="SoloMode">SOLO MODE</string>
+    <string name="MultiPlayer">MULTIPLAYER</string>
+    <string name="Shop">SHOP</string>
+    <string name="Achievements">ACHIEVEMENTS</string>
+    <string name="Register">REGISTER</string>
+    <string name="Email">EMAIL</string>
+    <string name="RepeatPass">REPEAT PASS</string>
+    <string name="SignUpButton">SIGN UP</string>
+    <string name="SuddenDeathMode">SUDDEN DEATH</string>
+    <string name="ClassicMode">CLASSIC MODE</string>
+    <string name="HallOfFame">HALL OF FAME</string>
+    <string name="Sure">Are you sure?</string>
+    <string name="Yes">Yes</string>
+    <string name="No">No</string> />
+    
+    
 
 </resources>
