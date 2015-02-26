@@ -1,100 +1,165 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    tools:context="com.example.patrichuan.battlequizzies.GameScreen_Pregunta"
+<?xml version="1.0" encoding="utf-8"?>
+
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <RelativeLayout
+    <ImageView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@android:color/white"
-        android:alpha="0.4">
+        android:alpha="0.7"/>
+
+    <ImageView
+        android:id="@+id/personajenegro"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        android:adjustViewBounds="true"
+        android:src="@drawable/seven_a_personaje_con_cronometro">
+    </ImageView>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:weightSum="1">
+
+    <RelativeLayout
+        android:id="@+id/child_one"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="0.31"
+        android:paddingBottom="10dp"
+        android:paddingEnd="@dimen/activity_horizontal_margin"
+        android:paddingStart="@dimen/activity_horizontal_margin">
+   </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/child_two"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="0.68">
+
+        <ImageView
+            android:id="@+id/marcopregunta"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center_horizontal"
+            android:adjustViewBounds="true"
+            android:src="@drawable/seven_a_marco_pregunta"
+            android:layout_centerVertical="true"
+            android:layout_alignParentStart="true" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding = "50dp"
+            android:orientation="vertical"
+            android:weightSum="1">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:background="@android:color/background_dark"
+                android:padding="15dp"
+                android:layout_height="0dp"
+                android:layout_weight="0.55">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="50sp"
+                    android:text="dklasjdlkasjdlaskjdaslkkghkhkhlhlkjhkjjdasljdalksjdaslkj"
+                    android:textColor="@android:color/white"
+                    android:paddingBottom="10dp"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentStart="true" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_marginTop="20dp"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="0.45">
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:weightSum="1"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentStart="true">
+
+                    <LinearLayout
+                        android:layout_marginBottom="20dp"
+                        android:orientation="horizontal"
+                        android:weightSum="1"
+                        android:layout_weight="0.5"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp">
+                        <Button
+                            android:id="@+id/BotonRojo"
+                            android:layout_marginEnd="25dp"
+                            android:background="@drawable/button_red_answer"
+                            android:text="A"
+                            android:textSize="50sp"
+                            android:textColor="@android:color/white"
+                            android:layout_weight="0.5"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent" />
+                        <Button
+                            android:id="@+id/BotonAmarillo"
+                            android:background="@drawable/button_yellow_answer"
+                            android:text="B"
+                            android:textSize="50sp"
+                            android:textColor="@android:color/white"
+                            android:layout_weight="0.5"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:orientation="horizontal"
+                        android:weightSum="1"
+                        android:layout_weight="0.5"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp">
+                        <Button
+                            android:id="@+id/BotonAzul"
+                            android:layout_marginEnd="25dp"
+                            android:background="@drawable/button_blue_answer"
+                            android:text="C"
+                            android:textSize="50sp"
+                            android:textColor="@android:color/white"
+                            android:layout_weight="0.5"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent" />
+                        <Button
+                            android:id="@+id/BotonVerde"
+
+                            android:background="@drawable/button_green_answer"
+                            android:text="D"
+                            android:textSize="50sp"
+                            android:textColor="@android:color/white"
+                            android:layout_weight="0.5"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent" />
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+
+
+            </RelativeLayout>
+
+        </LinearLayout>
+
     </RelativeLayout>
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/texto"
-        android:textSize="40sp"/>
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textColor="@android:color/white"
-        android:textSize="40sp"
-        android:text="D"
-        android:background="@drawable/button_green_answer_large"
-        android:layout_gravity="end|bottom"
-        android:layout_marginBottom="40dp"
-        android:layout_marginEnd="30dp">
-    </Button>
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textColor="@android:color/white"
-        android:textSize="40sp"
-        android:text="C"
-        android:background="@drawable/button_green_answer_large"
-        android:layout_gravity="center_horizontal|bottom"
-        android:layout_marginBottom="40dp"
-        android:layout_marginEnd="42dp">
-    </Button>
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textColor="@android:color/white"
-        android:textSize="40sp"
-        android:text="A"
-        android:background="@drawable/button_green_answer_large"
-        android:layout_gravity="center_horizontal|bottom"
-        android:layout_marginBottom="170dp"
-        android:layout_marginEnd="42dp">
-    </Button>
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textColor="@android:color/white"
-        android:textSize="40sp"
-        android:text="B"
-        android:background="@drawable/button_green_answer_large"
-        android:layout_gravity="end|bottom"
-        android:layout_marginBottom="170dp"
-        android:layout_marginEnd="30dp">
-    </Button>
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textColor="@android:color/white"
-        android:textSize="40sp"
-        android:text="B"
-        android:background="@drawable/pregunta_black_box_large"
-        android:layout_gravity="end|top"
-        android:layout_marginTop="30dp"
-        android:layout_marginEnd="30dp">
-    </Button>
-
-
-
-
-    <ImageView
-        android:layout_width="500dp"
-        android:layout_height="match_parent"
-        android:src="@drawable/seven_a_personaje_con_cronometro"
-        android:layout_gravity="start|center_vertical" />
-
-    <ImageView
-        android:layout_width="wrap_content"
-        android:layout_gravity="end|center_vertical"
-        android:padding="5dp"
-        android:layout_height="match_parent"
-        android:scaleType="fitXY"
-        android:adjustViewBounds="true"
-        android:src="@drawable/seven_a_marco_pregunta" />
-
-
+</LinearLayout>
 
 </FrameLayout>

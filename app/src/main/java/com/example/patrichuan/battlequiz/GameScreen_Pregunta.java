@@ -5,10 +5,11 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TextView;
 
 public class GameScreen_Pregunta extends Fragment {
-    TextView textviewdeprueba;
+    Button BotonRojo, BotonVerde, BotonAmarillo, BotonAzul;
     ViewGroup root;
 
     @Override
@@ -22,14 +23,43 @@ public class GameScreen_Pregunta extends Fragment {
     @Override
     public void onActivityCreated(Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-        textviewdeprueba = (TextView) root.findViewById(R.id.texto);
-        textviewdeprueba.setText("Fragment Pregunta LANZADO !!");
-        textviewdeprueba.setOnClickListener(new View.OnClickListener() {
+
+        BotonRojo = (Button) root.findViewById(R.id.BotonRojo);
+        BotonVerde = (Button) root.findViewById(R.id.BotonVerde);
+        BotonAmarillo = (Button) root.findViewById(R.id.BotonAmarillo);
+        BotonAzul = (Button) root.findViewById(R.id.BotonAzul);
+
+        BotonRojo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 // Si lo clikeo me lo cargo (lo saco de la pila)
                 getFragmentManager().popBackStack();
             }
         });
+
+        BotonVerde.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Si lo clikeo me lo cargo (lo saco de la pila)
+                getFragmentManager().popBackStack();
+            }
+        });
+
+        BotonAmarillo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Si lo clikeo me lo cargo (lo saco de la pila)
+                getFragmentManager().popBackStack();
+            }
+        });
+
+        BotonAzul.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Si lo clikeo me lo cargo (lo saco de la pila)
+                getFragmentManager().popBackStack();
+            }
+        });
+
     }
 }

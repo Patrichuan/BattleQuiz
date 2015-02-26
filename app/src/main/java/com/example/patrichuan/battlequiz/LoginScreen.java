@@ -1,9 +1,11 @@
 package com.example.patrichuan.battlequiz;
 
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.ActionBarActivity;
+import android.text.InputType;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -96,13 +98,13 @@ public class LoginScreen extends ActionBarActivity {
         return super.onOptionsItemSelected(item);
     }
 
+
     public void login() {
 
         String usernametxt;
         String passwordtxt;
         userEdit = (EditText) findViewById(R.id.UserEt);
         passEdit = (EditText) findViewById(R.id.PassEt);
-
 
         // Retrieve the text entered from the EditText
         usernametxt = userEdit.getText().toString().toUpperCase();

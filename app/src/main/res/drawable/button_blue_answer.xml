@@ -14,9 +14,9 @@
 
             <size
                 android:width="180dp"
-                android:height="55dp"/>
+                android:height="70dp"/>
 
-            <solid android:color="#ff239ad3" />
+            <solid android:color="#3069aa" />
         </shape>
     </item>
 </layer-list>
