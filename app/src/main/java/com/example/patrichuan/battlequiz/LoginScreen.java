@@ -137,7 +137,7 @@ public class LoginScreen extends ActionBarActivity {
                                     "Successfully Logged in",
                                     Toast.LENGTH_LONG).show();
                             finish();
-
+                            logueado();
                         } else {
 
                             //VENTANA EMERGENTE USUARIO INVÁLIDO
@@ -149,6 +149,10 @@ public class LoginScreen extends ActionBarActivity {
                         }
                     }
                 });
+    }
+
+    public boolean logueado(){
+        return true;
     }
 
     @Override
