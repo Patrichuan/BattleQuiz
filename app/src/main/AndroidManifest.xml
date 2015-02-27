@@ -15,16 +15,18 @@
             android:name=".SplashScreen"
             android:screenOrientation="landscape"
             android:theme="@style/AppTheme" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity
             android:name=".LoginScreen"
             android:label="@string/title_activity_login_screen"
             android:screenOrientation="landscape" >
+
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
         <activity
             android:name=".RegisterScreen"
@@ -36,7 +38,8 @@
             android:name=".MainMenuScreen"
             android:label="@string/title_activity_main_menu_screen"
             android:screenOrientation="landscape" >
-        </activity>
+
+            </activity>
         <activity
             android:name=".SoloModeScreen"
             android:label="@string/title_activity_solo_mode_screen"

@@ -7,10 +7,10 @@
     android:orientation="horizontal">
 
     <GridView xmlns:android="http://schemas.android.com/apk/res/android"
-        android:id="@+id/gridview"
+        android:id="@+id/gridviewCosmetics"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@drawable/five_marco_choose_equipment"
+        android:background="@drawable/listview_background"
         android:columnWidth="250dp"
         android:gravity="center"
         android:horizontalSpacing="5dp"
