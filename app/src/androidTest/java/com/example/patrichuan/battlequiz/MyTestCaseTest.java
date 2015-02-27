@@ -68,6 +68,6 @@ public class MyTestCaseTest extends ActivityInstrumentationTestCase2<LoginScreen
         }
 
         // Comparo el nombre para ver si el resultado es el esperado
-        assertTrue("Login result expect to be sucesfull and has been...", UsuarioLogeado == true);
+        assertTrue("Login result expect to be sucesfull and has been...", UsuarioLogeado);
     }
 }
