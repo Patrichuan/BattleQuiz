@@ -15,8 +15,6 @@ public class MyTestCaseTest extends ActivityInstrumentationTestCase2<LoginScreen
     private static final String Password = "Pat";
 
     private LoginScreen actividad;
-    private String ResultadoObtenido;
-    private String ResultadoEsperado;
 
     public MyTestCaseTest() {
         super(LoginScreen.class);
@@ -29,9 +27,6 @@ public class MyTestCaseTest extends ActivityInstrumentationTestCase2<LoginScreen
 
         // Obtengo la activity actual
         actividad = getActivity();
-
-        // Guardo el nombre de la actividad en la que estoy
-        ResultadoObtenido = actividad.getClass().getName();
 
         // Instancio lo necesario (edittext y button)
         etext1 = (EditText) actividad.findViewById(R.id.UserEt);
@@ -47,6 +42,8 @@ public class MyTestCaseTest extends ActivityInstrumentationTestCase2<LoginScreen
 
 
     public void testAddValues() {
+
+        Boolean UsuarioLogeado = false;
 
         // Compruebo si el usuario esta logeado
         if (ParseUser.getCurrentUser()!=null) {
@@ -66,9 +63,11 @@ public class MyTestCaseTest extends ActivityInstrumentationTestCase2<LoginScreen
 
         // Guardo el nombre de la actividad en la que me encuentro ahora
         // y si ha ido bien deberia de llamarse "MainMenuScreen"
-        ResultadoEsperado = getActivity().getClass().getName();
+        if (ParseUser.getCurrentUser()!=null) {
+            UsuarioLogeado = true;
+        }
 
         // Comparo el nombre para ver si el resultado es el esperado
-        assertTrue("Login result has been...", ResultadoEsperado.equals(ResultadoObtenido));
+        assertTrue("Login result expect to be sucesfull and has been...", UsuarioLogeado == true);
     }
 }
