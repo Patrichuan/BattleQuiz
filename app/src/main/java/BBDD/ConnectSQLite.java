@@ -1,4 +1,4 @@
-package com.example.patrichuan.battlequiz;
+package BBDD;
 
 import android.content.Context;
 import android.database.SQLException;
@@ -58,13 +58,12 @@ public class ConnectSQLite extends SQLiteOpenHelper {
         boolean dbExist = dbFile.exists();
 
         if (dbExist) {
-
+            borrarDataBase();
         } else {
             this.getReadableDatabase();
             copiarbasededatos();
         }
     }
-
 
     public boolean checkDataBase() {
         SQLiteDatabase checkDB = null;
