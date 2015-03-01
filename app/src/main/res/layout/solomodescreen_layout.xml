@@ -91,7 +91,7 @@
                 android:layout_marginTop="10dp"
                 android:background="@drawable/buttonmenu"
                 android:gravity="center"
-                android:text="SUDDEN DEATH"
+                android:text="@string/SuddenDeathMode"
                 android:textColor="@android:color/white"
                 android:textSize="30sp">
 
@@ -104,7 +104,7 @@
                 android:layout_marginTop="10dp"
                 android:background="@drawable/buttonmenu"
                 android:gravity="center"
-                android:text="CLASSIC MODE"
+                android:text="@string/ClassicMode"
                 android:textColor="@android:color/white"
                 android:textSize="30sp">
 
@@ -117,7 +117,7 @@
                 android:layout_marginTop="10dp"
                 android:background="@drawable/buttonmenu"
                 android:gravity="center"
-                android:text="HALL OF FAME"
+                android:text="@string/HallOfFame"
                 android:textColor="@android:color/white"
                 android:textSize="30sp">
 

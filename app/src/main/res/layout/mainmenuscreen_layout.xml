@@ -92,7 +92,7 @@
                 android:layout_marginTop="10dp"
                 android:background="@drawable/buttonmenu"
                 android:gravity="center"
-                android:text="SOLO MODE"
+                android:text="@string/SoloMode"
                 android:textColor="@android:color/white"
                 android:textSize="30sp">
 
@@ -105,7 +105,7 @@
                 android:layout_marginTop="10dp"
                 android:background="@drawable/buttonmenu"
                 android:gravity="center"
-                android:text="MULTIPLAYER"
+                android:text="@string/MultiPlayer"
                 android:textColor="@android:color/white"
                 android:textSize="30sp">
 
@@ -118,7 +118,7 @@
                 android:layout_marginTop="10dp"
                 android:background="@drawable/buttonmenu"
                 android:gravity="center"
-                android:text="SHOP"
+                android:text="@string/Shop"
                 android:textColor="@android:color/white"
                 android:textSize="30sp">
 
@@ -131,7 +131,7 @@
                 android:layout_marginTop="10dp"
                 android:background="@drawable/buttonmenu"
                 android:gravity="center"
-                android:text="ACHIEVEMENTS"
+                android:text="@string/Achievements"
                 android:textColor="@android:color/white"
                 android:textSize="30sp">
 
