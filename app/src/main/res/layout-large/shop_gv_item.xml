@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="300dp"
+    android:layout_weight="1"
+    android:background="@drawable/shop_gridview_item">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.15"
+        android:gravity="center_horizontal">
+
+        <TextView
+            android:id="@+id/shopLabel1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@+id/shopLabel1"
+            android:textSize="26sp"
+            android:textColor="#275c97"
+            android:textAlignment="center" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.5" >
+
+        <ImageView
+            android:id="@+id/shopIcon"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+
+            />
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.2"
+        >
+        <TextView
+            android:id="@+id/shopLabel2"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="10dp"
+            android:text="@+id/shopLabel2"
+            android:textSize="18sp"
+            android:textColor="#275c97"/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.15"
+        android:orientation="horizontal"
+        android:gravity="center_horizontal">
+
+        <TextView
+            android:id="@+id/shopLabel3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@+id/shopLabel3"
+            android:textColor="#ffc955"
+            android:textSize="30sp"
+
+            android:paddingEnd="5dp"
+            android:textAlignment="gravity" />
+
+        <ImageView
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:id="@+id/big_coin"
+            android:background="@drawable/three_c_big_coin"
+            android:cropToPadding="false"
+            android:layout_alignEnd="@id/shopLabel3"
+            />
+
+    </LinearLayout>
+</LinearLayout>
