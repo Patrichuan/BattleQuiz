@@ -9,6 +9,11 @@ import android.view.MenuItem;
 import android.view.WindowManager;
 import android.widget.TextView;
 
+import com.parse.ParseUser;
+
+import BBDD.ConnectSQLite;
+import BBDD.Querys;
+
 public class SplashScreen extends ActionBarActivity {
 
     private ProgressWheel progressWheel;
@@ -16,6 +21,7 @@ public class SplashScreen extends ActionBarActivity {
     private Intent SiguienteActivity;
     private ParseUser currentUser;
     private ConnectSQLite sqLite;
+    private Querys querys;
 
 
     @Override
@@ -27,6 +33,11 @@ public class SplashScreen extends ActionBarActivity {
         sqLite = new ConnectSQLite(this);
         sqLite.createDataBase();
         sqLite.openDataBase();
+        querys = new Querys(this);
+        querys.Question(1);
+        querys.Answer(1);
+
+
 
         //Hide status bar
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN);
