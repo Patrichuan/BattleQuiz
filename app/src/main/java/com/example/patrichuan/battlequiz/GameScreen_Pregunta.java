@@ -138,6 +138,7 @@ public class GameScreen_Pregunta extends Fragment {
     private void UpdateGUI() {
         if (TiempoRestante>0) {
             TiempoRestante--;
+            // Meter aqui el sonido del reloj
             myHandler.post(myRunnable);
         }
     }
