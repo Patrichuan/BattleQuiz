@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">BattleQuiz</string>
+    <string name="hello_world">Hola mundo</string>
+    <string name="action_settings">Ajustes</string>
+    <string name="title_activity_login_screen">LOG IN</string>
+    <string name="title_activity_register_screen">RegisterScreen</string>
+    <string name="title_activity_main_menu_screen">MainMenuScreen</string>
+    <string name="title_activity_solo_mode_screen">SoloModeScreen</string>
+    <string name="title_activity_game_screen">SoloModeScreen</string>
+    <string name="title_activity_splash_screen">SplashScreen</string>
+    <string name="default_progressbar">Default Progressbar:</string>
+    <string name="title_activity_comin_soon">CominSoon</string>
+    <string name="title_activity_shop_screen">ShopScreen</string>
+    <string name="ShopMoney">2000</string>
+    <string name="Cosmetic">ACCESORIOS</string>
+    <string name="Usable">UTILES</string>
+    <string name="PuntuacionPrueba">2014</string>
+    <string name="SignUp">REGISTRO</string>
+    <string name="ILostMyPassword">He perdido mi contraseña</string>
+    <string name="LogIn">INICIAR SESION</string>
+    <string name="Pass">CONTRASEÑA</string>
+    <string name="User">USUARIO</string>
+    <string name="LogInBig">LOGIN</string>
+    <string name="SoloMode">JUGAR SOLO</string>
+    <string name="MultiPlayer">MULTIPLAYER</string>
+    <string name="Shop">TIENDA</string>
+    <string name="Achievements">LOGROS</string>
+    <string name="Register">REGISTRO</string>
+    <string name="Email">EMAIL</string>
+    <string name="RepeatPass">REPETIR CONT.</string>
+    <string name="SignUpButton">REGISTRO</string>
+    <string name="SuddenDeathMode">MUERTE SUBITA</string>
+    <string name="ClassicMode">MODO CLASICO</string>
+    <string name="HallOfFame">SALON DE LA FAMA</string>
+    <string name="Sure">¿Estas seguro?</string>
+    <string name="Yes">Si</string>
+    <string name="No">No</string>
+    <string name="title_activity_my_test_case">MyTestCase</string> />
+
+</resources>
