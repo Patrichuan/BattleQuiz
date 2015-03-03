@@ -6,6 +6,7 @@ package com.example.patrichuan.battlequiz;
 import java.lang.reflect.Field;
 import android.content.Context;
 import android.graphics.Typeface;
+import android.widget.Button;
 import android.widget.EditText;
 
 public final class FontsOverride {
@@ -41,5 +42,17 @@ public final class FontsOverride {
 
         // Aplicamos la fuente:
         editText.setTypeface(tf);
+    }
+
+    public static void setButtonFont(Context context, Button button){
+
+        // Ruta de la fuente dentro de la carpeta assets:
+        String fontPath = "fonts/HVD_Comic_Serif_Pro.otf";
+
+        // Cargamos la fuente:
+        Typeface tf = Typeface.createFromAsset(context.getAssets(), fontPath);
+
+        // Aplicamos la fuente:
+        button.setTypeface(tf);
     }
 }
