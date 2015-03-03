@@ -39,6 +39,8 @@ public class LoginScreen extends ActionBarActivity {
 
         FontsOverride.setDefaultFont(this, "DEFAULT", "fonts/HVD_Comic_Serif_Pro.otf");
 
+
+
         // Aplicamos a Password
         EditText EditPass = (EditText) findViewById(R.id.PassEt);
 
@@ -59,6 +61,7 @@ public class LoginScreen extends ActionBarActivity {
 
 
         Registerbtn = (Button) findViewById(R.id.Registerbtn);
+        FontsOverride.setButtonFont(this,Registerbtn);
         Registerbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -69,6 +72,7 @@ public class LoginScreen extends ActionBarActivity {
         });
 
         Loginbtn = (Button) findViewById(R.id.Loginbtn);
+        FontsOverride.setButtonFont(this,Loginbtn);
         Loginbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
