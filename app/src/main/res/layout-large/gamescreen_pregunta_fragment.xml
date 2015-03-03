@@ -33,7 +33,17 @@
         android:layout_weight="0.31"
         android:paddingBottom="10dp"
         android:paddingEnd="@dimen/activity_horizontal_margin"
-        android:paddingStart="@dimen/activity_horizontal_margin">
+        android:paddingStart="40dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/CuentaAtras"
+            android:text="15"
+            android:textSize="150sp"
+            android:textColor="@android:color/black"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentStart="true" />
    </RelativeLayout>
 
     <RelativeLayout
@@ -70,7 +80,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:textSize="50sp"
-                    android:text="dklasjdlkasjdlaskjdaslkkghkhkhlhlkjhkjjdasljdalksjdaslkj"
+                    android:id="@+id/TextoDeLaPregunta"
+                    android:text=""
                     android:textColor="@android:color/white"
                     android:paddingBottom="10dp"
                     android:layout_alignParentTop="true"
@@ -103,8 +114,8 @@
                             android:id="@+id/BotonRojo"
                             android:layout_marginEnd="25dp"
                             android:background="@drawable/button_red_answer"
-                            android:text="A"
-                            android:textSize="50sp"
+                            android:text=""
+                            android:textSize="20sp"
                             android:textColor="@android:color/white"
                             android:layout_weight="0.5"
                             android:layout_width="0dp"
@@ -112,8 +123,8 @@
                         <Button
                             android:id="@+id/BotonAmarillo"
                             android:background="@drawable/button_yellow_answer"
-                            android:text="B"
-                            android:textSize="50sp"
+                            android:text=""
+                            android:textSize="20sp"
                             android:textColor="@android:color/white"
                             android:layout_weight="0.5"
                             android:layout_width="0dp"
@@ -130,18 +141,17 @@
                             android:id="@+id/BotonAzul"
                             android:layout_marginEnd="25dp"
                             android:background="@drawable/button_blue_answer"
-                            android:text="C"
-                            android:textSize="50sp"
+                            android:text=""
+                            android:textSize="20sp"
                             android:textColor="@android:color/white"
                             android:layout_weight="0.5"
                             android:layout_width="0dp"
                             android:layout_height="match_parent" />
                         <Button
                             android:id="@+id/BotonVerde"
-
                             android:background="@drawable/button_green_answer"
-                            android:text="D"
-                            android:textSize="50sp"
+                            android:text=""
+                            android:textSize="20sp"
                             android:textColor="@android:color/white"
                             android:layout_weight="0.5"
                             android:layout_width="0dp"

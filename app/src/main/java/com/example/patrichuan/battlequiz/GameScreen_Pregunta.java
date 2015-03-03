@@ -3,6 +3,7 @@ package com.example.patrichuan.battlequiz;
 import android.app.Fragment;
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
+import android.content.Context;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.LayoutInflater;
@@ -15,6 +16,11 @@ import android.widget.TextView;
 import java.util.Timer;
 import java.util.TimerTask;
 
+import BBDD.Answers;
+import BBDD.ConnectSQLite;
+import BBDD.Querys;
+import BBDD.Questions;
+
 public class GameScreen_Pregunta extends Fragment {
 
     private Button BotonRojo, BotonVerde, BotonAmarillo, BotonAzul;
@@ -25,7 +31,11 @@ public class GameScreen_Pregunta extends Fragment {
     private View CasillaClickeada;
     private View CasillaClickeadaAnterior;
 
-    private int TiempoRestante = 15;
+    private TextView Preguntatv;
+    private Answers[] Respuestas;
+    private Questions RandomQuestion;
+
+    private int TiempoRestante = 16;
     private TextView CuentaAtras;
 
     final Handler myHandler = new Handler();
@@ -52,6 +62,27 @@ public class GameScreen_Pregunta extends Fragment {
     public void onActivityCreated(Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
 
+        // Instancio el TextView donde va la pregunta
+        Preguntatv = (TextView) root.findViewById(R.id.TextoDeLaPregunta);
+        // Se le asigna el texto de una pregunta al azar
+        RandomQuestion = ActividadPadre.getRandomQuestion();
+        Preguntatv.setText(RandomQuestion.getTextQuestion());
+
+        // Instancio los botones
+        BotonRojo = (Button) root.findViewById(R.id.BotonRojo);
+        BotonVerde = (Button) root.findViewById(R.id.BotonVerde);
+        BotonAmarillo = (Button) root.findViewById(R.id.BotonAmarillo);
+        BotonAzul = (Button) root.findViewById(R.id.BotonAzul);
+
+        // Recojo en un array las respuestas a dicha pregunta obtenida al azar
+        Respuestas = ActividadPadre.querys.getAnswersByQuestion(RandomQuestion);
+        // Asigno el texto de las respuestas a los botones
+        BotonRojo.setText(Respuestas[0].getTextAnswer());
+        BotonVerde.setText(Respuestas[1].getTextAnswer());
+        BotonAmarillo.setText(Respuestas[2].getTextAnswer());
+        BotonAzul.setText(Respuestas[3].getTextAnswer());
+
+
         // Instancio el texto de la Cuenta Atras
         CuentaAtras = (TextView) root.findViewById(R.id.CuentaAtras);
 
@@ -75,15 +106,13 @@ public class GameScreen_Pregunta extends Fragment {
         // Prueba del listener: Colorear casilla
         CasillaDe_Anterior = (ImageView) CasillaClickeadaAnterior.findViewById(R.id.Casilla);
 
-        BotonRojo = (Button) root.findViewById(R.id.BotonRojo);
-        BotonVerde = (Button) root.findViewById(R.id.BotonVerde);
-        BotonAmarillo = (Button) root.findViewById(R.id.BotonAmarillo);
-        BotonAzul = (Button) root.findViewById(R.id.BotonAzul);
-
         // Crear un metodo que devuelva si es correcta o no y cierre la ventana
         BotonRojo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                if (Respuestas[0].isCorrect()==1) {
+                    HasAcertado ();
+                }
                 CloseFragment ();
             }
         });
@@ -91,19 +120,9 @@ public class GameScreen_Pregunta extends Fragment {
         BotonVerde.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
-                // Nueva Casilla
-                OcupadoPor.setImageResource(R.drawable.seven_personaje_amarillo);
-                CasillaDe.setImageResource(R.drawable.seven_casilla_amarilla);
-
-                // Casilla Anterior
-                OcupadoPor_Anterior.setImageResource(R.drawable.empty);
-                CasillaDe_Anterior.setImageResource(R.drawable.seven_casilla_amarilla);
-
-                // Sumo 10 puntos al marcador por acertar
-                ActividadPadre.setPuntuacion(ActividadPadre.getPuntuacion() + 10);
-                ActividadPadre.ActualizarMarcador(ActividadPadre.getPuntuacion());
-
+                if (Respuestas[1].isCorrect()==1) {
+                    HasAcertado ();
+                }
                 CloseFragment ();
             }
         });
@@ -111,6 +130,9 @@ public class GameScreen_Pregunta extends Fragment {
         BotonAmarillo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                if (Respuestas[2].isCorrect()==1) {
+                    HasAcertado ();
+                }
                 CloseFragment ();
             }
         });
@@ -118,9 +140,26 @@ public class GameScreen_Pregunta extends Fragment {
         BotonAzul.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                if (Respuestas[3].isCorrect()==1) {
+                    HasAcertado ();
+                }
                 CloseFragment ();
             }
         });
+    }
+
+    private void HasAcertado () {
+        // Nueva Casilla
+        OcupadoPor.setImageResource(R.drawable.seven_personaje_amarillo);
+        CasillaDe.setImageResource(R.drawable.seven_casilla_amarilla);
+
+        // Casilla Anterior
+        OcupadoPor_Anterior.setImageResource(R.drawable.empty);
+        CasillaDe_Anterior.setImageResource(R.drawable.seven_casilla_amarilla);
+
+        // Sumo 10 puntos al marcador por acertar
+        ActividadPadre.setPuntuacion(ActividadPadre.getPuntuacion() + 10);
+        ActividadPadre.ActualizarMarcador(ActividadPadre.getPuntuacion());
     }
 
     private void CloseFragment () {

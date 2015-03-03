@@ -22,6 +22,10 @@ import android.widget.Toast;
 
 import java.util.ArrayList;
 
+import BBDD.ConnectSQLite;
+import BBDD.Querys;
+import BBDD.Questions;
+
 public class GameScreen extends ActionBarActivity {
 
     private GridView gridView;
@@ -31,6 +35,10 @@ public class GameScreen extends ActionBarActivity {
     private TextView Marcador;
     private int Puntuacion;
     public boolean PreguntaActiva = false;
+
+    public ConnectSQLite sqLite;
+    public Querys querys;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,6 +56,12 @@ public class GameScreen extends ActionBarActivity {
 
         Marcador = (TextView) findViewById(R.id.puntuacionamarilla);
         ActualizarMarcador(0);
+
+        // Creo y abro la base de datos
+        sqLite = new ConnectSQLite(this);
+        sqLite.createDataBase();
+        sqLite.openDataBase();
+        querys = new Querys(this);
 
         gridView = (GridView)findViewById(R.id.gridview);
 
@@ -101,7 +115,21 @@ public class GameScreen extends ActionBarActivity {
             });
     }
 
+    // Devuelve un numero al azar
+    public int NumAlAzar(int min, int max) {
+        return min + (int) (Math.random() * ((max - min) + 1));
+    }
 
+    // Devuelve un Question al azar de los presentes en la bae de datos
+    public Questions getRandomQuestion () {
+        int NumQuestions = querys.countQuestions();
+        Questions Pregunta = null;
+
+        if (NumQuestions>0) {
+            Pregunta = querys.getQuestionById(NumAlAzar(1,NumQuestions));
+        }
+        return Pregunta;
+    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

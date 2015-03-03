@@ -28,20 +28,11 @@ public class SplashScreen extends ActionBarActivity {
     private SharedPreferences GameSettings;
     private SharedPreferences.Editor prefEditor;
 
-    private ConnectSQLite sqLite;
-    private Querys querys;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.splashscreen_layout);
-
-
-        sqLite = new ConnectSQLite(this);
-        sqLite.createDataBase();
-        sqLite.openDataBase();
-        querys = new Querys(this);
 
         //Hide status bar
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN);

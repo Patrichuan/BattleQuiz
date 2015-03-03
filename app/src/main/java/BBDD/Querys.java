@@ -6,9 +6,11 @@ import android.database.sqlite.SQLiteDatabase;
  * Created by Miguel on 27/02/2015.
  */
 public class Querys extends ConnectSQLite {
+
     public Querys(Context context) {
         super(context);
     }
+
     public int countQuestions() {
         int numQuestions = 0;
         String query = "SELECT COUNT (*) FROM Question";
@@ -19,7 +21,8 @@ public class Querys extends ConnectSQLite {
         }
         return numQuestions;
     }
-    public Questions Question(int idQuestion) {
+
+    public Questions getQuestionById(int idQuestion) {
         String query = "SELECT * FROM Question WHERE idquestion = " + idQuestion;
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor cursor = db.rawQuery(query, null);
@@ -28,17 +31,16 @@ public class Querys extends ConnectSQLite {
         String Categoria;
         Questions question = null;
         if (cursor.moveToFirst()) {
-/*do{*/
             idPregunta = cursor.getInt(0);
             textPregunta = cursor.getString(1);
             Categoria = cursor.getString(2);
-/* }while (cursor.moveToNext());*/
             question = new Questions(idPregunta, textPregunta, Categoria);
         }
         db.close();
         return question;
     }
-    public Answers[] Answer(int idQuestion) {
+
+    public Answers[] getAnswersById(int idQuestion) {
         Answers[] respuestas = new Answers[4];
         String query = "SELECT * FROM Answer WHERE idQuestionFK = " + idQuestion;
         SQLiteDatabase db = this.getReadableDatabase();
@@ -48,6 +50,7 @@ public class Querys extends ConnectSQLite {
         int idPregunta;
         int esCorrecta;
         Answers respuesta;
+
         if (cursor.moveToFirst()) {
             int i = 0;
             do {
@@ -61,6 +64,11 @@ public class Querys extends ConnectSQLite {
             } while (cursor.moveToNext());
         }
         db.close();
+        return respuestas;
+    }
+
+    public Answers[] getAnswersByQuestion(Questions Question) {
+        Answers [] respuestas = getAnswersById(Question.getIdQuestion());
         return respuestas;
     }
 }
