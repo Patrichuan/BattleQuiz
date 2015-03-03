@@ -13,40 +13,71 @@ public class Querys extends ConnectSQLite {
         super(context);
     }
 
-    public void Question(int idQuestion) {
+    public int countQuestions() {
+        int numQuestions = 0;
+        String query = "SELECT COUNT (*) FROM Question";
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor cursor = db.rawQuery(query, null);
+        if (cursor.moveToFirst()) {
+            numQuestions = cursor.getInt(0);
+        }
+
+        return numQuestions;
+
+    }
+
+
+    public Questions Question(int idQuestion) {
 
         String query = "SELECT * FROM Question WHERE idquestion = " + idQuestion;
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor cursor = db.rawQuery(query, null);
-        Questions question = new Questions();
-
+        int idPregunta;
+        String textPregunta;
+        String Categoria;
+        Questions question = null;
         if (cursor.moveToFirst()) {
-            do{
-                int idPregunta = cursor.getInt(0);
-                String textPregunta = cursor.getString(1);
-                String Categoria = cursor.getString(2);
-            }while (cursor.moveToNext());
-            question = null;
+            /*do{*/
+            idPregunta = cursor.getInt(0);
+            textPregunta = cursor.getString(1);
+            Categoria = cursor.getString(2);
+/*            }while (cursor.moveToNext());*/
+            question = new Questions(idPregunta, textPregunta, Categoria);
         }
 
         db.close();
+        return question;
     }
 
-    public void Answer(int idQuestion) {
+    public Answers[] Answer(int idQuestion) {
+
+        Answers[] respuestas = new Answers[4];
 
         String query = "SELECT * FROM Answer WHERE idQuestionFK = " + idQuestion;
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor cursor = db.rawQuery(query, null);
-        Answers respuesta = new Answers();
+        int idRespuesta;
+        String textRespuesta;
+        int idPregunta;
+        int esCorrecta;
+        Answers respuesta;
 
-        if (cursor.moveToFirst()){
-            do{
-                int idRespuesta = cursor.getInt(0);
-                String textRespuesta = cursor.getString(1);
-                int idPregunta = cursor.getInt(2);
-                int esCorrecta = cursor.getInt(3);
-            }while (cursor.moveToNext());
-            respuesta = null;
+        if (cursor.moveToFirst()) {
+            int i = 0;
+            do {
+                idRespuesta = cursor.getInt(0);
+                textRespuesta = cursor.getString(1);
+                idPregunta = cursor.getInt(2);
+                esCorrecta = cursor.getInt(3);
+
+                respuesta = new Answers(idRespuesta, textRespuesta, idPregunta, esCorrecta);
+                respuestas[i] = respuesta;
+                i++;
+
+            } while (cursor.moveToNext());
         }
+        db.close();
+
+        return respuestas;
     }
 }
