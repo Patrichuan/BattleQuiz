@@ -3,6 +3,7 @@ package com.example.patrichuan.battlequiz;
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.ActionBarActivity;
@@ -16,16 +17,20 @@ import android.widget.AdapterView;
 import android.widget.BaseAdapter;
 import android.widget.GridView;
 import android.widget.ImageView;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 
-// Problema con las puntuaciones en tablets (en esos casos la fuente deberia de ser 40sp y no 20sp)
 public class GameScreen extends ActionBarActivity {
 
-
-    ImageView OcupadoPor, CasillaDe;
-    GridView gridView;
-    TableroAdapter tableroadapter;
+    private GridView gridView;
+    private TableroAdapter tableroadapter;
+    private View CasillaClickeada = null;
+    private View CasillaClickeadaAnterior = null;
+    private TextView Marcador;
+    private int Puntuacion;
+    public boolean PreguntaActiva = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,11 +40,14 @@ public class GameScreen extends ActionBarActivity {
 
         FontsOverride.setDefaultFont(this, "DEFAULT", "fonts/HVD_Comic_Serif_Pro.otf");
 
-        //Hide status bar
+        // Hide status bar
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN);
         // Hide the action bar
         ActionBar actionBar = getSupportActionBar();
         actionBar.hide();
+
+        Marcador = (TextView) findViewById(R.id.puntuacionamarilla);
+        ActualizarMarcador(0);
 
         gridView = (GridView)findViewById(R.id.gridview);
 
@@ -50,41 +58,50 @@ public class GameScreen extends ActionBarActivity {
         for (int i = 1; i <= 35; i++) {
             NombreCasilla.append(i);
             items.add(new Item(NombreCasilla.toString(), R.drawable.seven_casilla_gris_borde, R.drawable.empty));
+            // Reseteo el nombre de la casilla
             NombreCasilla = new StringBuilder("Casilla");
         }
 
         tableroadapter = new TableroAdapter(this, items);
-
         gridView.setAdapter(tableroadapter);
+
         gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             public void onItemClick(AdapterView<?> parent, View v, int position, long id) {
-                // Prueba del listener: Tag de la casilla
-                //String message = "Clicked : " + v.findViewById(R.id.Casilla).getTag();
-                //Toast.makeText(getApplicationContext(), message, Toast.LENGTH_SHORT).show();
 
-                // Prueba del listener: Dibujar personaje
-                OcupadoPor = (ImageView) v.findViewById(R.id.Ocupante);
-                OcupadoPor.setImageResource(R.drawable.seven_personaje_amarillo);
+                //GameScreen_Pregunta fragmentPregunta = (GameScreen_Pregunta)getFragmentManager().findFragmentByTag("PopUpPregunta");
 
-                // Prueba del listener: Colorear casilla
-                CasillaDe = (ImageView) v.findViewById(R.id.Casilla);
-                CasillaDe.setImageResource(R.drawable.seven_casilla_amarilla);
+                if (PreguntaActiva) {
+                    // Esta abierta ya una instancia de la ventana de pregunta asi que no hago nada
+                } else {
+                    // No esta abierta ninguna instancia de pregunta asi que la creo y respondo al listener
+                    PreguntaActiva = true;
 
-                FragmentManager fragmentManager = getFragmentManager();
-                FragmentTransaction transaction = fragmentManager.beginTransaction();
-                GameScreen_Pregunta fragmentPregunta = (GameScreen_Pregunta) fragmentManager.findFragmentByTag("PopUpPregunta");
+                    // Si son iguales es que fallé la pregunta
+                    if (getCasillaClickeada() == getCasillaClickeadaAnterior()) {
+                        setCasillaClickeada(v);
+                        setCasillaClickeadaAnterior(v);
+                    }
 
-                // Compruebo si el fragment esta ya creado o no, si no lo esta lo creo
-                if (fragmentPregunta == null) {
-                    fragmentPregunta = new GameScreen_Pregunta();
-                    transaction.add(R.id.main_layout, fragmentPregunta, "PopUpPregunta");
+                    // Y si son diferentes es porque acerté y he de avanzar
+                    if (getCasillaClickeada() != getCasillaClickeadaAnterior()) {
+                        // En caso de haber acertado esto es cierto ya que te mueves
+                        setCasillaClickeadaAnterior(getCasillaClickeada());
+                        setCasillaClickeada(v);
+                    }
+
+                    FragmentManager fragmentManager = getFragmentManager();
+                    FragmentTransaction transaction = fragmentManager.beginTransaction();
+                    //fragmentManager.popBackStack(null, FragmentManager.POP_BACK_STACK_INCLUSIVE);
+                    transaction.add(R.id.main_layout, new GameScreen_Pregunta(), "PopUpPregunta");
                     transaction.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN);
                     transaction.addToBackStack(null);
+                    transaction.commit();
+                    }
                 }
-                transaction.commit();
-            }
-        });
+            });
     }
+
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -104,6 +121,35 @@ public class GameScreen extends ActionBarActivity {
             return true;
         }
         return super.onOptionsItemSelected(item);
+    }
+
+
+    public void setCasillaClickeada (View Casilla){
+        this.CasillaClickeada = Casilla;
+    }
+
+    public View getCasillaClickeada () {
+        return CasillaClickeada;
+    }
+
+    public void setCasillaClickeadaAnterior (View Casilla){
+        this.CasillaClickeadaAnterior = Casilla;
+    }
+
+    public View getCasillaClickeadaAnterior () {
+        return CasillaClickeadaAnterior;
+    }
+
+    public void setPuntuacion (int Puntuacion) {
+        this.Puntuacion = Puntuacion;
+    }
+
+    public int getPuntuacion () {
+        return Puntuacion;
+    }
+
+    public void ActualizarMarcador (int Puntuacion) {
+        Marcador.setText(""+Puntuacion);
     }
 
     @Override
@@ -169,8 +215,6 @@ public class GameScreen extends ActionBarActivity {
 
             return v;
         }
-
-
     }
 
     private class Item {
@@ -184,5 +228,4 @@ public class GameScreen extends ActionBarActivity {
             this.drawableOcupante = drawableOcupante;
         }
     }
-
 }
