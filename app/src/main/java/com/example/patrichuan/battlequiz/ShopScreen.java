@@ -4,19 +4,16 @@ package com.example.patrichuan.battlequiz;
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
 import android.graphics.Color;
+import android.os.Bundle;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.ActionBarActivity;
-import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.WindowManager;
-
 import android.widget.Button;
-
 import android.widget.ImageView;
 import android.widget.LinearLayout;
-
 
 import FragmentShop.Cosmetic;
 import FragmentShop.Usables;
@@ -30,6 +27,7 @@ public class ShopScreen extends ActionBarActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        overridePendingTransition(R.anim.pull_in_right, R.anim.push_out_left);
         setContentView(R.layout.activity_shop_screen);
 
         //Hide status bar
@@ -111,6 +109,12 @@ public class ShopScreen extends ActionBarActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        overridePendingTransition(R.anim.pull_in_left, R.anim.push_out_right);
     }
 }
 

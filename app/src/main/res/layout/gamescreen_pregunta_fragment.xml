@@ -1,17 +1,179 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context="com.example.patrichuan.battlequiz.GameScreen_Pregunta">
+<?xml version="1.0" encoding="utf-8"?>
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@android:color/white"
+        android:alpha="0.7"/>
+
+    <ImageView
+        android:id="@+id/personajenegro"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/texto"
-        android:textSize="40sp"/>
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        android:adjustViewBounds="true"
+        android:src="@drawable/seven_a_personaje_con_cronometro">
+    </ImageView>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:weightSum="1">
+
+    <RelativeLayout
+        android:id="@+id/child_one"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="0.31"
+        android:paddingBottom="10dp"
+        android:paddingEnd="@dimen/activity_horizontal_margin"
+        android:paddingStart="@dimen/activity_horizontal_margin">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/CuentaAtras"
+            android:text="15"
+            android:textSize="65sp"
+            android:textColor="@android:color/black"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentStart="true" />
+
+   </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/child_two"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="0.68">
+
+        <ImageView
+            android:id="@+id/marcopregunta"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center_horizontal"
+            android:adjustViewBounds="true"
+            android:src="@drawable/seven_a_marco_pregunta"
+            android:layout_centerVertical="true"
+            android:layout_alignParentStart="true" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingTop="30dp"
+            android:paddingBottom="30dp"
+            android:paddingStart="12dp"
+            android:paddingEnd="12dp"
+            android:orientation="vertical"
+            android:weightSum="1">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:background="@android:color/background_dark"
+                android:padding="5dp"
+                android:layout_height="0dp"
+                android:layout_weight="0.55">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="30sp"
+                    android:id="@+id/TextoDeLaPregunta"
+                    android:text=""
+                    android:textColor="@android:color/white"
+                    android:paddingBottom="10dp"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentStart="true" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_marginTop="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="0.45">
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:weightSum="1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentStart="true">
+
+                    <LinearLayout
+                        android:layout_marginBottom="10dp"
+                        android:orientation="horizontal"
+                        android:weightSum="1"
+                        android:layout_weight="0.5"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp">
+                        <Button
+                            android:id="@+id/BotonRojo"
+                            android:layout_marginEnd="12dp"
+                            android:background="@drawable/button_red_answer"
+                            android:text=""
+                            android:textSize="10sp"
+                            android:textColor="@android:color/white"
+                            android:layout_weight="0.5"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent" />
+                        <Button
+                            android:id="@+id/BotonAmarillo"
+                            android:background="@drawable/button_yellow_answer"
+                            android:textSize="10sp"
+                            android:textColor="@android:color/white"
+                            android:text=""
+                            android:layout_weight="0.5"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:orientation="horizontal"
+                        android:weightSum="1"
+                        android:layout_weight="0.5"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp">
+                        <Button
+                            android:id="@+id/BotonAzul"
+                            android:layout_marginEnd="12dp"
+                            android:background="@drawable/button_blue_answer"
+                            android:textSize="10sp"
+                            android:textColor="@android:color/white"
+                            android:text=""
+                            android:layout_weight="0.5"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent" />
+                        <Button
+                            android:id="@+id/BotonVerde"
+                            android:background="@drawable/button_green_answer"
+                            android:textSize="10sp"
+                            android:textColor="@android:color/white"
+                            android:text=""
+                            android:layout_weight="0.5"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent" />
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+
+
+            </RelativeLayout>
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+
+</LinearLayout>
 
 </FrameLayout>
-
-
-
-

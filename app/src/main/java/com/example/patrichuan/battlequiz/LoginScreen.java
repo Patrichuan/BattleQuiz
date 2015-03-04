@@ -1,11 +1,11 @@
 package com.example.patrichuan.battlequiz;
 
-import android.content.Context;
 import android.content.Intent;
-import android.graphics.Typeface;
+import android.os.Build;
+import android.os.Bundle;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.ActionBarActivity;
-import android.os.Bundle;
+import android.text.InputType;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -17,10 +17,7 @@ import android.widget.LinearLayout;
 import android.widget.Toast;
 
 import com.parse.LogInCallback;
-import com.parse.ParseObject;
 import com.parse.ParseUser;
-
-import java.text.ParseException;
 
 public class LoginScreen extends ActionBarActivity {
 
@@ -47,18 +44,6 @@ public class LoginScreen extends ActionBarActivity {
         FontsOverride.setPasswordFont(this, EditPass);
 
         ImageView imagen = (ImageView)findViewById(R.id.protaimg);
-        imagen.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent SiguienteActivity = new Intent(LoginScreen.this, MainMenuScreen.class);
-                startActivity(SiguienteActivity);
-            }
-        });
-
-        // Hay que poner este codigo a un listener de un futuro boton para deslogearse
-        //  ParseUser.logOut();
-        //  ParseUser currentUser = ParseUser.getCurrentUser(); // this will now be null
-
 
         Registerbtn = (Button) findViewById(R.id.Registerbtn);
         FontsOverride.setButtonFont(this,Registerbtn);
@@ -117,13 +102,13 @@ public class LoginScreen extends ActionBarActivity {
         return super.onOptionsItemSelected(item);
     }
 
+
     public void login() {
 
         String usernametxt;
         String passwordtxt;
         userEdit = (EditText) findViewById(R.id.UserEt);
         passEdit = (EditText) findViewById(R.id.PassEt);
-
 
         // Retrieve the text entered from the EditText
         usernametxt = userEdit.getText().toString().toUpperCase();
@@ -136,6 +121,9 @@ public class LoginScreen extends ActionBarActivity {
                     public void done(ParseUser parseUser, com.parse.ParseException e) {
                         if (parseUser != null) {
                             Intent SiguienteActivity = new Intent(LoginScreen.this, MainMenuScreen.class);
+                            // Remuevo la activity del stack ya que no me interesa que al dar a volver
+                            // aparezca la ventana de login de nuevo
+                            SiguienteActivity.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                             startActivity(SiguienteActivity);
                             Toast.makeText(getApplicationContext(),
                                     "Successfully Logged in",

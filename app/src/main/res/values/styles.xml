@@ -2,7 +2,19 @@
 
     <!-- Base application theme. -->
     <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
-        <!-- Customize your theme here. -->
+        <!-- Nothing to customize. Dada la estructura de nuestro juego no. -->
+    </style>
+
+    <style name="GreenButton">
+        <item name="android:background">@drawable/buttonlogin</item>
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+    <style name="RedButton">
+        <item name="android:background">@drawable/buttonregister</item>
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:gravity">center</item>
     </style>
 
 </resources>

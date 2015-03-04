@@ -31,29 +31,28 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
-                android:layout_centerHorizontal="false"
-                >
+                android:layout_centerHorizontal="false">
 
 
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/background_coin"
-                android:gravity="left"
+                android:alpha="0.8"
+                android:gravity="start"
                 android:src="@drawable/three_c_background_coin"
                 android:adjustViewBounds="false"
-                android:layout_marginLeft="10dp"/>
+                android:layout_marginStart="10dp"/>
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="fill_parent"
                     android:id="@+id/editText"
-                    android:text="2000"
+                    android:text="@string/ShopMoney"
                     android:textColor="#ffc955"
                     android:textSize="20sp"
                     android:gravity="center"
-                    android:layout_marginRight="6dp"
-                    android:layout_marginBottom="2dp"
+                    android:layout_marginEnd="6dp"
                     android:layout_alignEnd="@id/background_coin"
                     android:textAlignment="gravity" />
 
@@ -76,11 +75,9 @@
             android:textSize="30sp"
             android:background="@drawable/buttonmenu"
             android:textColor="@android:color/white"
-            android:text="COSMETICS"
+            android:text="@string/Cosmetic"
             android:id="@+id/Cosmeticbtn"
             android:gravity="center"
-            android:layout_below="@+id/PassEt"
-            android:layout_alignParentStart="true"
             android:layout_marginTop="10dp"
             >
         </Button>
@@ -90,11 +87,9 @@
             android:textSize="30sp"
             android:background="@drawable/buttonmenu"
             android:textColor="@android:color/white"
-            android:text="USABLES"
+            android:text="@string/Usable"
             android:id="@+id/usablebtn"
             android:gravity="center"
-            android:layout_below="@+id/PassEt"
-            android:layout_alignParentStart="true"
             android:layout_marginTop="5dp"
             >
         </Button>
