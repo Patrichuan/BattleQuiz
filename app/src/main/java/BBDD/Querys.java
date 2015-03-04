@@ -58,7 +58,7 @@ public class Querys extends ConnectSQLite {
                 textRespuesta = cursor.getString(1);
                 idPregunta = cursor.getInt(2);
                 esCorrecta = cursor.getInt(3);
-                respuesta = new Answers(idRespuesta, textRespuesta, idPregunta, esCorrecta);
+                respuesta = new Answers(idRespuesta, textRespuesta, esCorrecta, idPregunta);
                 respuestas[i] = respuesta;
                 i++;
             } while (cursor.moveToNext());
