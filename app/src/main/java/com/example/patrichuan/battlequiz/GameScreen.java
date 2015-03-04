@@ -4,6 +4,7 @@ import android.app.FragmentManager;
 import android.app.FragmentTransaction;
 import android.content.Context;
 import android.content.SharedPreferences;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.ActionBarActivity;
@@ -115,6 +116,39 @@ public class GameScreen extends ActionBarActivity {
             });
     }
 
+    public void BeepSound(){
+        MediaPlayer player = MediaPlayer.create(this, R.raw.beep);
+        player.start();
+        player.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+            @Override
+            public void onCompletion(MediaPlayer mp) {
+                mp.release();
+            }
+        });
+    }
+
+    public void WrongAnswerSound(){
+        MediaPlayer player = MediaPlayer.create(this, R.raw.wronganswer);
+        player.start();
+        player.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+            @Override
+            public void onCompletion(MediaPlayer mp) {
+                mp.release();
+            }
+        });
+    }
+
+    public void CorrectAnswerSound(){
+        MediaPlayer player = MediaPlayer.create(this, R.raw.correctanswer);
+        player.start();
+        player.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+            @Override
+            public void onCompletion(MediaPlayer mp) {
+                mp.release();
+            }
+        });
+    }
+
     // Devuelve un numero al azar
     public int NumAlAzar(int min, int max) {
         return min + (int) (Math.random() * ((max - min) + 1));
@@ -126,7 +160,7 @@ public class GameScreen extends ActionBarActivity {
         Questions Pregunta = null;
 
         if (NumQuestions>0) {
-            Pregunta = querys.getQuestionById(NumAlAzar(1,NumQuestions));
+            Pregunta = querys.getQuestionById(NumAlAzar(1, NumQuestions));
         }
         return Pregunta;
     }

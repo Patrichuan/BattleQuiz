@@ -40,7 +40,7 @@
             android:layout_height="wrap_content"
             android:id="@+id/CuentaAtras"
             android:text="15"
-            android:textSize="62sp"
+            android:textSize="65sp"
             android:textColor="@android:color/black"
             android:layout_alignParentBottom="true"
             android:layout_alignParentStart="true" />

@@ -4,6 +4,7 @@ import android.app.Fragment;
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
 import android.content.Context;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.LayoutInflater;
@@ -111,7 +112,10 @@ public class GameScreen_Pregunta extends Fragment {
             @Override
             public void onClick(View v) {
                 if (Respuestas[0].isCorrect()==1) {
+                    ActividadPadre.CorrectAnswerSound();
                     HasAcertado ();
+                } else {
+                    ActividadPadre.WrongAnswerSound();
                 }
                 CloseFragment ();
             }
@@ -121,7 +125,10 @@ public class GameScreen_Pregunta extends Fragment {
             @Override
             public void onClick(View v) {
                 if (Respuestas[1].isCorrect()==1) {
-                    HasAcertado ();
+                    ActividadPadre.CorrectAnswerSound();
+                    HasAcertado();
+                } else {
+                    ActividadPadre.WrongAnswerSound();
                 }
                 CloseFragment ();
             }
@@ -131,7 +138,10 @@ public class GameScreen_Pregunta extends Fragment {
             @Override
             public void onClick(View v) {
                 if (Respuestas[2].isCorrect()==1) {
-                    HasAcertado ();
+                    ActividadPadre.CorrectAnswerSound();
+                    HasAcertado();
+                } else {
+                    ActividadPadre.WrongAnswerSound();
                 }
                 CloseFragment ();
             }
@@ -141,12 +151,17 @@ public class GameScreen_Pregunta extends Fragment {
             @Override
             public void onClick(View v) {
                 if (Respuestas[3].isCorrect()==1) {
-                    HasAcertado ();
+                    ActividadPadre.CorrectAnswerSound();
+                    HasAcertado();
+                } else {
+                    ActividadPadre.WrongAnswerSound();
                 }
                 CloseFragment ();
             }
         });
     }
+
+
 
     private void HasAcertado () {
         // Nueva Casilla
@@ -178,6 +193,7 @@ public class GameScreen_Pregunta extends Fragment {
         if (TiempoRestante>0) {
             TiempoRestante--;
             // Meter aqui el sonido del reloj
+            ActividadPadre.BeepSound();
             myHandler.post(myRunnable);
         }
     }
