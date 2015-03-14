@@ -36,5 +36,8 @@
     <string name="HallOfFame">HALL OF FAME</string>
     <string name="title_activity_achievement_screen">AchievementScreen</string>
     <string name="title_activity_theme_choice_screen">ThemeChoiceScreen</string>
+    <string name="title_activity_confirm_log_out_dialog">ConfirmLogOutDialog</string>
+    <string name="NextReward">Next Reward</string>
+    <string name="Level">LEVEL 27</string>
 
 </resources>

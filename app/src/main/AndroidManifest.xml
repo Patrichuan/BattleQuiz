@@ -12,62 +12,54 @@
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
-
         <activity
             android:name=".SplashScreen"
-            android:theme="@style/AppTheme"
+            android:noHistory="true"
             android:screenOrientation="landscape"
-            android:noHistory="true">
+            android:theme="@style/AppTheme" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
         <activity
             android:name=".LoginScreen"
             android:label="@string/title_activity_login_screen"
+            android:launchMode="singleInstance"
             android:screenOrientation="landscape"
-            android:windowSoftInputMode="stateHidden"
-            android:launchMode="singleInstance">
-
+            android:windowSoftInputMode="stateHidden" >
         </activity>
-
         <activity
             android:name=".RegisterScreen"
             android:label="@string/title_activity_register_screen"
-            android:screenOrientation="landscape"
-            android:noHistory="true">
+            android:noHistory="true"
+            android:screenOrientation="landscape" >
         </activity>
-
         <activity
             android:name=".MainMenuScreen"
             android:label="@string/title_activity_main_menu_screen"
-            android:screenOrientation="landscape"
-            android:launchMode="singleInstance">
+            android:launchMode="singleInstance"
+            android:screenOrientation="landscape" >
         </activity>
-
         <activity
             android:name=".SoloModeScreen"
             android:label="@string/title_activity_solo_mode_screen"
-            android:screenOrientation="landscape"
-            android:launchMode="singleInstance">
+            android:launchMode="singleInstance"
+            android:screenOrientation="landscape" >
         </activity>
-
         <activity
             android:name=".GameScreen"
             android:label="@string/title_activity_game_screen"
-            android:screenOrientation="landscape"
-            android:launchMode="singleInstance">
+            android:launchMode="singleInstance"
+            android:screenOrientation="landscape" >
         </activity>
-
         <activity
             android:name=".ComingSoon"
             android:label="@string/title_activity_comin_soon"
-            android:screenOrientation="landscape"
-            android:launchMode="singleInstance">
+            android:launchMode="singleInstance"
+            android:screenOrientation="landscape" >
         </activity>
-
         <activity
             android:name=".ShopScreen"
             android:label="@string/title_activity_shop_screen"
@@ -85,7 +77,6 @@
             android:screenOrientation="landscape"
             android:launchMode="singleInstance">
         </activity>
-
     </application>
 
 </manifest>

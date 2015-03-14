@@ -48,14 +48,11 @@
                     android:id="@+id/labelLevel"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="LEVEL 27"
+                    android:text="@string/Level"
                     android:textColor="#ffffff"
                     android:textSize="30sp"
                     android:layout_gravity="center_horizontal"
                     />
-
-
-
 
                 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
                     xmlns:tools="http://schemas.android.com/tools"
@@ -97,7 +94,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:paddingTop="15dp"
-                    android:text="NEXT REWARD: "
+                    android:text="@string/NextReward"
                     android:textColor="#ffffff"
                     android:textSize="20sp"
                     android:layout_gravity="start" />

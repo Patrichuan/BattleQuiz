@@ -37,6 +37,9 @@
     <string name="Sure">¿Estas seguro?</string>
     <string name="Yes">Si</string>
     <string name="No">No</string>
-    <string name="title_activity_my_test_case">MyTestCase</string> />
+    <string name="title_activity_my_test_case">MyTestCase</string>
+    <string name="NextReward">Siguiente Premio</string>
+    <string name="Level">Nivel 27</string>
+    />
 
 </resources>
