@@ -6,6 +6,7 @@ import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.WindowManager;
+import android.widget.Button;
 import android.widget.LinearLayout;
 
 
@@ -25,6 +26,15 @@ public class SoloModeScreen extends ActionBarActivity {
 
         MainLayout = (LinearLayout) findViewById(R.id.main_layout);
         MainLayout.setBackgroundResource(R.drawable.background);
+
+        // Aplicamos fuente a textos
+        Button SuddenDeathbtn = (Button) findViewById(R.id.SuddenDeathbtn);
+        Button ClassicModebtn = (Button) findViewById(R.id.ClassicModebtn);
+        Button HallOfFamebtn = (Button) findViewById(R.id.HallOfFamebtn);
+
+        FontsOverride.setButtonFont(this, SuddenDeathbtn);
+        FontsOverride.setButtonFont(this, ClassicModebtn);
+        FontsOverride.setButtonFont(this, HallOfFamebtn);
     }
 
 

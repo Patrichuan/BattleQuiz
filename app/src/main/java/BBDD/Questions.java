@@ -7,6 +7,7 @@ public class Questions implements Serializable{
     private int idQuestion;
     private String textQuestion;
     private String Category;
+
     public Questions(int idQuestion, String textQuestion, String category) {
         this.idQuestion = idQuestion;
         this.textQuestion = textQuestion;

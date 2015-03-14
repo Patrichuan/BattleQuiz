@@ -14,6 +14,7 @@ import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 
 import FragmentShop.Cosmetic;
 import FragmentShop.Usables;
@@ -86,6 +87,14 @@ public class ShopScreen extends ActionBarActivity {
 
             }
         });
+
+        TextView goldText = (TextView) findViewById(R.id.editText);
+        Button Cosmeticbtn = (Button) findViewById(R.id.Cosmeticbtn);
+        Button usablebtn = (Button) findViewById(R.id.usablebtn);
+
+        FontsOverride.setTextViewFont(this, goldText);
+        FontsOverride.setButtonFont(this, Cosmeticbtn);
+        FontsOverride.setButtonFont(this, usablebtn);
     }
 
 

@@ -3,7 +3,6 @@ package com.example.patrichuan.battlequiz;
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
 import android.content.Context;
-import android.content.SharedPreferences;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.support.v7.app.ActionBar;
@@ -19,7 +18,6 @@ import android.widget.BaseAdapter;
 import android.widget.GridView;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import java.util.ArrayList;
 
@@ -47,13 +45,23 @@ public class GameScreen extends ActionBarActivity {
         overridePendingTransition(R.anim.pull_in_right, R.anim.push_out_left);
         setContentView(R.layout.gamescreen_layout);
 
-        FontsOverride.setDefaultFont(this, "DEFAULT", "fonts/HVD_Comic_Serif_Pro.otf");
-
         // Hide status bar
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN);
         // Hide the action bar
         ActionBar actionBar = getSupportActionBar();
         actionBar.hide();
+
+        // Aplicamos fuente a textos
+        TextView puntuacionazul = (TextView) findViewById(R.id.puntuacionazul);
+        TextView puntuacionverde = (TextView) findViewById(R.id.puntuacionverde);
+        TextView puntuacionroja = (TextView) findViewById(R.id.puntuacionroja);
+        TextView puntuacionamarilla = (TextView) findViewById(R.id.puntuacionamarilla);
+
+        FontsOverride.setTextViewFont(this, puntuacionazul);
+        FontsOverride.setTextViewFont(this, puntuacionverde);
+        FontsOverride.setTextViewFont(this, puntuacionroja);
+        FontsOverride.setTextViewFont(this, puntuacionamarilla);
+
 
         Marcador = (TextView) findViewById(R.id.puntuacionamarilla);
         ActualizarMarcador(0);

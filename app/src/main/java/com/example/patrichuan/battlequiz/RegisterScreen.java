@@ -11,6 +11,7 @@ import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.parse.ParseUser;
@@ -31,15 +32,6 @@ public class RegisterScreen extends ActionBarActivity {
         super.onCreate(savedInstanceState);
         overridePendingTransition(R.anim.pull_in_right, R.anim.push_out_left);
         setContentView(R.layout.registerscreen_layout);
-
-        FontsOverride.setDefaultFont(this, "DEFAULT", "fonts/HVD_Comic_Serif_Pro.otf");
-
-        // Aplicamos a Password
-        EditText EditPass = (EditText) findViewById(R.id.Pass1);
-        EditText EditPass2 = (EditText) findViewById(R.id.Pass2);
-
-        FontsOverride.setPasswordFont(this, EditPass);
-        FontsOverride.setPasswordFont(this, EditPass2);
 
         Registerbtn = (Button) findViewById(R.id.Registerbtn);
 
@@ -63,7 +55,21 @@ public class RegisterScreen extends ActionBarActivity {
 
         MainLayout = (LinearLayout) findViewById(R.id.main_layout);
         MainLayout.setBackgroundResource(R.drawable.background);
-    }
+
+        // Aplicamos a Password
+        EditText EditPass = (EditText) findViewById(R.id.Pass1);
+        EditText EditPass2 = (EditText) findViewById(R.id.Pass2);
+        EditText EditUser = (EditText) findViewById(R.id.UserEt);
+        EditText EmailEt = (EditText) findViewById(R.id.EmailEt);
+        Button Registerbtn = (Button) findViewById(R.id.Registerbtn);
+        TextView RegisterText = (TextView) findViewById(R.id.registerText);
+
+        FontsOverride.setPasswordFont(this, EditPass);
+        FontsOverride.setPasswordFont(this, EditPass2);
+        FontsOverride.setEditTextFont(this, EditUser);
+        FontsOverride.setEditTextFont(this, EmailEt);
+        FontsOverride.setButtonFont(this, Registerbtn);
+        FontsOverride.setTextViewFont(this, RegisterText);           }
 
 
     @Override

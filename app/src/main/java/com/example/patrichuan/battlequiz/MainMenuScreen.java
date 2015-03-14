@@ -40,16 +40,15 @@ public class MainMenuScreen extends ActionBarActivity {
     private Boolean HeSalido = false;
     private String musicUri;
     private Uri mUri;
+   // private ConfirmLogOutDialog confirmLogOutDialog;
 
     private static MediaPlayer player = new MediaPlayer();
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(final Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         overridePendingTransition(R.anim.pull_in_right, R.anim.push_out_left);
         setContentView(R.layout.mainmenuscreen_layout);
-
-        FontsOverride.setDefaultFont(this, "DEFAULT", "fonts/HVD_Comic_Serif_Pro.otf");
 
         // Escondo las barras
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN);
@@ -161,9 +160,12 @@ public class MainMenuScreen extends ActionBarActivity {
         });
         SettingsButton3 = (ImageView) findViewById(R.id.logout_btn);
         SettingsButton3.setOnClickListener(new View.OnClickListener() {
+
             @Override
             public void onClick(View v) {
-                  currentUser = ParseUser.getCurrentUser();
+                //confirmLogOutDialog.createDialog();
+
+                currentUser = ParseUser.getCurrentUser();
                   if ((currentUser!=null)&&(currentUser.getUsername()!=null)) {
                       Toast.makeText(getApplicationContext(), "User " + currentUser.getUsername() + " Successfully Logged out", Toast.LENGTH_LONG).show();
                       // Deslogeo al usuario y lo mando a la pantalla de login
@@ -359,6 +361,10 @@ public class MainMenuScreen extends ActionBarActivity {
         MainLayout = (LinearLayout) findViewById(R.id.main_layout);
         MainLayout.setBackgroundResource(R.drawable.background);
 
+        FontsOverride.setButtonFont(this, SoloModebtn);
+        FontsOverride.setButtonFont(this, MultiModebtn);
+        FontsOverride.setButtonFont(this, Shopbtn);
+        FontsOverride.setButtonFont(this, achievementbtn);
     }
 
 

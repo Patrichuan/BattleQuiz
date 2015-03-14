@@ -3,8 +3,6 @@ package com.example.patrichuan.battlequiz;
 import android.app.Fragment;
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
-import android.content.Context;
-import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.LayoutInflater;
@@ -18,8 +16,6 @@ import java.util.Timer;
 import java.util.TimerTask;
 
 import BBDD.Answers;
-import BBDD.ConnectSQLite;
-import BBDD.Querys;
 import BBDD.Questions;
 
 public class GameScreen_Pregunta extends Fragment {
@@ -50,6 +46,10 @@ public class GameScreen_Pregunta extends Fragment {
 
         // Activity Padre
         ActividadPadre = (GameScreen) getActivity();
+
+/*        // Aplicamos fuente a textos
+        CuentaAtras = (TextView) ActividadPadre.findViewById(R.id.CuentaAtras);
+        FontsOverride.setTextViewFontGameS(this, CuentaAtras);*/
 
         // Casilla Clickeada
         CasillaClickeada = ActividadPadre.getCasillaClickeada();
@@ -160,8 +160,6 @@ public class GameScreen_Pregunta extends Fragment {
             }
         });
     }
-
-
 
     private void HasAcertado () {
         // Nueva Casilla

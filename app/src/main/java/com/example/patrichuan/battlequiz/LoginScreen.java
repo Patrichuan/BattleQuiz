@@ -1,11 +1,9 @@
 package com.example.patrichuan.battlequiz;
 
 import android.content.Intent;
-import android.os.Build;
 import android.os.Bundle;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.ActionBarActivity;
-import android.text.InputType;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -14,6 +12,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.parse.LogInCallback;
@@ -24,7 +23,6 @@ public class LoginScreen extends ActionBarActivity {
     private LinearLayout MainLayout;
     private Button Registerbtn;
     private Button Loginbtn;
-
     private EditText userEdit;
     private EditText passEdit;
 
@@ -33,15 +31,6 @@ public class LoginScreen extends ActionBarActivity {
         super.onCreate(savedInstanceState);
         overridePendingTransition(R.anim.pull_in_right, R.anim.push_out_left);
         setContentView(R.layout.loginscreen_layout);
-
-        FontsOverride.setDefaultFont(this, "DEFAULT", "fonts/HVD_Comic_Serif_Pro.otf");
-
-
-
-        // Aplicamos a Password
-        EditText EditPass = (EditText) findViewById(R.id.PassEt);
-
-        FontsOverride.setPasswordFont(this, EditPass);
 
         ImageView imagen = (ImageView)findViewById(R.id.protaimg);
 
@@ -76,7 +65,16 @@ public class LoginScreen extends ActionBarActivity {
         MainLayout.setBackgroundResource(R.drawable.background);
 
 
+        // Aplicamos fuente a textos
+        TextView LoginText = (TextView) findViewById(R.id.LoginText);
+        TextView lost = (TextView) findViewById(R.id.lost);
+        EditText userEdit = (EditText) findViewById(R.id.UserEt);
+        EditText passEdit = (EditText) findViewById(R.id.PassEt);
 
+        FontsOverride.setPasswordFont(this, passEdit);
+        FontsOverride.setTextViewFont(this, LoginText);
+        FontsOverride.setTextViewFont(this, lost);
+        FontsOverride.setEditTextFont(this, userEdit);
     }
 
 

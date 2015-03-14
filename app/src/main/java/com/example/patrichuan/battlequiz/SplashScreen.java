@@ -12,9 +12,6 @@ import android.widget.TextView;
 
 import com.parse.ParseUser;
 
-import BBDD.ConnectSQLite;
-import BBDD.Querys;
-
 
 public class SplashScreen extends ActionBarActivity {
 
@@ -81,6 +78,9 @@ public class SplashScreen extends ActionBarActivity {
                 value.setText(String.format("%.0f", progress*100)+"%");
             }
         });
+
+        FontsOverride.setTextViewFont(this, value);
+
     }
 
     @Override

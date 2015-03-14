@@ -1,17 +1,12 @@
 package com.example.patrichuan.battlequiz;
 
-import android.app.ListActivity;
+import android.os.Bundle;
 import android.os.Handler;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.ActionBarActivity;
-import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
 import android.view.WindowManager;
-import android.widget.ArrayAdapter;
-import android.widget.Button;
-import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
@@ -35,13 +30,20 @@ public class AchievementScreen extends ActionBarActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_achievement_screen);
 
-        FontsOverride.setDefaultFont(this, "DEFAULT", "fonts/HVD_Comic_Serif_Pro.otf");
-
         //Hide status bar
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN);
         // Hide the action bar
         ActionBar actionBar = getSupportActionBar();
         actionBar.hide();
+
+        // Aplicamos fuente a textos
+        TextView labelNextReward = (TextView) findViewById(R.id.labelNextReward);
+        TextView labelLevel = (TextView) findViewById(R.id.labelLevel);
+        TextView textProgress = (TextView) findViewById(R.id.textProgress);
+
+        FontsOverride.setTextViewFont(this, labelNextReward);
+        FontsOverride.setTextViewFont(this, labelLevel);
+        FontsOverride.setTextViewFont(this, textProgress);
 
         ListView listView = (ListView)findViewById(R.id.listView);
 

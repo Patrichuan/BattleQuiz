@@ -8,10 +8,13 @@ import android.content.Context;
 import android.graphics.Typeface;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 
 import java.lang.reflect.Field;
 
 public final class FontsOverride {
+
+    static String FONTPATH = "fonts/HVD_Comic_Serif_Pro.otf";
 
     public static void setDefaultFont(Context context, String staticTypefaceFieldName, String fontAssetName) {
         final Typeface regular = Typeface.createFromAsset(context.getAssets(), fontAssetName);
@@ -32,11 +35,8 @@ public final class FontsOverride {
 
     public static void setPasswordFont(Context context, EditText editText){
 
-        // Ruta de la fuente dentro de la carpeta assets:
-        String fontPath = "fonts/HVD_Comic_Serif_Pro.otf";
-
         // Cargamos la fuente:
-        Typeface tf = Typeface.createFromAsset(context.getAssets(), fontPath);
+        Typeface tf = Typeface.createFromAsset(context.getAssets(), FONTPATH);
 
         // Aplicamos la fuente:
         editText.setTypeface(tf);
@@ -44,13 +44,28 @@ public final class FontsOverride {
 
     public static void setButtonFont(Context context, Button button){
 
-        // Ruta de la fuente dentro de la carpeta assets:
-        String fontPath = "fonts/HVD_Comic_Serif_Pro.otf";
-
         // Cargamos la fuente:
-        Typeface tf = Typeface.createFromAsset(context.getAssets(), fontPath);
+        Typeface tf = Typeface.createFromAsset(context.getAssets(), FONTPATH);
 
         // Aplicamos la fuente:
         button.setTypeface(tf);
     }
+
+    public static void setTextViewFont(Context context, TextView textView){
+
+        Typeface tf = Typeface.createFromAsset(context.getAssets(), FONTPATH);
+        textView.setTypeface(tf);
+    }
+
+    public static void setEditTextFont(Context context, EditText editText){
+
+        Typeface tf = Typeface.createFromAsset(context.getAssets(), FONTPATH);
+        editText.setTypeface(tf);
+    }
+
+/*    public static void setTextViewFontGameS(GameScreen_Pregunta context, TextView textView){
+
+        Typeface tf = Typeface.createFromAsset(GameScreen_Pregunta.context.getAssets(), FONTPATH);
+        textView.setTypeface(tf);
+    }*/
 }
