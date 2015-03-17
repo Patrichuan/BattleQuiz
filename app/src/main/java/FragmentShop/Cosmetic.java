@@ -6,10 +6,12 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
+import android.widget.EditText;
 import android.widget.GridView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.patrichuan.battlequiz.FontsOverride;
 import com.example.patrichuan.battlequiz.R;
 
 import java.util.ArrayList;
@@ -26,8 +28,6 @@ public class Cosmetic extends Fragment {
 
         GridView gridview = (GridView) rootView.findViewById(R.id.gridviewCosmetics);
         ArrayList<ItemShop> itemList=new ArrayList<>();
-
-        TextView shopLabel1 = (TextView) rootView.findViewById(R.id.shopLabel1);
 
 
         //ESTO ES PROVISIONAL SE DEBERA CONSULTAR EN LA BBDD PARA RELLENAR EL ARRAYLIST <-----------------------------------------

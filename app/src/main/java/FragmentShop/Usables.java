@@ -7,8 +7,10 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.GridView;
+import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.patrichuan.battlequiz.FontsOverride;
 import com.example.patrichuan.battlequiz.R;
 
 import java.util.ArrayList;
@@ -22,6 +24,8 @@ public class Usables extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View rootView = inflater.inflate(
                 R.layout.fragment_usables, container,false);
+
+
 
         GridView gridview = (GridView) rootView.findViewById(R.id.gridviewUsables);
         ArrayList<ItemShop> itemList2=new ArrayList<>();

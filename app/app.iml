@@ -91,6 +91,7 @@
     <orderEntry type="library" exported="" name="bolts-android-1.1.4-javadoc" level="project" />
     <orderEntry type="library" exported="" name="bolts-android-1.1.4" level="project" />
     <orderEntry type="library" exported="" name="1_bolts-android-1.1.4" level="project" />
+    <orderEntry type="library" exported="" name="facebook-android-sdk-3.23.1" level="project" />
   </component>
 </module>
 

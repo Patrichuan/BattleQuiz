@@ -8,6 +8,7 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
+import com.example.patrichuan.battlequiz.FontsOverride;
 import com.example.patrichuan.battlequiz.R;
 
 import java.util.ArrayList;
@@ -41,6 +42,10 @@ public class CustomArrayAdapter extends ArrayAdapter<Logros> {
             holder.textView1 = (TextView)row.findViewById(R.id.label);
             holder.textView2 = (TextView)row.findViewById(R.id.label2);
             holder.textView3 = (TextView)row.findViewById(R.id.label3);
+
+            FontsOverride.setTextViewFont(context, holder.textView1);
+            FontsOverride.setTextViewFont(context,holder.textView2);
+            FontsOverride.setTextViewFont(context,holder.textView3);
 
             row.setTag(holder);
         }

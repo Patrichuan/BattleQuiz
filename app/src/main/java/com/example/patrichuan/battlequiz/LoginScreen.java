@@ -1,9 +1,12 @@
 package com.example.patrichuan.battlequiz;
 
+import android.app.Dialog;
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.ActionBarActivity;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -16,15 +19,25 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.parse.LogInCallback;
+import com.parse.ParseException;
+import com.parse.ParseFacebookUtils;
 import com.parse.ParseUser;
 
+import com.facebook.Session;
+
+import java.util.Arrays;
+import java.util.List;
+
 public class LoginScreen extends ActionBarActivity {
+
+    private Dialog progressDialog;
 
     private LinearLayout MainLayout;
     private Button Registerbtn;
     private Button Loginbtn;
     private EditText userEdit;
     private EditText passEdit;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,6 +46,8 @@ public class LoginScreen extends ActionBarActivity {
         setContentView(R.layout.loginscreen_layout);
 
         ImageView imagen = (ImageView)findViewById(R.id.protaimg);
+
+        ParseFacebookUtils.initialize(getString(R.string.app_id));
 
         Registerbtn = (Button) findViewById(R.id.Registerbtn);
         FontsOverride.setButtonFont(this,Registerbtn);
@@ -75,6 +90,12 @@ public class LoginScreen extends ActionBarActivity {
         FontsOverride.setTextViewFont(this, LoginText);
         FontsOverride.setTextViewFont(this, lost);
         FontsOverride.setEditTextFont(this, userEdit);
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        ParseFacebookUtils.finishAuthentication(requestCode, resultCode, data);
     }
 
 
@@ -144,6 +165,55 @@ public class LoginScreen extends ActionBarActivity {
     public boolean logueado(){
         return true;
     }
+
+    public void onLoginClick(View v) {
+        progressDialog = ProgressDialog.show(LoginScreen.this, "", "Logging in...", true);
+
+        List<String> permissions = Arrays.asList("public_profile", "email");
+        // NOTE: for extended permissions, like "user_about_me", your app must be reviewed by the Facebook team
+
+
+        ParseFacebookUtils.logIn(permissions, this, new LogInCallback() {
+
+            @Override
+            public void done(ParseUser user, ParseException err) {
+
+               progressDialog.dismiss();
+                if (user == null) {
+                    Log.d("LoginFacebook", "El usuario cancelo el login");
+
+                } else if (user.isNew()) {
+
+                    // esto es si quieres añadir otras cosas al user, como puntos nivel etc.
+                    Log.d("LoginFacebook", "El usuario se registro y logeo con facebook");
+
+                    Intent SiguienteActivity = new Intent(LoginScreen.this, MainMenuScreen.class);
+                    // Remuevo la activity del stack ya que no me interesa que al dar a volver
+                    // aparezca la ventana de login de nuevo
+                    SiguienteActivity.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                    startActivity(SiguienteActivity);
+                    Toast.makeText(getApplicationContext(),
+                            "Successfully Logged in",
+                            Toast.LENGTH_LONG).show();
+                    finish();
+                    logueado();
+                } else {
+                    Log.d("LoginFacebook", "Usuario logeado");
+                    Intent SiguienteActivity = new Intent(LoginScreen.this, MainMenuScreen.class);
+                    // Remuevo la activity del stack ya que no me interesa que al dar a volver
+                    // aparezca la ventana de login de nuevo
+                    SiguienteActivity.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                    startActivity(SiguienteActivity);
+                    Toast.makeText(getApplicationContext(),
+                            "Successfully Logged in",
+                            Toast.LENGTH_LONG).show();
+                    finish();
+                    logueado();
+                }
+            }
+        });
+    }
+
 
     @Override
     public void onBackPressed() {

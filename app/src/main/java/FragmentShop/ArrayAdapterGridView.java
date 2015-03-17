@@ -8,6 +8,8 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.example.patrichuan.battlequiz.FontsOverride;
 import com.example.patrichuan.battlequiz.R;
 import java.util.ArrayList;
 
@@ -41,6 +43,10 @@ public class ArrayAdapterGridView extends ArrayAdapter<ItemShop> {
             holder.imageView1 = (ImageView) itemView.findViewById(R.id.shopIcon);
             holder.textView2 = (TextView) itemView.findViewById(R.id.shopLabel2);
             holder.textView3 = (TextView) itemView.findViewById(R.id.shopLabel3);
+
+            FontsOverride.setTextViewFont(context, holder.textView1);
+            FontsOverride.setTextViewFont(context,holder.textView2);
+            FontsOverride.setTextViewFont(context,holder.textView3);
 
             itemView.setTag(holder);
         } else {

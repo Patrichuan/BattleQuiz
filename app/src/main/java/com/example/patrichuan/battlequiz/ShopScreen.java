@@ -50,8 +50,10 @@ public class ShopScreen extends ActionBarActivity {
             @Override
             public void onClick(View v) {
                 if (!FragUsable.isVisible()) {
+
                     cosmetic.setBackgroundResource(R.drawable.buttonmenu);
                     cosmetic.setTextColor(Color.WHITE);
+
                     usables.setBackgroundResource(R.drawable.buttonpressed);
                     usables.setTextColor(Color.parseColor("#ce492b"));
 

@@ -4,6 +4,7 @@ package com.example.patrichuan.battlequiz;
  * Created by daniel on 24/01/15.
  */
 
+import android.app.Fragment;
 import android.content.Context;
 import android.graphics.Typeface;
 import android.widget.Button;
@@ -11,6 +12,8 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 import java.lang.reflect.Field;
+
+import FragmentShop.Cosmetic;
 
 public final class FontsOverride {
 
@@ -54,6 +57,12 @@ public final class FontsOverride {
     public static void setTextViewFont(Context context, TextView textView){
 
         Typeface tf = Typeface.createFromAsset(context.getAssets(), FONTPATH);
+        textView.setTypeface(tf);
+    }
+
+    public static void setTextViewFontFragment(Fragment fragment, TextView textView){
+
+        Typeface tf = Typeface.createFromAsset(fragment.getActivity().getAssets(), FONTPATH);
         textView.setTypeface(tf);
     }
 
