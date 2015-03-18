@@ -46,7 +46,7 @@
                     android:id="@+id/puntuacionazul"
                     android:textSize="40sp"
                     android:textColor="@android:color/white"
-                    android:text="2014"/>
+                    android:text="0"/>
 
             </RelativeLayout>
 
@@ -71,7 +71,7 @@
                     android:id="@+id/puntuacionverde"
                     android:textSize="40sp"
                     android:textColor="@android:color/white"
-                    android:text="2014"/>
+                    android:text="0"/>
 
             </RelativeLayout>
 
@@ -96,7 +96,7 @@
                     android:id="@+id/puntuacionroja"
                     android:textSize="40sp"
                     android:textColor="@android:color/white"
-                    android:text="2014"/>
+                    android:text="0"/>
 
             </RelativeLayout>
 
@@ -121,7 +121,7 @@
                     android:id="@+id/puntuacionamarilla"
                     android:textSize="40sp"
                     android:textColor="@android:color/white"
-                    android:text="122"/>
+                    android:text="0"/>
 
             </RelativeLayout>
 

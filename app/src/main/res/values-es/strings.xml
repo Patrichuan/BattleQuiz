@@ -6,6 +6,9 @@
     <string name="action_settings">Ajustes</string>
     <string name="title_activity_login_screen">LOG IN</string>
     <string name="title_activity_register_screen">RegisterScreen</string>
+    <string name="title_activity_confirm_log_out_dialog">Confirmacion</string>
+    <string name="title_activity_achievement_screen">Logros</string>
+    <string name="title_activity_theme_choice_screen">Elegir Tema</string>
     <string name="title_activity_main_menu_screen">MainMenuScreen</string>
     <string name="title_activity_solo_mode_screen">SoloModeScreen</string>
     <string name="title_activity_game_screen">SoloModeScreen</string>
@@ -40,6 +43,8 @@
     <string name="title_activity_my_test_case">MyTestCase</string>
     <string name="NextReward">Siguiente Premio</string>
     <string name="Level">Nivel 27</string>
+    <string name="app_id">1576025279304126</string>
+    <string name="title_facebook_login">loginFacebook</string>
     />
 
 </resources>
