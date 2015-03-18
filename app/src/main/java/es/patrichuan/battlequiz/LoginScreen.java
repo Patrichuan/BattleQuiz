@@ -1,4 +1,4 @@
-package com.example.patrichuan.battlequiz;
+package es.patrichuan.battlequiz;
 
 import android.app.Dialog;
 import android.app.ProgressDialog;
@@ -22,8 +22,6 @@ import com.parse.LogInCallback;
 import com.parse.ParseException;
 import com.parse.ParseFacebookUtils;
 import com.parse.ParseUser;
-
-import com.facebook.Session;
 
 import java.util.Arrays;
 import java.util.List;
@@ -50,7 +48,7 @@ public class LoginScreen extends ActionBarActivity {
         ParseFacebookUtils.initialize(getString(R.string.app_id));
 
         Registerbtn = (Button) findViewById(R.id.Registerbtn);
-        FontsOverride.setButtonFont(this,Registerbtn);
+        FontsOverride.setButtonFont(this, Registerbtn);
         Registerbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -61,7 +59,7 @@ public class LoginScreen extends ActionBarActivity {
         });
 
         Loginbtn = (Button) findViewById(R.id.Loginbtn);
-        FontsOverride.setButtonFont(this,Loginbtn);
+        FontsOverride.setButtonFont(this, Loginbtn);
         Loginbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -137,7 +135,7 @@ public class LoginScreen extends ActionBarActivity {
         ParseUser.logInInBackground(usernametxt, passwordtxt,
                 new LogInCallback() {
                     @Override
-                    public void done(ParseUser parseUser, com.parse.ParseException e) {
+                    public void done(ParseUser parseUser, ParseException e) {
                         if (parseUser != null) {
                             Intent SiguienteActivity = new Intent(LoginScreen.this, MainMenuScreen.class);
                             // Remuevo la activity del stack ya que no me interesa que al dar a volver

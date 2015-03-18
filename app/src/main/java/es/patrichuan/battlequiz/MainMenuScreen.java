@@ -1,4 +1,4 @@
-package com.example.patrichuan.battlequiz;
+package es.patrichuan.battlequiz;
 
 import android.animation.Animator;
 import android.animation.ObjectAnimator;
@@ -6,9 +6,9 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.media.MediaPlayer;
 import android.net.Uri;
+import android.os.Bundle;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.ActionBarActivity;
-import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;

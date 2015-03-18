@@ -1,4 +1,4 @@
-package com.example.patrichuan.battlequiz;
+package es.patrichuan.battlequiz;
 
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
@@ -57,10 +57,10 @@ public class GameScreen extends ActionBarActivity {
         TextView puntuacionroja = (TextView) findViewById(R.id.puntuacionroja);
         TextView puntuacionamarilla = (TextView) findViewById(R.id.puntuacionamarilla);
 
-        FontsOverride.setTextViewFont(this, puntuacionazul);
-        FontsOverride.setTextViewFont(this, puntuacionverde);
-        FontsOverride.setTextViewFont(this, puntuacionroja);
-        FontsOverride.setTextViewFont(this, puntuacionamarilla);
+        //FontsOverride.setTextViewFont(this, puntuacionazul);
+        //FontsOverride.setTextViewFont(this, puntuacionverde);
+        //FontsOverride.setTextViewFont(this, puntuacionroja);
+        //FontsOverride.setTextViewFont(this, puntuacionamarilla);
 
 
         Marcador = (TextView) findViewById(R.id.puntuacionamarilla);

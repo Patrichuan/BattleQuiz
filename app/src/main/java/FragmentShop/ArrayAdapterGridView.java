@@ -9,8 +9,8 @@ import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.example.patrichuan.battlequiz.FontsOverride;
-import com.example.patrichuan.battlequiz.R;
+import es.patrichuan.battlequiz.FontsOverride;
+import es.patrichuan.battlequiz.R;
 import java.util.ArrayList;
 
 /**

@@ -1,4 +1,4 @@
-package com.example.patrichuan.battlequiz;
+package es.patrichuan.battlequiz;
 
 import android.content.Intent;
 import android.content.SharedPreferences;

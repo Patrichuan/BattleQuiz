@@ -1,7 +1,7 @@
-package com.example.patrichuan.battlequiz;
+package es.patrichuan.battlequiz;
 
-import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 

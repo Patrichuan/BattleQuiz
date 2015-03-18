@@ -1,4 +1,4 @@
-package com.example.patrichuan.battlequiz;
+package es.patrichuan.battlequiz;
 
 import android.content.Context;
 import android.view.View;

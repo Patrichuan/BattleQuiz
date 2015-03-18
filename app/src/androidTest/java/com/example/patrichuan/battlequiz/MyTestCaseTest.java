@@ -6,6 +6,8 @@ import com.parse.ParseUser;
 import android.widget.Button;
 import android.widget.EditText;
 
+import es.patrichuan.battlequiz.R;
+
 public class MyTestCaseTest extends ActivityInstrumentationTestCase2<LoginScreen> {
 
     private Button login;

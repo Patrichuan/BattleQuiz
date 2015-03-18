@@ -1,4 +1,4 @@
-package com.example.patrichuan.test;
+package es.patrichuan.test;
 
 /**
  * Created by daniel on 26/02/15.
@@ -9,8 +9,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
-import com.example.patrichuan.battlequiz.LoginScreen;
-import com.example.patrichuan.battlequiz.R;
+import es.patrichuan.battlequiz.LoginScreen;
+import es.patrichuan.battlequiz.R;
 
 public class LoginScreenTest extends ActivityInstrumentationTestCase2<LoginScreen> {
     private TextView etiqueta;

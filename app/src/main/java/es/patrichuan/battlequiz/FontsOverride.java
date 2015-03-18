@@ -1,4 +1,4 @@
-package com.example.patrichuan.battlequiz;
+package es.patrichuan.battlequiz;
 
 /**
  * Created by daniel on 24/01/15.
@@ -12,8 +12,6 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 import java.lang.reflect.Field;
-
-import FragmentShop.Cosmetic;
 
 public final class FontsOverride {
 
